@@ -1,0 +1,5144 @@
+{
+  "generatedAt": "2026-09-19T13:48:00.359Z",
+  "count": 280,
+  "items": [
+    {
+      "name": "meg-anim-accent-cercle-reel",
+      "brand": "MEG",
+      "title": "Accent cercle or — Reel 9:16",
+      "description": "Ellipse or tracée à la main autour du centre de l'écran, pour entourer un élément. 3 s, repositionnable.",
+      "tags": [
+        "meg",
+        "reel",
+        "accent",
+        "cercle",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-anim-accent-cercle-reel.html",
+      "preview": "registry/blocks/meg-anim-accent-cercle-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-accent-cercle-yt",
+      "brand": "MEG",
+      "title": "Accent cercle or — YouTube 16:9",
+      "description": "Ellipse or tracée à la main autour du centre de l'écran, pour entourer un élément. 3 s, repositionnable.",
+      "tags": [
+        "meg",
+        "youtube",
+        "accent",
+        "cercle",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-anim-accent-cercle-yt.html",
+      "preview": "registry/blocks/meg-anim-accent-cercle-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-accent-fleche-reel",
+      "brand": "MEG",
+      "title": "Accent flèche or — Reel 9:16",
+      "description": "Flèche or tracée qui pointe vers une zone de l'écran. 3 s, repositionnable.",
+      "tags": [
+        "meg",
+        "reel",
+        "accent",
+        "fleche",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-anim-accent-fleche-reel.html",
+      "preview": "registry/blocks/meg-anim-accent-fleche-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-accent-fleche-yt",
+      "brand": "MEG",
+      "title": "Accent flèche or — YouTube 16:9",
+      "description": "Flèche or tracée qui pointe vers une zone de l'écran. 3 s, repositionnable.",
+      "tags": [
+        "meg",
+        "youtube",
+        "accent",
+        "fleche",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-anim-accent-fleche-yt.html",
+      "preview": "registry/blocks/meg-anim-accent-fleche-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-accent-surligneur-reel",
+      "brand": "MEG",
+      "title": "Accent surligneur — Reel 9:16",
+      "description": "Trait de surligneur or semi-transparent qui balaie une ligne, comme au feutre. 3 s, repositionnable.",
+      "tags": [
+        "meg",
+        "reel",
+        "accent",
+        "surligneur",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-anim-accent-surligneur-reel.html",
+      "preview": "registry/blocks/meg-anim-accent-surligneur-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-accent-surligneur-yt",
+      "brand": "MEG",
+      "title": "Accent surligneur — YouTube 16:9",
+      "description": "Trait de surligneur or semi-transparent qui balaie une ligne, comme au feutre. 3 s, repositionnable.",
+      "tags": [
+        "meg",
+        "youtube",
+        "accent",
+        "surligneur",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-anim-accent-surligneur-yt.html",
+      "preview": "registry/blocks/meg-anim-accent-surligneur-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-badge-reel",
+      "brand": "MEG",
+      "title": "Badge à retenir — Reel 9:16",
+      "description": "Badge or « À RETENIR » qui tombe en haut de l'écran. 4 s, texte à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "badge",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-anim-badge-reel.html",
+      "preview": "registry/blocks/meg-anim-badge-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-badge-yt",
+      "brand": "MEG",
+      "title": "Badge à retenir — YouTube 16:9",
+      "description": "Badge or « À RETENIR » qui tombe en haut de l'écran. 4 s, texte à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "habillage",
+        "badge",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-anim-badge-yt.html",
+      "preview": "registry/blocks/meg-anim-badge-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-compteur-reel",
+      "brand": "MEG",
+      "title": "Compteur chiffre choc — Reel 9:16",
+      "description": "Grand chiffre or qui compte de 0 à la valeur cible, avec légende. 4 s, valeur et légende à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "compteur",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-anim-compteur-reel.html",
+      "preview": "registry/blocks/meg-anim-compteur-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-compteur-yt",
+      "brand": "MEG",
+      "title": "Compteur chiffre choc — YouTube 16:9",
+      "description": "Grand chiffre or qui compte de 0 à la valeur cible, avec légende. 4 s, valeur et légende à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "habillage",
+        "compteur",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-anim-compteur-yt.html",
+      "preview": "registry/blocks/meg-anim-compteur-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-flash-reel",
+      "brand": "MEG",
+      "title": "Transition flash crème — Reel 9:16",
+      "description": "Flash crème 0,6 s à poser à cheval sur un cut : monte vite, cache le cut au pic, retombe.",
+      "tags": [
+        "meg",
+        "reel",
+        "transition",
+        "flash",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 0.6,
+      "target": "compositions/meg-anim-flash-reel.html",
+      "preview": "registry/blocks/meg-anim-flash-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-flash-yt",
+      "brand": "MEG",
+      "title": "Transition flash crème — YouTube 16:9",
+      "description": "Flash crème 0,6 s à poser à cheval sur un cut : monte vite, cache le cut au pic, retombe.",
+      "tags": [
+        "meg",
+        "youtube",
+        "transition",
+        "flash",
+        "meg-large",
+        "meg-youtube-folder-transitions"
+      ],
+      "duration": 0.6,
+      "target": "compositions/meg-anim-flash-yt.html",
+      "preview": "registry/blocks/meg-anim-flash-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-glisse-reel",
+      "brand": "MEG",
+      "title": "Transition glissement vertical — Reel 9:16",
+      "description": "Voile crème qui monte du bas, couvre l'écran à mi-course, puis sort par le haut. 1 s, à cheval sur un cut.",
+      "tags": [
+        "meg",
+        "reel",
+        "transition",
+        "glisse",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-anim-glisse-reel.html",
+      "preview": "registry/blocks/meg-anim-glisse-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-glisse-yt",
+      "brand": "MEG",
+      "title": "Transition glissement vertical — YouTube 16:9",
+      "description": "Voile crème qui monte du bas, couvre l'écran à mi-course, puis sort par le haut. 1 s, à cheval sur un cut.",
+      "tags": [
+        "meg",
+        "youtube",
+        "transition",
+        "glisse",
+        "meg-large",
+        "meg-youtube-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-anim-glisse-yt.html",
+      "preview": "registry/blocks/meg-anim-glisse-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-iris-reel",
+      "brand": "MEG",
+      "title": "Transition iris — Reel 9:16",
+      "description": "Disque encre qui se referme sur le visage puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.",
+      "tags": [
+        "meg",
+        "reel",
+        "transition",
+        "iris",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-anim-iris-reel.html",
+      "preview": "registry/blocks/meg-anim-iris-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-iris-yt",
+      "brand": "MEG",
+      "title": "Transition iris — YouTube 16:9",
+      "description": "Disque encre qui se referme sur le visage puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.",
+      "tags": [
+        "meg",
+        "youtube",
+        "transition",
+        "iris",
+        "meg-large",
+        "meg-youtube-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-anim-iris-yt.html",
+      "preview": "registry/blocks/meg-anim-iris-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-lower-third-reel",
+      "brand": "MEG",
+      "title": "Lower third identité — Reel 9:16",
+      "description": "Bandeau d'identité nom + rôle, entrée glissée, filet or. 5 s, textes à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "lower-third",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-anim-lower-third-reel.html",
+      "preview": "registry/blocks/meg-anim-lower-third-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-lower-third-yt",
+      "brand": "MEG",
+      "title": "Lower third identité — YouTube 16:9",
+      "description": "Bandeau d'identité nom + rôle, entrée glissée, filet or. 5 s, textes à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "habillage",
+        "lower-third",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-anim-lower-third-yt.html",
+      "preview": "registry/blocks/meg-anim-lower-third-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-mot-cle-reel",
+      "brand": "MEG",
+      "title": "Mot-clé pop — Reel 9:16",
+      "description": "Mot-clé unique qui claque au centre de l'écran sur fond gélule encre. 2,5 s, mot à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "mot-cle",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-anim-mot-cle-reel.html",
+      "preview": "registry/blocks/meg-anim-mot-cle-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-mot-cle-yt",
+      "brand": "MEG",
+      "title": "Mot-clé pop — YouTube 16:9",
+      "description": "Mot-clé unique qui claque au centre de l'écran sur fond gélule encre. 2,5 s, mot à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "habillage",
+        "mot-cle",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-anim-mot-cle-yt.html",
+      "preview": "registry/blocks/meg-anim-mot-cle-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-recadrage-lent-reel",
+      "brand": "MEG",
+      "title": "Effet recadrage lent — Reel 9:16",
+      "description": "Zoom avant très lent du master (1 → 1.08) sur 8 s, pour tenir un plan face caméra. Poser juste avant un cut.",
+      "tags": [
+        "meg",
+        "reel",
+        "effet",
+        "recadrage",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 8,
+      "target": "compositions/meg-anim-recadrage-lent-reel.html",
+      "preview": "registry/blocks/meg-anim-recadrage-lent-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-recadrage-lent-yt",
+      "brand": "MEG",
+      "title": "Effet recadrage lent — YouTube 16:9",
+      "description": "Zoom avant très lent du master (1 → 1.08) sur 8 s, pour tenir un plan face caméra. Poser juste avant un cut.",
+      "tags": [
+        "meg",
+        "youtube",
+        "effet",
+        "recadrage",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 8,
+      "target": "compositions/meg-anim-recadrage-lent-yt.html",
+      "preview": "registry/blocks/meg-anim-recadrage-lent-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-secousse-reel",
+      "brand": "MEG",
+      "title": "Effet secousse — Reel 9:16",
+      "description": "Secousse horizontale brève du master (±16 px) pour un mot choc ou une rupture. 0,8 s.",
+      "tags": [
+        "meg",
+        "reel",
+        "effet",
+        "secousse",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 0.8,
+      "target": "compositions/meg-anim-secousse-reel.html",
+      "preview": "registry/blocks/meg-anim-secousse-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-secousse-yt",
+      "brand": "MEG",
+      "title": "Effet secousse — YouTube 16:9",
+      "description": "Secousse horizontale brève du master (±16 px) pour un mot choc ou une rupture. 0,8 s.",
+      "tags": [
+        "meg",
+        "youtube",
+        "effet",
+        "secousse",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 0.8,
+      "target": "compositions/meg-anim-secousse-yt.html",
+      "preview": "registry/blocks/meg-anim-secousse-yt/preview.jpg"
+    },
+    {
+      "name": "meg-anim-zoom-punch-reel",
+      "brand": "MEG",
+      "title": "Effet zoom punch — Reel 9:16",
+      "description": "Coup de zoom sec sur le master (1 → 1.07 → 1) pour appuyer un mot fort. 1 s, se pose tel quel.",
+      "tags": [
+        "meg",
+        "reel",
+        "effet",
+        "zoom",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-anim-zoom-punch-reel.html",
+      "preview": "registry/blocks/meg-anim-zoom-punch-reel/preview.jpg"
+    },
+    {
+      "name": "meg-anim-zoom-punch-yt",
+      "brand": "MEG",
+      "title": "Effet zoom punch — YouTube 16:9",
+      "description": "Coup de zoom sec sur le master (1 → 1.07 → 1) pour appuyer un mot fort. 1 s, se pose tel quel.",
+      "tags": [
+        "meg",
+        "youtube",
+        "effet",
+        "zoom",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-anim-zoom-punch-yt.html",
+      "preview": "registry/blocks/meg-anim-zoom-punch-yt/preview.jpg"
+    },
+    {
+      "name": "meg-broll-frame",
+      "brand": "MEG",
+      "title": "Cadre B-roll planifié",
+      "description": "Emplacement plein cadre en Ken Burns avec hublot hachuré « B-ROLL À PLANIFIER » — réserve la place d'un plan de coupe réel soumis au gate MEG.",
+      "tags": [
+        "meg",
+        "broll",
+        "placeholder",
+        "plan-de-coupe",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-broll-frame.html",
+      "preview": "registry/blocks/meg-broll-frame/preview.jpg"
+    },
+    {
+      "name": "meg-callout-arrow",
+      "brand": "MEG",
+      "title": "Étiquette-flèche",
+      "description": "Étiquette crème et flèche or qui se trace en courbe jusqu'au détail exact (cible réglable).",
+      "tags": [
+        "meg",
+        "habillage",
+        "callout",
+        "fleche",
+        "preuve",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-callout-arrow.html",
+      "preview": "registry/blocks/meg-callout-arrow/preview.jpg"
+    },
+    {
+      "name": "meg-captions-global",
+      "brand": "MEG",
+      "title": "Sous-titres",
+      "description": "Une seule ligne, capitale initiale, cadre ajusté au texte et position liée au visage.",
+      "tags": [
+        "meg",
+        "sous-titres",
+        "global",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 15,
+      "target": "compositions/meg-captions-global.html",
+      "preview": "registry/blocks/meg-captions-global/preview.jpg"
+    },
+    {
+      "name": "meg-captions-karaoke-reel",
+      "brand": "MEG",
+      "title": "Sous-titres karaoke — Reel 9:16",
+      "description": "Groupe de trois ou quatre mots en bas du cadre : le mot actif passe sur une pastille or puis revient à l'état sombre. Démo 4 s.",
+      "tags": [
+        "meg",
+        "reel",
+        "captions",
+        "sous-titres",
+        "karaoke",
+        "mot-a-mot",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-captions-karaoke-reel.html",
+      "preview": "registry/blocks/meg-captions-karaoke-reel/preview.jpg"
+    },
+    {
+      "name": "meg-captions-karaoke-yt",
+      "brand": "MEG",
+      "title": "Sous-titres karaoke — YouTube 16:9",
+      "description": "Groupe de trois ou quatre mots en bas du cadre : le mot actif passe sur une pastille or puis revient à l'état sombre. Démo 4 s.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "captions",
+        "sous-titres",
+        "karaoke",
+        "mot-a-mot",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-captions-karaoke-yt.html",
+      "preview": "registry/blocks/meg-captions-karaoke-yt/preview.jpg"
+    },
+    {
+      "name": "meg-captions-keyword",
+      "brand": "MEG",
+      "title": "Sous-titres — mot-clé",
+      "description": "Gélule basse dont le mot balisé <em> passe en jaune clair et pop au moment exact où il est prononcé.",
+      "tags": [
+        "meg",
+        "captions",
+        "sous-titres",
+        "mot-cle",
+        "pop",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 15,
+      "target": "compositions/meg-captions-keyword.html",
+      "preview": "registry/blocks/meg-captions-keyword/preview.jpg"
+    },
+    {
+      "name": "meg-captions-middle",
+      "brand": "MEG",
+      "title": "Sous-titres — milieu",
+      "description": "Gélule de sous-titre posée sur la couture d'un split écran + visage (ancres 40, 50 ou centre).",
+      "tags": [
+        "meg",
+        "captions",
+        "sous-titres",
+        "milieu",
+        "split",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 15,
+      "target": "compositions/meg-captions-middle.html",
+      "preview": "registry/blocks/meg-captions-middle/preview.jpg"
+    },
+    {
+      "name": "meg-catalog-preview",
+      "brand": "MEG",
+      "title": "Apercu catalogue MEG",
+      "description": "Bloc plein ecran d'apercu catalogue MEG (grille de biens).",
+      "tags": [
+        "meg",
+        "catalogue",
+        "apercu"
+      ],
+      "duration": 15,
+      "target": "compositions/meg-catalog-preview.html",
+      "preview": "registry/blocks/meg-catalog-preview/preview.jpg"
+    },
+    {
+      "name": "meg-catalogue-large",
+      "brand": "MEG",
+      "title": "MEG - Large",
+      "description": "Couverture du catalogue horizontal 1920×1080 : tous les blocs « Large — … » qui suivent appartiennent à ce catalogue (layouts, intros, chapitres, outros, animations 16:9).",
+      "tags": [
+        "meg",
+        "catalogue",
+        "large",
+        "16-9",
+        "meg-large",
+        "meg-youtube-folder-apercus"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-catalogue-large.html",
+      "preview": "registry/blocks/meg-catalogue-large/preview.jpg"
+    },
+    {
+      "name": "meg-catalogue-reel",
+      "brand": "MEG",
+      "title": "MEG - Reel",
+      "description": "Couverture du catalogue vertical 1080×1920 : tous les blocs « Reel — … » qui suivent appartiennent à ce catalogue (layouts, intros, chapitres, CTA, animations 9:16).",
+      "tags": [
+        "meg",
+        "catalogue",
+        "reel",
+        "9-16",
+        "meg-reel",
+        "meg-reel-folder-apercus"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-catalogue-reel.html",
+      "preview": "registry/blocks/meg-catalogue-reel/preview.jpg"
+    },
+    {
+      "name": "meg-checklist-ticks",
+      "brand": "MEG",
+      "title": "Liste cochée",
+      "description": "Trois affirmations dont les pastilles se remplissent d'or et se cochent une à une au rythme de la voix.",
+      "tags": [
+        "meg",
+        "liste",
+        "checklist",
+        "coche",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-checklist-ticks.html",
+      "preview": "registry/blocks/meg-checklist-ticks/preview.jpg"
+    },
+    {
+      "name": "meg-compare-cards",
+      "brand": "MEG",
+      "title": "Comparatif deux cartes",
+      "description": "Deux cartes qui entrent chacune par son côté — le subi en encre à gauche, le résultat MEG en crème à droite — scellées par un jeton VS.",
+      "tags": [
+        "meg",
+        "comparatif",
+        "avant-apres",
+        "vs",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-compare-cards.html",
+      "preview": "registry/blocks/meg-compare-cards/preview.jpg"
+    },
+    {
+      "name": "meg-cutout-emoji",
+      "brand": "MEG",
+      "title": "Corps détouré — pastilles",
+      "description": "Sept jetons en arc autour de la tête, pour énumérer sans texte.",
+      "tags": [
+        "meg",
+        "corps-detoure",
+        "detourage",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-cutout-emoji.html",
+      "preview": "registry/blocks/meg-cutout-emoji/preview.jpg"
+    },
+    {
+      "name": "meg-cutout-one-card",
+      "brand": "MEG",
+      "title": "Corps détouré — une carte",
+      "description": "Une carte calibrée au texte, décentrée derrière le sujet, liste de trois points.",
+      "tags": [
+        "meg",
+        "corps-detoure",
+        "detourage",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-cutout-one-card.html",
+      "preview": "registry/blocks/meg-cutout-one-card/preview.jpg"
+    },
+    {
+      "name": "meg-cutout-panel",
+      "brand": "MEG",
+      "title": "Corps détouré — panneau",
+      "description": "Panneau keynote au-dessus de la tête, son bord bas seul passe derrière le front.",
+      "tags": [
+        "meg",
+        "corps-detoure",
+        "detourage",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-cutout-panel.html",
+      "preview": "registry/blocks/meg-cutout-panel/preview.jpg"
+    },
+    {
+      "name": "meg-cutout-two-cards",
+      "brand": "MEG",
+      "title": "Corps détouré — deux cartes",
+      "description": "Deux cartes avant/après serrées derrière le sujet détouré, fond master flouté.",
+      "tags": [
+        "meg",
+        "corps-detoure",
+        "detourage",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-cutout-two-cards.html",
+      "preview": "registry/blocks/meg-cutout-two-cards/preview.jpg"
+    },
+    {
+      "name": "meg-data-bars",
+      "brand": "MEG",
+      "title": "Chiffres — barres comparées",
+      "description": "Trois barres horizontales qui s'étirent l'une après l'autre, la ligne MEG seule en or.",
+      "tags": [
+        "meg",
+        "data",
+        "barres",
+        "comparaison",
+        "stat",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-data-bars.html",
+      "preview": "registry/blocks/meg-data-bars/preview.jpg"
+    },
+    {
+      "name": "meg-detoure-occlusion-titre-reel",
+      "brand": "MEG",
+      "title": "Détouré — occlusion titre (Reel)",
+      "description": "Titre Clash Grotesk qui passe derrière une silhouette centrée issue du master, avec liseré or et masque ellipse de démonstration si aucun alpha n'est fourni.",
+      "tags": [
+        "meg",
+        "reel",
+        "9-16",
+        "detoure",
+        "occlusion",
+        "titre",
+        "alpha",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-detoure-occlusion-titre-reel.html",
+      "preview": "registry/blocks/meg-detoure-occlusion-titre-reel/preview.jpg"
+    },
+    {
+      "name": "meg-detoure-occlusion-titre-yt",
+      "brand": "MEG",
+      "title": "Détouré — occlusion titre (YouTube)",
+      "description": "Titre Clash Grotesk qui passe derrière une silhouette centrée issue du master, avec liseré or et masque ellipse de démonstration si aucun alpha n'est fourni.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "detoure",
+        "occlusion",
+        "titre",
+        "alpha",
+        "meg-youtube-folder-detourage"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-detoure-occlusion-titre-yt.html",
+      "preview": "registry/blocks/meg-detoure-occlusion-titre-yt/preview.jpg"
+    },
+    {
+      "name": "meg-face-cta-arrows",
+      "brand": "MEG",
+      "title": "Appel à l’action",
+      "description": "Carte CTA adaptée au texte, chevrons arrondis en jeton rond animés vers le lien sous la vidéo.",
+      "tags": [
+        "meg",
+        "cta",
+        "visage",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-face-cta-arrows.html",
+      "preview": "registry/blocks/meg-face-cta-arrows/preview.jpg"
+    },
+    {
+      "name": "meg-face-full",
+      "brand": "MEG",
+      "title": "Plein cadre",
+      "description": "Vidéo maître plein cadre.",
+      "tags": [
+        "meg",
+        "visage",
+        "maitre",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 15,
+      "target": "compositions/meg-face-full.html",
+      "preview": "registry/blocks/meg-face-full/preview.jpg"
+    },
+    {
+      "name": "meg-face-proof-split-t04",
+      "brand": "MEG",
+      "title": "Preuve haut 40 · Visage bas 60",
+      "description": "Preuve haute 40 %, visage bas 60 % ; transition, rayon et sous-titre synchronisés.",
+      "tags": [
+        "meg",
+        "preuve",
+        "separe",
+        "haut",
+        "40-60",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-face-proof-split-t04.html",
+      "preview": "registry/blocks/meg-face-proof-split-t04/preview.jpg"
+    },
+    {
+      "name": "meg-face-proof-split-t17",
+      "brand": "MEG",
+      "title": "Visage haut 60 · Preuve bas 40",
+      "description": "Visage haut 60 %, preuve basse 40 % ; transition, rayon et sous-titre synchronisés.",
+      "tags": [
+        "meg",
+        "preuve",
+        "separe",
+        "bas",
+        "60-40",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-face-proof-split-t17.html",
+      "preview": "registry/blocks/meg-face-proof-split-t17/preview.jpg"
+    },
+    {
+      "name": "meg-freeze-annote-reel",
+      "brand": "MEG",
+      "title": "Freeze annoté — Reel 9:16",
+      "description": "Pause simulée avec badge PAUSE, ellipse rouge irrégulière et flèche courte autour d'une zone réglable en pourcentage. Le master est légèrement désaturé puis restauré.",
+      "tags": [
+        "meg",
+        "reel",
+        "freeze-frame",
+        "annotation",
+        "pause",
+        "callout",
+        "accent",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-freeze-annote-reel.html",
+      "preview": "registry/blocks/meg-freeze-annote-reel/preview.jpg"
+    },
+    {
+      "name": "meg-freeze-annote-yt",
+      "brand": "MEG",
+      "title": "Freeze annoté — YouTube 16:9",
+      "description": "Pause simulée avec badge PAUSE, ellipse rouge irrégulière et flèche courte autour d'une zone réglable en pourcentage. Le master est légèrement désaturé puis restauré.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "freeze-frame",
+        "annotation",
+        "pause",
+        "callout",
+        "accent",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-freeze-annote-yt.html",
+      "preview": "registry/blocks/meg-freeze-annote-yt/preview.jpg"
+    },
+    {
+      "name": "meg-habillage-grain-reel",
+      "brand": "MEG",
+      "title": "Habillage grain et light leak — Reel 9:16",
+      "description": "Habillage plein cadre sans texte : grain fin à 10 %, vignette douce et light leak or à 15 % qui dérive en huit secondes.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "grain",
+        "texture",
+        "vignette",
+        "light-leak",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 8,
+      "target": "compositions/meg-habillage-grain-reel.html",
+      "preview": "registry/blocks/meg-habillage-grain-reel/preview.jpg"
+    },
+    {
+      "name": "meg-habillage-grain-yt",
+      "brand": "MEG",
+      "title": "Habillage grain et light leak — YouTube 16:9",
+      "description": "Habillage plein cadre sans texte : grain fin à 10 %, vignette douce et light leak or à 15 % qui dérive en huit secondes.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "habillage",
+        "grain",
+        "texture",
+        "vignette",
+        "light-leak",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 8,
+      "target": "compositions/meg-habillage-grain-yt.html",
+      "preview": "registry/blocks/meg-habillage-grain-yt/preview.jpg"
+    },
+    {
+      "name": "meg-lower-third-identity",
+      "brand": "MEG",
+      "title": "Bandeau identité",
+      "description": "Lower third bas-gauche en deux gélules calibrées (nom + rôle), entre et ressort par la gauche.",
+      "tags": [
+        "meg",
+        "habillage",
+        "lower-third",
+        "identite",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-lower-third-identity.html",
+      "preview": "registry/blocks/meg-lower-third-identity/preview.jpg"
+    },
+    {
+      "name": "meg-masked-face-stage",
+      "brand": "MEG",
+      "title": "Visage détouré",
+      "description": "Visage détouré avec cartes derrière le sujet.",
+      "tags": [
+        "meg",
+        "visage",
+        "detoure",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-masked-face-stage.html",
+      "preview": "registry/blocks/meg-masked-face-stage/preview.jpg"
+    },
+    {
+      "name": "meg-motion-bandeau-preuve-reel",
+      "brand": "MEG",
+      "title": "Reel — Bandeau preuve (notification)",
+      "description": "Bandeau style notification qui glisse du haut : coche or + résultat chiffré. Pour appuyer une preuve dite (montant financé, dossier validé…).",
+      "tags": [
+        "meg",
+        "motion",
+        "preuve",
+        "notification",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 3.5,
+      "target": "compositions/meg-motion-bandeau-preuve-reel.html",
+      "preview": "registry/blocks/meg-motion-bandeau-preuve-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-bandeau-preuve-yt",
+      "brand": "MEG",
+      "title": "Large — Bandeau preuve (notification)",
+      "description": "Bandeau style notification qui glisse du haut : coche or + résultat chiffré. Pour appuyer une preuve dite (montant financé, dossier validé…).",
+      "tags": [
+        "meg",
+        "motion",
+        "preuve",
+        "notification",
+        "meg-large",
+        "meg-youtube-folder-preuves"
+      ],
+      "duration": 3.5,
+      "target": "compositions/meg-motion-bandeau-preuve-yt.html",
+      "preview": "registry/blocks/meg-motion-bandeau-preuve-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-cadre-accent-reel",
+      "brand": "MEG",
+      "title": "Reel — Cadre accent or",
+      "description": "Cadre or épais qui se pose sur le plan entier pour marquer LE moment important. 2,5 s.",
+      "tags": [
+        "meg",
+        "motion",
+        "cadre",
+        "accent",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-cadre-accent-reel.html",
+      "preview": "registry/blocks/meg-motion-cadre-accent-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-cadre-accent-yt",
+      "brand": "MEG",
+      "title": "Large — Cadre accent or",
+      "description": "Cadre or épais qui se pose sur le plan entier pour marquer LE moment important. 2,5 s.",
+      "tags": [
+        "meg",
+        "motion",
+        "cadre",
+        "accent",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-cadre-accent-yt.html",
+      "preview": "registry/blocks/meg-motion-cadre-accent-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-carte-titre-punch-reel",
+      "brand": "MEG",
+      "title": "Reel — Carte-titre interstitielle (punch)",
+      "description": "Carte crème pleine qui claque entre deux séquences : gélule + grand titre + filet or. 2,2 s, à poser sur un cut.",
+      "tags": [
+        "meg",
+        "motion",
+        "carte-titre",
+        "punch",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 2.2,
+      "target": "compositions/meg-motion-carte-titre-punch-reel.html",
+      "preview": "registry/blocks/meg-motion-carte-titre-punch-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-carte-titre-slide-reel",
+      "brand": "MEG",
+      "title": "Reel — Carte-titre interstitielle (glissée)",
+      "description": "Carte crème pleine qui glisse entre deux séquences : gélule + grand titre + filet or. 2,2 s, à poser sur un cut.",
+      "tags": [
+        "meg",
+        "motion",
+        "carte-titre",
+        "slide",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 2.2,
+      "target": "compositions/meg-motion-carte-titre-slide-reel.html",
+      "preview": "registry/blocks/meg-motion-carte-titre-slide-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-carte-titre-slide-yt",
+      "brand": "MEG",
+      "title": "Large — Carte-titre interstitielle (glissée)",
+      "description": "Carte crème pleine qui glisse entre deux séquences : gélule + grand titre + filet or. 2,2 s, à poser sur un cut.",
+      "tags": [
+        "meg",
+        "motion",
+        "carte-titre",
+        "slide",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 2.2,
+      "target": "compositions/meg-motion-carte-titre-slide-yt.html",
+      "preview": "registry/blocks/meg-motion-carte-titre-slide-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-chips-colonne-reel",
+      "brand": "MEG",
+      "title": "Reel — Chips cumulatives en colonne",
+      "description": "Liste animée : chaque point arrive en chip surlignée et reste (en colonne). Pour énumérer 3 éléments pendant qu'ils sont dits.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "chips",
+        "colonne",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-chips-colonne-reel.html",
+      "preview": "registry/blocks/meg-motion-chips-colonne-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-chips-colonne-yt",
+      "brand": "MEG",
+      "title": "Large — Chips cumulatives en colonne",
+      "description": "Liste animée : chaque point arrive en chip surlignée et reste (en colonne). Pour énumérer 3 éléments pendant qu'ils sont dits.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "chips",
+        "colonne",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-chips-colonne-yt.html",
+      "preview": "registry/blocks/meg-motion-chips-colonne-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-chips-rangee-reel",
+      "brand": "MEG",
+      "title": "Reel — Chips cumulatives en rangée",
+      "description": "Liste animée : chaque point arrive en chip surlignée et reste (en rangée). Pour énumérer 3 éléments pendant qu'ils sont dits.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "chips",
+        "rangee",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-chips-rangee-reel.html",
+      "preview": "registry/blocks/meg-motion-chips-rangee-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-cta-pastille-abonnez-reel",
+      "brand": "MEG",
+      "title": "Reel — Pastille CTA « ABONNEZ-VOUS »",
+      "description": "Badge CTA persistant en zone neutre (torse, à gauche) : rond or qui pulse + étiquette « ABONNEZ-VOUS ». Se pose sur plusieurs secondes sans gêner.",
+      "tags": [
+        "meg",
+        "motion",
+        "cta",
+        "pastille",
+        "abonnez",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-motion-cta-pastille-abonnez-reel.html",
+      "preview": "registry/blocks/meg-motion-cta-pastille-abonnez-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-cta-pastille-lien-reel",
+      "brand": "MEG",
+      "title": "Reel — Pastille CTA « LIEN EN BIO »",
+      "description": "Badge CTA persistant en zone neutre (torse, à gauche) : rond or qui pulse + étiquette « LIEN EN BIO ». Se pose sur plusieurs secondes sans gêner.",
+      "tags": [
+        "meg",
+        "motion",
+        "cta",
+        "pastille",
+        "lien",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-motion-cta-pastille-lien-reel.html",
+      "preview": "registry/blocks/meg-motion-cta-pastille-lien-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-fleche-bas-reel",
+      "brand": "MEG",
+      "title": "Reel — Sticker flèche vers le bas",
+      "description": "Flèche sticker qui pop et pointe vers le bas (preuve, visage, élément) + étiquette éditable.",
+      "tags": [
+        "meg",
+        "motion",
+        "sticker",
+        "fleche",
+        "bas",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-fleche-bas-reel.html",
+      "preview": "registry/blocks/meg-motion-fleche-bas-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-fleche-gauche-yt",
+      "brand": "MEG",
+      "title": "Large — Sticker flèche vers la gauche",
+      "description": "Flèche sticker qui pop et pointe vers la gauche (preuve, visage, élément) + étiquette éditable.",
+      "tags": [
+        "meg",
+        "motion",
+        "sticker",
+        "fleche",
+        "gauche",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-fleche-gauche-yt.html",
+      "preview": "registry/blocks/meg-motion-fleche-gauche-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-fleche-haut-reel",
+      "brand": "MEG",
+      "title": "Reel — Sticker flèche vers le haut",
+      "description": "Flèche sticker qui pop et pointe vers le haut (preuve, visage, élément) + étiquette éditable.",
+      "tags": [
+        "meg",
+        "motion",
+        "sticker",
+        "fleche",
+        "haut",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-fleche-haut-reel.html",
+      "preview": "registry/blocks/meg-motion-fleche-haut-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-icone-check-reel",
+      "brand": "MEG",
+      "title": "Reel — Icône pop (check)",
+      "description": "Icône check qui claque en zone neutre pour ponctuer le propos (validation, refus, rapidité, argent).",
+      "tags": [
+        "meg",
+        "motion",
+        "icone",
+        "check",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.4,
+      "target": "compositions/meg-motion-icone-check-reel.html",
+      "preview": "registry/blocks/meg-motion-icone-check-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-icone-check-yt",
+      "brand": "MEG",
+      "title": "Large — Icône pop (check)",
+      "description": "Coche or qui claque en tiers gauche pour valider un point dit.",
+      "tags": [
+        "meg",
+        "motion",
+        "icone",
+        "check",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 1.4,
+      "target": "compositions/meg-motion-icone-check-yt.html",
+      "preview": "registry/blocks/meg-motion-icone-check-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-icone-croix-reel",
+      "brand": "MEG",
+      "title": "Reel — Icône pop (croix)",
+      "description": "Icône croix qui claque en zone neutre pour ponctuer le propos (validation, refus, rapidité, argent).",
+      "tags": [
+        "meg",
+        "motion",
+        "icone",
+        "croix",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.4,
+      "target": "compositions/meg-motion-icone-croix-reel.html",
+      "preview": "registry/blocks/meg-motion-icone-croix-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-icone-eclair-reel",
+      "brand": "MEG",
+      "title": "Reel — Icône pop (eclair)",
+      "description": "Icône eclair qui claque en zone neutre pour ponctuer le propos (validation, refus, rapidité, argent).",
+      "tags": [
+        "meg",
+        "motion",
+        "icone",
+        "eclair",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.4,
+      "target": "compositions/meg-motion-icone-eclair-reel.html",
+      "preview": "registry/blocks/meg-motion-icone-eclair-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-icone-euro-reel",
+      "brand": "MEG",
+      "title": "Reel — Icône pop (euro)",
+      "description": "Icône euro qui claque en zone neutre pour ponctuer le propos (validation, refus, rapidité, argent).",
+      "tags": [
+        "meg",
+        "motion",
+        "icone",
+        "euro",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.4,
+      "target": "compositions/meg-motion-icone-euro-reel.html",
+      "preview": "registry/blocks/meg-motion-icone-euro-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-logo-reveal-reel",
+      "brand": "MEG",
+      "title": "Reel — Logo reveal MEG",
+      "description": "Signature de marque : logo MEG officiel + filet or qui se déploie sur carte crème. 2,5 s — ouverture ou fermeture de vidéo.",
+      "tags": [
+        "meg",
+        "motion",
+        "logo",
+        "marque",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-logo-reveal-reel.html",
+      "preview": "registry/blocks/meg-motion-logo-reveal-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-logo-reveal-yt",
+      "brand": "MEG",
+      "title": "Large — Logo reveal MEG",
+      "description": "Signature de marque : logo MEG officiel + filet or qui se déploie sur carte crème. 2,5 s — ouverture ou fermeture de vidéo.",
+      "tags": [
+        "meg",
+        "motion",
+        "logo",
+        "marque",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 2.5,
+      "target": "compositions/meg-motion-logo-reveal-yt.html",
+      "preview": "registry/blocks/meg-motion-logo-reveal-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-mot-pop-contour-reel",
+      "brand": "MEG",
+      "title": "Reel — Mot-clé pop (contour crème)",
+      "description": "Un seul mot qui claque à l'écran (contour crème) au moment exact où il est prononcé. Remplacer le mot, caler le bloc sur le mot dans l'audio.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "mot-cle",
+        "contour",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.6,
+      "target": "compositions/meg-motion-mot-pop-contour-reel.html",
+      "preview": "registry/blocks/meg-motion-mot-pop-contour-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-mot-pop-gelule-reel",
+      "brand": "MEG",
+      "title": "Reel — Mot-clé pop (gélule encre)",
+      "description": "Un seul mot qui claque à l'écran (gélule encre) au moment exact où il est prononcé. Remplacer le mot, caler le bloc sur le mot dans l'audio.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "mot-cle",
+        "gelule",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.6,
+      "target": "compositions/meg-motion-mot-pop-gelule-reel.html",
+      "preview": "registry/blocks/meg-motion-mot-pop-gelule-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-mot-pop-or-reel",
+      "brand": "MEG",
+      "title": "Reel — Mot-clé pop (plein or)",
+      "description": "Un seul mot qui claque à l'écran (plein or) au moment exact où il est prononcé. Remplacer le mot, caler le bloc sur le mot dans l'audio.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "mot-cle",
+        "or",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 1.6,
+      "target": "compositions/meg-motion-mot-pop-or-reel.html",
+      "preview": "registry/blocks/meg-motion-mot-pop-or-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-mot-pop-or-yt",
+      "brand": "MEG",
+      "title": "Large — Mot-clé pop (plein or)",
+      "description": "Un seul mot qui claque à l'écran (plein or) au moment exact où il est prononcé. Remplacer le mot, caler le bloc sur le mot dans l'audio.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "mot-cle",
+        "or",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 1.6,
+      "target": "compositions/meg-motion-mot-pop-or-yt.html",
+      "preview": "registry/blocks/meg-motion-mot-pop-or-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-objet-phrase-reel",
+      "brand": "MEG",
+      "title": "Reel — Objet détouré + phrase",
+      "description": "Emplacement d'objet détouré (document, téléphone, produit — asset alpha) + phrase accent en gélule dessous. L'objet pop, la phrase suit.",
+      "tags": [
+        "meg",
+        "motion",
+        "objet",
+        "detoure",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-motion-objet-phrase-reel.html",
+      "preview": "registry/blocks/meg-motion-objet-phrase-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-objet-phrase-yt",
+      "brand": "MEG",
+      "title": "Large — Objet détouré + phrase",
+      "description": "Emplacement d'objet détouré (document, téléphone, produit — asset alpha) + phrase accent en gélule dessous. L'objet pop, la phrase suit.",
+      "tags": [
+        "meg",
+        "motion",
+        "objet",
+        "detoure",
+        "meg-large",
+        "meg-youtube-folder-detourage"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-motion-objet-phrase-yt.html",
+      "preview": "registry/blocks/meg-motion-objet-phrase-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-pile-broll-reel",
+      "brand": "MEG",
+      "title": "Reel — Pile de texte sur B-roll",
+      "description": "Trois grandes lignes en gélules qui s'empilent au centre du cadre — à poser sur un plan B-roll (jamais sur le visage).",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "broll",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 4.5,
+      "target": "compositions/meg-motion-pile-broll-reel.html",
+      "preview": "registry/blocks/meg-motion-pile-broll-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-pile-broll-yt",
+      "brand": "MEG",
+      "title": "Large — Pile de texte sur B-roll",
+      "description": "Trois grandes lignes en gélules qui s'empilent au centre du cadre — à poser sur un plan B-roll (jamais sur le visage).",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "broll",
+        "meg-large",
+        "meg-youtube-folder-preuves"
+      ],
+      "duration": 4.5,
+      "target": "compositions/meg-motion-pile-broll-yt.html",
+      "preview": "registry/blocks/meg-motion-pile-broll-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-plein-caption-reel",
+      "brand": "MEG",
+      "title": "Reel — Écran plein + caption centrale",
+      "description": "Écran bord à bord (capture, B-roll) + grande caption centrée en gélule. Remplacer la zone hachurée et le texte.",
+      "tags": [
+        "meg",
+        "motion",
+        "ecran",
+        "caption",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-motion-plein-caption-reel.html",
+      "preview": "registry/blocks/meg-motion-plein-caption-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-plein-caption-yt",
+      "brand": "MEG",
+      "title": "Large — Écran plein + caption centrale",
+      "description": "Écran bord à bord (capture, B-roll) + grande caption centrée en gélule. Remplacer la zone hachurée et le texte.",
+      "tags": [
+        "meg",
+        "motion",
+        "ecran",
+        "caption",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-motion-plein-caption-yt.html",
+      "preview": "registry/blocks/meg-motion-plein-caption-yt/preview.jpg"
+    },
+    {
+      "name": "meg-motion-typo-centre-reel",
+      "brand": "MEG",
+      "title": "Reel — Typo cinétique empilée au centre",
+      "description": "Texte animé : la phrase arrive par blocs de mots qui s'empilent (empilée au centre) et restent à l'écran. Chaque ligne est éditable, le mot fort passe en or.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "typo-cinetique",
+        "centre",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-typo-centre-reel.html",
+      "preview": "registry/blocks/meg-motion-typo-centre-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-typo-escalier-reel",
+      "brand": "MEG",
+      "title": "Reel — Typo cinétique en escalier",
+      "description": "Texte animé : la phrase arrive par blocs de mots qui s'empilent (en escalier) et restent à l'écran. Chaque ligne est éditable, le mot fort passe en or.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "typo-cinetique",
+        "escalier",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-typo-escalier-reel.html",
+      "preview": "registry/blocks/meg-motion-typo-escalier-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-typo-gauche-reel",
+      "brand": "MEG",
+      "title": "Reel — Typo cinétique empilée à gauche",
+      "description": "Texte animé : la phrase arrive par blocs de mots qui s'empilent (empilée à gauche) et restent à l'écran. Chaque ligne est éditable, le mot fort passe en or.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "typo-cinetique",
+        "gauche",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-typo-gauche-reel.html",
+      "preview": "registry/blocks/meg-motion-typo-gauche-reel/preview.jpg"
+    },
+    {
+      "name": "meg-motion-typo-gauche-yt",
+      "brand": "MEG",
+      "title": "Large — Typo cinétique empilée à gauche",
+      "description": "Texte animé : la phrase arrive par blocs de mots qui s'empilent (empilée à gauche) et restent à l'écran. Chaque ligne est éditable, le mot fort passe en or.",
+      "tags": [
+        "meg",
+        "motion",
+        "texte",
+        "typo-cinetique",
+        "gauche",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-motion-typo-gauche-yt.html",
+      "preview": "registry/blocks/meg-motion-typo-gauche-yt/preview.jpg"
+    },
+    {
+      "name": "meg-notification-message-reel",
+      "brand": "MEG",
+      "title": "Notification messagerie — Reel 9:16",
+      "description": "Carte sombre de notification avec avatar or, Client OF, WhatsApp et message modifiable. Entrée 0,5 s, tenue 2,5 s, sortie 0,5 s.",
+      "tags": [
+        "meg",
+        "reel",
+        "notification",
+        "messagerie",
+        "overlay",
+        "motion",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 3.5,
+      "target": "compositions/meg-notification-message-reel.html",
+      "preview": "registry/blocks/meg-notification-message-reel/preview.jpg"
+    },
+    {
+      "name": "meg-notification-message-yt",
+      "brand": "MEG",
+      "title": "Notification messagerie — YouTube 16:9",
+      "description": "Carte sombre de notification avec avatar or, Client OF, WhatsApp et message modifiable. Entrée 0,5 s, tenue 2,5 s, sortie 0,5 s.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "notification",
+        "messagerie",
+        "overlay",
+        "motion",
+        "meg-large",
+        "meg-youtube-folder-motion-texte"
+      ],
+      "duration": 3.5,
+      "target": "compositions/meg-notification-message-yt.html",
+      "preview": "registry/blocks/meg-notification-message-yt/preview.jpg"
+    },
+    {
+      "name": "meg-presence-translucide-reel",
+      "brand": "MEG",
+      "title": "Présence translucide sur preuve (Reel)",
+      "description": "Cadre preuve plein écran lisible sous le wrapper du master unique à 0,25 d'opacité, avec pastille paramétrable en bas.",
+      "tags": [
+        "meg",
+        "reel",
+        "9-16",
+        "presence",
+        "translucide",
+        "preuve",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-presence-translucide-reel.html",
+      "preview": "registry/blocks/meg-presence-translucide-reel/preview.jpg"
+    },
+    {
+      "name": "meg-presence-translucide-yt",
+      "brand": "MEG",
+      "title": "Présence translucide sur preuve (YouTube)",
+      "description": "Cadre preuve plein écran lisible sous le wrapper du master unique à 0,25 d'opacité, avec pastille paramétrable en bas.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "presence",
+        "translucide",
+        "preuve",
+        "meg-youtube-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-presence-translucide-yt.html",
+      "preview": "registry/blocks/meg-presence-translucide-yt/preview.jpg"
+    },
+    {
+      "name": "meg-preuve-curseur-clic-reel",
+      "brand": "MEG",
+      "title": "Preuve écran — curseur et clic (Reel)",
+      "description": "Cadre preuve crème en haut à 45 %, curseur paramétrable, ripple et zoom sur la zone cliquée ; visage master recadré en bande basse.",
+      "tags": [
+        "meg",
+        "reel",
+        "preuve",
+        "curseur",
+        "clic",
+        "interaction",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-preuve-curseur-clic-reel.html",
+      "preview": "registry/blocks/meg-preuve-curseur-clic-reel/preview.jpg"
+    },
+    {
+      "name": "meg-preuve-curseur-clic-yt",
+      "brand": "MEG",
+      "title": "Preuve écran — curseur et clic (YouTube)",
+      "description": "Cadre preuve crème à droite à 65 %, curseur paramétrable, ripple et zoom sur la zone cliquée ; visage master à gauche.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "preuve",
+        "curseur",
+        "clic",
+        "interaction",
+        "meg-large",
+        "meg-youtube-folder-preuves"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-preuve-curseur-clic-yt.html",
+      "preview": "registry/blocks/meg-preuve-curseur-clic-yt/preview.jpg"
+    },
+    {
+      "name": "meg-preuve-loupe-document-reel",
+      "brand": "MEG",
+      "title": "Preuve document — loupe (Reel)",
+      "description": "Document A4 centré dans un cadre preuve haut 55 %, loupe or ×2 sur une zone paramétrable avec étiquette ; visage master en bas.",
+      "tags": [
+        "meg",
+        "reel",
+        "preuve",
+        "loupe",
+        "document",
+        "zoom",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-preuve-loupe-document-reel.html",
+      "preview": "registry/blocks/meg-preuve-loupe-document-reel/preview.jpg"
+    },
+    {
+      "name": "meg-preuve-loupe-document-yt",
+      "brand": "MEG",
+      "title": "Preuve document — loupe (YouTube)",
+      "description": "Document A4 à gauche dans un cadre preuve 55 %, loupe or ×2 sur une zone paramétrable avec étiquette ; visage master à droite.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "preuve",
+        "loupe",
+        "document",
+        "zoom",
+        "meg-large",
+        "meg-youtube-folder-preuves"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-preuve-loupe-document-yt.html",
+      "preview": "registry/blocks/meg-preuve-loupe-document-yt/preview.jpg"
+    },
+    {
+      "name": "meg-preuve-scroll-auto-reel",
+      "brand": "MEG",
+      "title": "Preuve écran — scroll automatique (Reel)",
+      "description": "Cadre preuve crème en haut à 45 %, contenu neutre de 2,5 fois la fenêtre et scroll en deux paliers avec pouce or ; visage master en bande basse.",
+      "tags": [
+        "meg",
+        "reel",
+        "preuve",
+        "scroll",
+        "défilement",
+        "animation",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-preuve-scroll-auto-reel.html",
+      "preview": "registry/blocks/meg-preuve-scroll-auto-reel/preview.jpg"
+    },
+    {
+      "name": "meg-preuve-scroll-auto-yt",
+      "brand": "MEG",
+      "title": "Preuve écran — scroll automatique (YouTube)",
+      "description": "Cadre preuve crème à droite à 65 %, contenu neutre de 2,5 fois la fenêtre et scroll en deux paliers avec pouce or ; visage master à gauche.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "preuve",
+        "scroll",
+        "défilement",
+        "animation",
+        "meg-large",
+        "meg-youtube-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-preuve-scroll-auto-yt.html",
+      "preview": "registry/blocks/meg-preuve-scroll-auto-yt/preview.jpg"
+    },
+    {
+      "name": "meg-proof-full",
+      "brand": "MEG",
+      "title": "Preuve — capture centrée",
+      "description": "Capture posée au centre sur fond dégradé crème, marque en source. La page défile pendant le plan.",
+      "tags": [
+        "meg",
+        "preuve",
+        "plein-ecran",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-proof-full.html",
+      "preview": "registry/blocks/meg-proof-full/preview.jpg"
+    },
+    {
+      "name": "meg-proof-full-browser",
+      "brand": "MEG",
+      "title": "Preuve — fenêtre navigateur",
+      "description": "Capture dans une fenêtre à la charte, marque et URL dans la barre. La page défile franchement.",
+      "tags": [
+        "meg",
+        "preuve",
+        "plein-ecran",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-proof-full-browser.html",
+      "preview": "registry/blocks/meg-proof-full-browser/preview.jpg"
+    },
+    {
+      "name": "meg-proof-full-tilt",
+      "brand": "MEG",
+      "title": "Preuve — capture inclinée",
+      "description": "Capture en perspective, texte en encre sur le fond crème. Pour un programme qu'on montre en train de défiler.",
+      "tags": [
+        "meg",
+        "preuve",
+        "plein-ecran",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-proof-full-tilt.html",
+      "preview": "registry/blocks/meg-proof-full-tilt/preview.jpg"
+    },
+    {
+      "name": "meg-proof-split-50-bottom",
+      "brand": "MEG",
+      "title": "Visage haut 50 · Preuve bas 50",
+      "description": "Partage à parts égales, preuve sous le visage.",
+      "tags": [
+        "meg",
+        "preuve",
+        "separe",
+        "bas",
+        "50-50",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-proof-split-50-bottom.html",
+      "preview": "registry/blocks/meg-proof-split-50-bottom/preview.jpg"
+    },
+    {
+      "name": "meg-proof-split-50-top",
+      "brand": "MEG",
+      "title": "Preuve haut 50 · Visage bas 50",
+      "description": "Partage à parts égales, preuve au-dessus du visage.",
+      "tags": [
+        "meg",
+        "preuve",
+        "separe",
+        "haut",
+        "50-50",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-proof-split-50-top.html",
+      "preview": "registry/blocks/meg-proof-split-50-top/preview.jpg"
+    },
+    {
+      "name": "meg-quote-card",
+      "brand": "MEG",
+      "title": "Citation — carte",
+      "description": "Carte crème légèrement inclinée, guillemet or tracé et attribution discrète pour un témoignage ou un texte cité.",
+      "tags": [
+        "meg",
+        "citation",
+        "temoignage",
+        "quote",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-quote-card.html",
+      "preview": "registry/blocks/meg-quote-card/preview.jpg"
+    },
+    {
+      "name": "meg-reel-appareil-double-telephone",
+      "brand": "MEG",
+      "title": "Reel — appareil deux téléphones",
+      "description": "Layout 9:16 : démo dans un cadre deux téléphones + visage master en bande basse. Remplacer l'écran hachuré par la capture.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "appareil",
+        "demo",
+        "double-telephone",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-appareil-double-telephone.html",
+      "preview": "registry/blocks/meg-reel-appareil-double-telephone/preview.jpg"
+    },
+    {
+      "name": "meg-reel-appareil-ordinateur",
+      "brand": "MEG",
+      "title": "Reel — appareil ordinateur portable",
+      "description": "Layout 9:16 : démo dans un cadre ordinateur portable + visage master en bande basse. Remplacer l'écran hachuré par la capture.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "appareil",
+        "demo",
+        "ordinateur",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-appareil-ordinateur.html",
+      "preview": "registry/blocks/meg-reel-appareil-ordinateur/preview.jpg"
+    },
+    {
+      "name": "meg-reel-appareil-telephone-centre",
+      "brand": "MEG",
+      "title": "Reel — appareil téléphone centré",
+      "description": "Layout 9:16 : démo dans un cadre téléphone centré + visage master en bande basse. Remplacer l'écran hachuré par la capture.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "appareil",
+        "demo",
+        "telephone-centre",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-appareil-telephone-centre.html",
+      "preview": "registry/blocks/meg-reel-appareil-telephone-centre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-appareil-telephone-penche",
+      "brand": "MEG",
+      "title": "Reel — appareil téléphone incliné",
+      "description": "Layout 9:16 : démo dans un cadre téléphone incliné + visage master en bande basse. Remplacer l'écran hachuré par la capture.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "appareil",
+        "demo",
+        "telephone-penche",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-appareil-telephone-penche.html",
+      "preview": "registry/blocks/meg-reel-appareil-telephone-penche/preview.jpg"
+    },
+    {
+      "name": "meg-reel-avant-apres-duo-cartes",
+      "brand": "MEG",
+      "title": "Reel — avant/après deux cartes inclinées",
+      "description": "Layout comparatif 9:16 : deux cartes inclinées + visage master en bande basse. Remplacer les deux zones par les captures.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "avant-apres",
+        "comparatif",
+        "duo-cartes",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-avant-apres-duo-cartes.html",
+      "preview": "registry/blocks/meg-reel-avant-apres-duo-cartes/preview.jpg"
+    },
+    {
+      "name": "meg-reel-avant-apres-horizontal-50",
+      "brand": "MEG",
+      "title": "Reel — avant/après empilé AVANT/APRÈS",
+      "description": "Layout comparatif 9:16 : empilé AVANT/APRÈS + visage master en bande basse. Remplacer les deux zones par les captures.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "avant-apres",
+        "comparatif",
+        "horizontal-50",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-avant-apres-horizontal-50.html",
+      "preview": "registry/blocks/meg-reel-avant-apres-horizontal-50/preview.jpg"
+    },
+    {
+      "name": "meg-reel-avant-apres-rideau",
+      "brand": "MEG",
+      "title": "Reel — avant/après rideau coulissant",
+      "description": "Layout comparatif 9:16 : rideau coulissant + visage master en bande basse. Remplacer les deux zones par les captures.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "avant-apres",
+        "comparatif",
+        "rideau",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-avant-apres-rideau.html",
+      "preview": "registry/blocks/meg-reel-avant-apres-rideau/preview.jpg"
+    },
+    {
+      "name": "meg-reel-avant-apres-vertical-50",
+      "brand": "MEG",
+      "title": "Reel — avant/après deux colonnes AVANT/APRÈS",
+      "description": "Layout comparatif 9:16 : deux colonnes AVANT/APRÈS + visage master en bande basse. Remplacer les deux zones par les captures.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "avant-apres",
+        "comparatif",
+        "vertical-50",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-avant-apres-vertical-50.html",
+      "preview": "registry/blocks/meg-reel-avant-apres-vertical-50/preview.jpg"
+    },
+    {
+      "name": "meg-reel-bande-bas-25",
+      "brand": "MEG",
+      "title": "Reel — écran dominant, bande visage bas 25 %",
+      "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (25 %) en bas. Jamais de PIP coin.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "bande",
+        "bas",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-bande-bas-25.html",
+      "preview": "registry/blocks/meg-reel-bande-bas-25/preview.jpg"
+    },
+    {
+      "name": "meg-reel-bande-bas-33",
+      "brand": "MEG",
+      "title": "Reel — écran dominant, bande visage bas 33 %",
+      "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (33 %) en bas. Jamais de PIP coin.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "bande",
+        "bas",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-bande-bas-33.html",
+      "preview": "registry/blocks/meg-reel-bande-bas-33/preview.jpg"
+    },
+    {
+      "name": "meg-reel-bande-haut-25",
+      "brand": "MEG",
+      "title": "Reel — écran dominant, bande visage haut 25 %",
+      "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (25 %) en haut. Jamais de PIP coin.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "bande",
+        "haut",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-bande-haut-25.html",
+      "preview": "registry/blocks/meg-reel-bande-haut-25/preview.jpg"
+    },
+    {
+      "name": "meg-reel-bande-haut-33",
+      "brand": "MEG",
+      "title": "Reel — écran dominant, bande visage haut 33 %",
+      "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (33 %) en haut. Jamais de PIP coin.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "bande",
+        "haut",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-bande-haut-33.html",
+      "preview": "registry/blocks/meg-reel-bande-haut-33/preview.jpg"
+    },
+    {
+      "name": "meg-reel-bulle-reaction-coin",
+      "brand": "MEG",
+      "title": "Reel — bulle réaction, visage flottant coin bas-gauche",
+      "description": "Layout 9:16 : écran plein cadre (capture, démo, réaction) + visage master en bulle circulaire flottante coin bas-gauche, hors zones UI natives. Format réaction / j'ai testé.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "bulle-reaction",
+        "reaction",
+        "coin",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-bulle-reaction-coin.html",
+      "preview": "registry/blocks/meg-reel-bulle-reaction-coin/preview.jpg"
+    },
+    {
+      "name": "meg-reel-chapitre-bandeau-lateral",
+      "brand": "MEG",
+      "title": "Reel — chapitre bandeau latéral vertical",
+      "description": "Carton de chapitre 9:16 : bandeau latéral vertical, posé par-dessus le master intact. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "chapitre",
+        "bandeau-lateral",
+        "meg-reel",
+        "meg-reel-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-chapitre-bandeau-lateral.html",
+      "preview": "registry/blocks/meg-reel-chapitre-bandeau-lateral/preview.jpg"
+    },
+    {
+      "name": "meg-reel-chapitre-barre-basse",
+      "brand": "MEG",
+      "title": "Reel — chapitre barre basse + libellé",
+      "description": "Carton de chapitre 9:16 : barre basse + libellé, posé par-dessus le master intact. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "chapitre",
+        "barre-basse",
+        "meg-reel",
+        "meg-reel-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-chapitre-barre-basse.html",
+      "preview": "registry/blocks/meg-reel-chapitre-barre-basse/preview.jpg"
+    },
+    {
+      "name": "meg-reel-chapitre-carton-numero",
+      "brand": "MEG",
+      "title": "Reel — chapitre carton numéro plein",
+      "description": "Carton de chapitre 9:16 : carton numéro plein, posé par-dessus le master intact. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "chapitre",
+        "carton-numero",
+        "meg-reel",
+        "meg-reel-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-chapitre-carton-numero.html",
+      "preview": "registry/blocks/meg-reel-chapitre-carton-numero/preview.jpg"
+    },
+    {
+      "name": "meg-reel-chapitre-pastilles-progression",
+      "brand": "MEG",
+      "title": "Reel — chapitre pastilles de progression",
+      "description": "Carton de chapitre 9:16 : pastilles de progression, posé par-dessus le master intact. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "chapitre",
+        "pastilles-progression",
+        "meg-reel",
+        "meg-reel-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-chapitre-pastilles-progression.html",
+      "preview": "registry/blocks/meg-reel-chapitre-pastilles-progression/preview.jpg"
+    },
+    {
+      "name": "meg-reel-cta-carte-marque",
+      "brand": "MEG",
+      "title": "Reel — CTA carte de marque plein cadre",
+      "description": "Fin de Reel : carte de marque plein cadre. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "cta",
+        "outro",
+        "carte-marque",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-cta-carte-marque.html",
+      "preview": "registry/blocks/meg-reel-cta-carte-marque/preview.jpg"
+    },
+    {
+      "name": "meg-reel-cta-commentaire",
+      "brand": "MEG",
+      "title": "Reel — CTA appel au commentaire",
+      "description": "Fin de Reel : appel au commentaire. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "cta",
+        "outro",
+        "commentaire",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-cta-commentaire.html",
+      "preview": "registry/blocks/meg-reel-cta-commentaire/preview.jpg"
+    },
+    {
+      "name": "meg-reel-cta-fleche-bas",
+      "brand": "MEG",
+      "title": "Reel — CTA flèche vers la description",
+      "description": "Fin de Reel : flèche vers la description. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "cta",
+        "outro",
+        "fleche-bas",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-cta-fleche-bas.html",
+      "preview": "registry/blocks/meg-reel-cta-fleche-bas/preview.jpg"
+    },
+    {
+      "name": "meg-reel-cta-fond-noir",
+      "brand": "MEG",
+      "title": "Reel — CTA fond noir, question + contact",
+      "description": "CTA/outro Reel 9:16 : fond noir plein cadre, question directe centrée + pastille contact centrée. Registre minimaliste sans carte ni logo, contraste maximal — variante sobre des CTA MEG.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "cta",
+        "outro",
+        "noir",
+        "contact",
+        "minimaliste",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-reel-cta-fond-noir.html",
+      "preview": "registry/blocks/meg-reel-cta-fond-noir/preview.jpg"
+    },
+    {
+      "name": "meg-reel-cta-recap",
+      "brand": "MEG",
+      "title": "Reel — CTA récap 3 points + bande visage",
+      "description": "Fin de Reel : récap 3 points + bande visage. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "cta",
+        "outro",
+        "recap",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-cta-recap.html",
+      "preview": "registry/blocks/meg-reel-cta-recap/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-centre-carte-grand",
+      "brand": "MEG",
+      "title": "Reel — détouré centre (écran carte, grand)",
+      "description": "Layout fond vert 9:16 : écran en carte + silhouette détourée centre en bas (grand). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "centre",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-centre-carte-grand.html",
+      "preview": "registry/blocks/meg-reel-detoure-centre-carte-grand/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-centre-carte-serre",
+      "brand": "MEG",
+      "title": "Reel — détouré centre (écran carte, serre)",
+      "description": "Layout fond vert 9:16 : écran en carte + silhouette détourée centre en bas (serre). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "centre",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-centre-carte-serre.html",
+      "preview": "registry/blocks/meg-reel-detoure-centre-carte-serre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-centre-plein-grand",
+      "brand": "MEG",
+      "title": "Reel — détouré centre (écran plein, grand)",
+      "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée centre en bas (grand). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "centre",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-centre-plein-grand.html",
+      "preview": "registry/blocks/meg-reel-detoure-centre-plein-grand/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-centre-plein-serre",
+      "brand": "MEG",
+      "title": "Reel — détouré centre (écran plein, serre)",
+      "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée centre en bas (serre). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "centre",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-centre-plein-serre.html",
+      "preview": "registry/blocks/meg-reel-detoure-centre-plein-serre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-droite-plein-grand",
+      "brand": "MEG",
+      "title": "Reel — détouré droite (écran plein, grand)",
+      "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée droite en bas (grand). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "droite",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-droite-plein-grand.html",
+      "preview": "registry/blocks/meg-reel-detoure-droite-plein-grand/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-droite-plein-serre",
+      "brand": "MEG",
+      "title": "Reel — détouré droite (écran plein, serre)",
+      "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée droite en bas (serre). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "droite",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-droite-plein-serre.html",
+      "preview": "registry/blocks/meg-reel-detoure-droite-plein-serre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-gauche-plein-grand",
+      "brand": "MEG",
+      "title": "Reel — détouré gauche (écran plein, grand)",
+      "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée gauche en bas (grand). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-gauche-plein-grand.html",
+      "preview": "registry/blocks/meg-reel-detoure-gauche-plein-grand/preview.jpg"
+    },
+    {
+      "name": "meg-reel-detoure-gauche-plein-serre",
+      "brand": "MEG",
+      "title": "Reel — détouré gauche (écran plein, serre)",
+      "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée gauche en bas (serre). Remplacer la silhouette par l'asset alpha.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "meg-reel",
+        "meg-reel-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-detoure-gauche-plein-serre.html",
+      "preview": "registry/blocks/meg-reel-detoure-gauche-plein-serre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-cote-haut-carte-domine",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans côte à côte en haut (carte, domine)",
+      "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition dominante, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "cote-haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-cote-haut-carte-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-cote-haut-carte-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-cote-haut-carte-egal",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans côte à côte en haut (carte, egal)",
+      "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition égale, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "cote-haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-cote-haut-carte-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-cote-haut-carte-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-cote-haut-nav-domine",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans côte à côte en haut (nav, domine)",
+      "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition dominante, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "cote-haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-cote-haut-nav-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-cote-haut-nav-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-cote-haut-nav-egal",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans côte à côte en haut (nav, egal)",
+      "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition égale, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "cote-haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-cote-haut-nav-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-cote-haut-nav-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-bas-carte-domine",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en bas (carte, domine)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition dominante, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-bas",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-bas-carte-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-bas-carte-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-bas-carte-egal",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en bas (carte, egal)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition égale, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-bas",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-bas-carte-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-bas-carte-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-bas-nav-domine",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en bas (nav, domine)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition dominante, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-bas",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-bas-nav-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-bas-nav-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-bas-nav-egal",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en bas (nav, egal)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition égale, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-bas",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-bas-nav-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-bas-nav-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-haut-carte-domine",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en haut (carte, domine)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition dominante, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-haut-carte-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-haut-carte-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-haut-carte-egal",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en haut (carte, egal)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition égale, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-haut-carte-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-haut-carte-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-haut-nav-domine",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en haut (nav, domine)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition dominante, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-haut-nav-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-haut-nav-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-pile-haut-nav-egal",
+      "brand": "MEG",
+      "title": "Reel — duo 2 écrans empilés en haut (nav, egal)",
+      "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition égale, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "pile-haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-pile-haut-nav-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-pile-haut-nav-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-sandwich-carte-domine",
+      "brand": "MEG",
+      "title": "Reel — duo écran haut + écran bas, visage au milieu (carte, domine)",
+      "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition dominante, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "sandwich",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-sandwich-carte-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-sandwich-carte-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-sandwich-carte-egal",
+      "brand": "MEG",
+      "title": "Reel — duo écran haut + écran bas, visage au milieu (carte, egal)",
+      "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition égale, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "sandwich",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-sandwich-carte-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-sandwich-carte-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-sandwich-nav-domine",
+      "brand": "MEG",
+      "title": "Reel — duo écran haut + écran bas, visage au milieu (nav, domine)",
+      "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition dominante, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "sandwich",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-sandwich-nav-domine.html",
+      "preview": "registry/blocks/meg-reel-duo-sandwich-nav-domine/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-sandwich-nav-egal",
+      "brand": "MEG",
+      "title": "Reel — duo écran haut + écran bas, visage au milieu (nav, egal)",
+      "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition égale, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo",
+        "sandwich",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-sandwich-nav-egal.html",
+      "preview": "registry/blocks/meg-reel-duo-sandwich-nav-egal/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-visages-cote-a-cote",
+      "brand": "MEG",
+      "title": "Reel — deux visages côte à côte 50/50",
+      "description": "Layout réaction/entretien 9:16 : master côte à côte 50/50 + zone invité à remplacer par le rush du second intervenant.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo-visages",
+        "reaction",
+        "cote-a-cote",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-visages-cote-a-cote.html",
+      "preview": "registry/blocks/meg-reel-duo-visages-cote-a-cote/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-visages-entretien-droite",
+      "brand": "MEG",
+      "title": "Reel — deux visages hôte dominant à droite",
+      "description": "Layout réaction/entretien 9:16 : master hôte dominant à droite + zone invité à remplacer par le rush du second intervenant.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo-visages",
+        "reaction",
+        "entretien-droite",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-visages-entretien-droite.html",
+      "preview": "registry/blocks/meg-reel-duo-visages-entretien-droite/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-visages-entretien-gauche",
+      "brand": "MEG",
+      "title": "Reel — deux visages hôte dominant à gauche",
+      "description": "Layout réaction/entretien 9:16 : master hôte dominant à gauche + zone invité à remplacer par le rush du second intervenant.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo-visages",
+        "reaction",
+        "entretien-gauche",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-visages-entretien-gauche.html",
+      "preview": "registry/blocks/meg-reel-duo-visages-entretien-gauche/preview.jpg"
+    },
+    {
+      "name": "meg-reel-duo-visages-haut-bas",
+      "brand": "MEG",
+      "title": "Reel — deux visages empilé 50/50",
+      "description": "Layout réaction/entretien 9:16 : master empilé 50/50 + zone invité à remplacer par le rush du second intervenant.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "duo-visages",
+        "reaction",
+        "haut-bas",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-duo-visages-haut-bas.html",
+      "preview": "registry/blocks/meg-reel-duo-visages-haut-bas/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-35-bord",
+      "brand": "MEG",
+      "title": "Reel — écran bas 35 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en bas (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-35-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-35-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-35-carte",
+      "brand": "MEG",
+      "title": "Reel — écran bas 35 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en bas (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-35-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-35-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-35-nav",
+      "brand": "MEG",
+      "title": "Reel — écran bas 35 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en bas (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-35-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-35-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-45-bord",
+      "brand": "MEG",
+      "title": "Reel — écran bas 45 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en bas (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-45-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-45-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-45-carte",
+      "brand": "MEG",
+      "title": "Reel — écran bas 45 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en bas (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-45-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-45-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-45-incline",
+      "brand": "MEG",
+      "title": "Reel — écran bas 45 % incliné",
+      "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en bas, visage master sur le reste.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "incline",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-45-incline.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-45-incline/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-45-nav",
+      "brand": "MEG",
+      "title": "Reel — écran bas 45 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en bas (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-45-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-45-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-55-bord",
+      "brand": "MEG",
+      "title": "Reel — écran bas 55 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en bas (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-55-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-55-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-55-carte",
+      "brand": "MEG",
+      "title": "Reel — écran bas 55 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en bas (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-55-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-55-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-55-nav",
+      "brand": "MEG",
+      "title": "Reel — écran bas 55 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en bas (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-55-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-55-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-60-incline",
+      "brand": "MEG",
+      "title": "Reel — écran bas 60 % incliné",
+      "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en bas, visage master sur le reste.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "incline",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-60-incline.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-60-incline/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-65-bord",
+      "brand": "MEG",
+      "title": "Reel — écran bas 65 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en bas (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-65-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-65-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-65-carte",
+      "brand": "MEG",
+      "title": "Reel — écran bas 65 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en bas (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-65-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-65-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-bas-65-nav",
+      "brand": "MEG",
+      "title": "Reel — écran bas 65 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en bas (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "bas",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-bas-65-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-bas-65-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-35-bord",
+      "brand": "MEG",
+      "title": "Reel — écran haut 35 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en haut (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-35-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-35-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-35-carte",
+      "brand": "MEG",
+      "title": "Reel — écran haut 35 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en haut (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-35-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-35-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-35-nav",
+      "brand": "MEG",
+      "title": "Reel — écran haut 35 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en haut (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-35-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-35-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-45-bord",
+      "brand": "MEG",
+      "title": "Reel — écran haut 45 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en haut (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-45-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-45-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-45-carte",
+      "brand": "MEG",
+      "title": "Reel — écran haut 45 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en haut (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-45-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-45-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-45-incline",
+      "brand": "MEG",
+      "title": "Reel — écran haut 45 % incliné",
+      "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en haut, visage master sur le reste.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "incline",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-45-incline.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-45-incline/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-45-nav",
+      "brand": "MEG",
+      "title": "Reel — écran haut 45 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en haut (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-45-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-45-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-55-bord",
+      "brand": "MEG",
+      "title": "Reel — écran haut 55 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en haut (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-55-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-55-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-55-carte",
+      "brand": "MEG",
+      "title": "Reel — écran haut 55 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en haut (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-55-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-55-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-55-nav",
+      "brand": "MEG",
+      "title": "Reel — écran haut 55 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en haut (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-55-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-55-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-60-incline",
+      "brand": "MEG",
+      "title": "Reel — écran haut 60 % incliné",
+      "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en haut, visage master sur le reste.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "incline",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-60-incline.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-60-incline/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-65-bord",
+      "brand": "MEG",
+      "title": "Reel — écran haut 65 % (bord à bord)",
+      "description": "Split 9:16 : écran bord à bord en haut (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "bord",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-65-bord.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-65-bord/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-65-carte",
+      "brand": "MEG",
+      "title": "Reel — écran haut 65 % (carte crème)",
+      "description": "Split 9:16 : écran carte crème en haut (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-65-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-65-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-haut-65-nav",
+      "brand": "MEG",
+      "title": "Reel — écran haut 65 % (fenêtre navigateur)",
+      "description": "Split 9:16 : écran fenêtre navigateur en haut (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "haut",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-haut-65-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-haut-65-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-titre-45-carte",
+      "brand": "MEG",
+      "title": "Reel — écran 45 % + titre à la couture (carte)",
+      "description": "Split 9:16 : écran carte en haut (45 %), grande ligne de titre éditable à la couture, visage master en bas.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "titre",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-titre-45-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-titre-45-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-titre-45-nav",
+      "brand": "MEG",
+      "title": "Reel — écran 45 % + titre à la couture (nav)",
+      "description": "Split 9:16 : écran nav en haut (45 %), grande ligne de titre éditable à la couture, visage master en bas.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "titre",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-titre-45-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-titre-45-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-titre-55-carte",
+      "brand": "MEG",
+      "title": "Reel — écran 55 % + titre à la couture (carte)",
+      "description": "Split 9:16 : écran carte en haut (55 %), grande ligne de titre éditable à la couture, visage master en bas.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "titre",
+        "carte",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-titre-55-carte.html",
+      "preview": "registry/blocks/meg-reel-ecran-titre-55-carte/preview.jpg"
+    },
+    {
+      "name": "meg-reel-ecran-titre-55-nav",
+      "brand": "MEG",
+      "title": "Reel — écran 55 % + titre à la couture (nav)",
+      "description": "Split 9:16 : écran nav en haut (55 %), grande ligne de titre éditable à la couture, visage master en bas.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "split",
+        "titre",
+        "nav",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-ecran-titre-55-nav.html",
+      "preview": "registry/blocks/meg-reel-ecran-titre-55-nav/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-bandes-header-footer",
+      "brand": "MEG",
+      "title": "Reel — habillage bandes haut et bas",
+      "description": "Habillage plein cadre 9:16 : bandes haut et bas par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "bandes-header-footer",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-bandes-header-footer.html",
+      "preview": "registry/blocks/meg-reel-habillage-bandes-header-footer/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-cadre-creme-epais",
+      "brand": "MEG",
+      "title": "Reel — habillage cadre crème épais",
+      "description": "Habillage plein cadre 9:16 : cadre crème épais par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "cadre-creme-epais",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-cadre-creme-epais.html",
+      "preview": "registry/blocks/meg-reel-habillage-cadre-creme-epais/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-cadre-fin-or",
+      "brand": "MEG",
+      "title": "Reel — habillage cadre fin or",
+      "description": "Habillage plein cadre 9:16 : cadre fin or par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "cadre-fin-or",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-cadre-fin-or.html",
+      "preview": "registry/blocks/meg-reel-habillage-cadre-fin-or/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-coins-or",
+      "brand": "MEG",
+      "title": "Reel — habillage quatre coins or",
+      "description": "Habillage plein cadre 9:16 : quatre coins or par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "coins-or",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-coins-or.html",
+      "preview": "registry/blocks/meg-reel-habillage-coins-or/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-filet-progression",
+      "brand": "MEG",
+      "title": "Reel — habillage filet de progression bas",
+      "description": "Habillage plein cadre 9:16 : filet de progression bas par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "filet-progression",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-filet-progression.html",
+      "preview": "registry/blocks/meg-reel-habillage-filet-progression/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-halo-cinema",
+      "brand": "MEG",
+      "title": "Reel — habillage halo cinéma haut/bas",
+      "description": "Habillage plein cadre 9:16 : halo cinéma haut/bas par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "halo-cinema",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-halo-cinema.html",
+      "preview": "registry/blocks/meg-reel-habillage-halo-cinema/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-marge-titre-vertical",
+      "brand": "MEG",
+      "title": "Reel — habillage marge latérale + titre vertical",
+      "description": "Habillage plein cadre 9:16 : marge latérale + titre vertical par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "marge-titre-vertical",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-marge-titre-vertical.html",
+      "preview": "registry/blocks/meg-reel-habillage-marge-titre-vertical/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-marque-meg-coin",
+      "brand": "MEG",
+      "title": "Reel — habillage marque MEG persistante coin haut-droit",
+      "description": "Habillage plein cadre 9:16 : marque MEG persistante coin haut-droit par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "marque-meg-coin",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-marque-meg-coin.html",
+      "preview": "registry/blocks/meg-reel-habillage-marque-meg-coin/preview.jpg"
+    },
+    {
+      "name": "meg-reel-habillage-vignette-focus",
+      "brand": "MEG",
+      "title": "Reel — habillage vignette de focus",
+      "description": "Habillage plein cadre 9:16 : vignette de focus par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+      "tags": [
+        "meg",
+        "reel",
+        "habillage",
+        "overlay",
+        "vignette-focus",
+        "meg-reel",
+        "meg-reel-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-habillage-vignette-focus.html",
+      "preview": "registry/blocks/meg-reel-habillage-vignette-focus/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-hook-avant-apres",
+      "brand": "MEG",
+      "title": "Reel — intro hook avant/après empilé",
+      "description": "Intro 9:16 : hook avant/après empilé plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "hook-avant-apres",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-hook-avant-apres.html",
+      "preview": "registry/blocks/meg-reel-intro-hook-avant-apres/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-hook-bulle-titre",
+      "brand": "MEG",
+      "title": "Reel — hook bulle-titre + coupe B-roll",
+      "description": "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (icône MEG officielle mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\". Marque persistante : superposer l'habillage `meg-reel-habillage-marque-meg-coin`.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "bulle-titre",
+        "broll",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-hook-bulle-titre.html",
+      "preview": "registry/blocks/meg-reel-intro-hook-bulle-titre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-hook-chiffre",
+      "brand": "MEG",
+      "title": "Reel — intro chiffre choc",
+      "description": "Intro 9:16 : chiffre choc plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "hook-chiffre",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-hook-chiffre.html",
+      "preview": "registry/blocks/meg-reel-intro-hook-chiffre/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-legende-citation-seule",
+      "brand": "MEG",
+      "title": "Reel — légende citation seule",
+      "description": "Légende Reel 9:16 : citation vedette en légende basse (texte blanc à contour), sans pastille nom, posée par-dessus le master intact plein cadre. Format interview \"punchline\".",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "legende",
+        "citation",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-legende-citation-seule.html",
+      "preview": "registry/blocks/meg-reel-intro-legende-citation-seule/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-legende-nom-role",
+      "brand": "MEG",
+      "title": "Reel — légende + nom/rôle",
+      "description": "Légende Reel 9:16 : citation vedette en légende basse (texte blanc à contour) + pastille nom/rôle, posée par-dessus le master intact plein cadre. Format interview \"parole d'expert\".",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "legende",
+        "citation",
+        "nom",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-legende-nom-role.html",
+      "preview": "registry/blocks/meg-reel-intro-legende-nom-role/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-question",
+      "brand": "MEG",
+      "title": "Reel — intro question centrale",
+      "description": "Intro 9:16 : question centrale plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "question",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-question.html",
+      "preview": "registry/blocks/meg-reel-intro-question/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-sommaire",
+      "brand": "MEG",
+      "title": "Reel — intro sommaire 3 points",
+      "description": "Intro 9:16 : sommaire 3 points plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "sommaire",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-sommaire.html",
+      "preview": "registry/blocks/meg-reel-intro-sommaire/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-titre-plein",
+      "brand": "MEG",
+      "title": "Reel — intro grand titre plein cadre",
+      "description": "Intro 9:16 : grand titre plein cadre plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "titre-plein",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-titre-plein.html",
+      "preview": "registry/blocks/meg-reel-intro-titre-plein/preview.jpg"
+    },
+    {
+      "name": "meg-reel-intro-vs-teaser",
+      "brand": "MEG",
+      "title": "Reel — intro teaser AVANT / APRÈS",
+      "description": "Intro 9:16 : teaser AVANT / APRÈS plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "intro",
+        "hook",
+        "vs-teaser",
+        "meg-reel",
+        "meg-reel-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-reel-intro-vs-teaser.html",
+      "preview": "registry/blocks/meg-reel-intro-vs-teaser/preview.jpg"
+    },
+    {
+      "name": "meg-reel-preuve-logos",
+      "brand": "MEG",
+      "title": "Reel — mur de logos",
+      "description": "Layout preuve sociale 9:16 : grille de 6 tuiles logos partenaires/clients + visage master en bande basse.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "preuve-sociale",
+        "logos",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-preuve-logos.html",
+      "preview": "registry/blocks/meg-reel-preuve-logos/preview.jpg"
+    },
+    {
+      "name": "meg-reel-preuve-temoignage",
+      "brand": "MEG",
+      "title": "Reel — témoignage + capture",
+      "description": "Layout preuve sociale 9:16 : citation client en carte + capture d'avis hachurée + visage master en bande basse.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "preuve-sociale",
+        "temoignage",
+        "meg-reel",
+        "meg-reel-folder-preuves"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-preuve-temoignage.html",
+      "preview": "registry/blocks/meg-reel-preuve-temoignage/preview.jpg"
+    },
+    {
+      "name": "meg-reel-trio-colonne",
+      "brand": "MEG",
+      "title": "Reel — trio visage pleine hauteur + colonne de 3 écrans",
+      "description": "Split 9:16 à trois écrans : visage pleine hauteur + colonne de 3 écrans, visage master recadré. Trois zones à remplacer indépendamment.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "trio",
+        "colonne",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-trio-colonne.html",
+      "preview": "registry/blocks/meg-reel-trio-colonne/preview.jpg"
+    },
+    {
+      "name": "meg-reel-trio-grille-1-2",
+      "brand": "MEG",
+      "title": "Reel — trio 1 écran large + 2 côte à côte dessous",
+      "description": "Split 9:16 à trois écrans : 1 écran large + 2 côte à côte dessous, visage master recadré. Trois zones à remplacer indépendamment.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "trio",
+        "grille-1-2",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-trio-grille-1-2.html",
+      "preview": "registry/blocks/meg-reel-trio-grille-1-2/preview.jpg"
+    },
+    {
+      "name": "meg-reel-trio-grille-2-1",
+      "brand": "MEG",
+      "title": "Reel — trio 2 écrans côte à côte + 1 large dessous",
+      "description": "Split 9:16 à trois écrans : 2 écrans côte à côte + 1 large dessous, visage master recadré. Trois zones à remplacer indépendamment.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "trio",
+        "grille-2-1",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-trio-grille-2-1.html",
+      "preview": "registry/blocks/meg-reel-trio-grille-2-1/preview.jpg"
+    },
+    {
+      "name": "meg-reel-trio-pile-haut",
+      "brand": "MEG",
+      "title": "Reel — trio 3 écrans empilés en haut",
+      "description": "Split 9:16 à trois écrans : 3 écrans empilés en haut, visage master recadré. Trois zones à remplacer indépendamment.",
+      "tags": [
+        "meg",
+        "reel",
+        "layout",
+        "trio",
+        "pile-haut",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-reel-trio-pile-haut.html",
+      "preview": "registry/blocks/meg-reel-trio-pile-haut/preview.jpg"
+    },
+    {
+      "name": "meg-stat-counter",
+      "brand": "MEG",
+      "title": "Chiffre-clé — compteur",
+      "description": "Carte crème au tiers haut avec chiffre géant qui compte jusqu'à la valeur, unité et contexte.",
+      "tags": [
+        "meg",
+        "data",
+        "chiffre",
+        "compteur",
+        "stat",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-stat-counter.html",
+      "preview": "registry/blocks/meg-stat-counter/preview.jpg"
+    },
+    {
+      "name": "meg-steps-timeline",
+      "brand": "MEG",
+      "title": "Frise d'étapes",
+      "description": "Fil vertical qui se trace et trois nœuds numérotés qui s'allument en or quand la voix y arrive.",
+      "tags": [
+        "meg",
+        "etapes",
+        "frise",
+        "process",
+        "meg-reel",
+        "meg-reel-folder-motion-texte"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-steps-timeline.html",
+      "preview": "registry/blocks/meg-steps-timeline/preview.jpg"
+    },
+    {
+      "name": "meg-tiktok-title-classic",
+      "brand": "MEG",
+      "title": "Titre TikTok",
+      "description": "Une ou deux lignes mesurées, silhouette SVG fusionnée et coins adaptatifs.",
+      "tags": [
+        "meg",
+        "tiktok",
+        "titre",
+        "adaptatif",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage"
+      ],
+      "duration": 3,
+      "target": "compositions/meg-tiktok-title-classic.html",
+      "preview": "registry/blocks/meg-tiktok-title-classic/preview.jpg"
+    },
+    {
+      "name": "meg-transition-doors",
+      "brand": "MEG",
+      "title": "Transition volets",
+      "description": "Deux panneaux encre à filets or qui claquent fermés (le cut se cache) puis se rouvrent — pour les changements de chapitre.",
+      "tags": [
+        "meg",
+        "transition",
+        "volets",
+        "chapitre",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-transition-doors.html",
+      "preview": "registry/blocks/meg-transition-doors/preview.jpg"
+    },
+    {
+      "name": "meg-transition-flash-reel",
+      "brand": "MEG",
+      "title": "Transition flash crème — Reel 9:16",
+      "description": "Voile crème 0,5 s avec léger zoom du master (1 → 1,04 → 1), montée puis disparition nette.",
+      "tags": [
+        "meg",
+        "reel",
+        "transition",
+        "flash",
+        "creme",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 0.5,
+      "target": "compositions/meg-transition-flash-reel.html",
+      "preview": "registry/blocks/meg-transition-flash-reel/preview.jpg"
+    },
+    {
+      "name": "meg-transition-flash-yt",
+      "brand": "MEG",
+      "title": "Transition flash crème — YouTube 16:9",
+      "description": "Voile crème 0,5 s avec léger zoom du master (1 → 1,04 → 1), montée puis disparition nette.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "transition",
+        "flash",
+        "creme",
+        "meg-large",
+        "meg-youtube-folder-transitions"
+      ],
+      "duration": 0.5,
+      "target": "compositions/meg-transition-flash-yt.html",
+      "preview": "registry/blocks/meg-transition-flash-yt/preview.jpg"
+    },
+    {
+      "name": "meg-transition-streak",
+      "brand": "MEG",
+      "title": "Transition trait",
+      "description": "Éclair or incliné qui file de gauche à droite — la ponctuation légère des jump-cuts, sans couvrir l'écran.",
+      "tags": [
+        "meg",
+        "transition",
+        "trait",
+        "jump-cut",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-transition-streak.html",
+      "preview": "registry/blocks/meg-transition-streak/preview.jpg"
+    },
+    {
+      "name": "meg-transition-whip-reel",
+      "brand": "MEG",
+      "title": "Transition whip pan — Reel 9:16",
+      "description": "Whip pan de 0,6 s : le master file latéralement avec scaleX et flou simulé, flash crème au centre, puis revient proprement.",
+      "tags": [
+        "meg",
+        "reel",
+        "transition",
+        "whip-pan",
+        "motion-blur",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 0.6,
+      "target": "compositions/meg-transition-whip-reel.html",
+      "preview": "registry/blocks/meg-transition-whip-reel/preview.jpg"
+    },
+    {
+      "name": "meg-transition-whip-yt",
+      "brand": "MEG",
+      "title": "Transition whip pan — YouTube 16:9",
+      "description": "Whip pan de 0,6 s : le master file latéralement avec scaleX et flou simulé, flash crème au centre, puis revient proprement.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "transition",
+        "whip-pan",
+        "motion-blur",
+        "meg-large",
+        "meg-youtube-folder-transitions"
+      ],
+      "duration": 0.6,
+      "target": "compositions/meg-transition-whip-yt.html",
+      "preview": "registry/blocks/meg-transition-whip-yt/preview.jpg"
+    },
+    {
+      "name": "meg-transition-wipe",
+      "brand": "MEG",
+      "title": "Transition balayage",
+      "description": "Voile crème incliné qui balaie l'écran de gauche à droite, bord de fuite or — le cut se cache à mi-course.",
+      "tags": [
+        "meg",
+        "transition",
+        "balayage",
+        "wipe",
+        "meg-reel",
+        "meg-reel-folder-transitions"
+      ],
+      "duration": 1,
+      "target": "compositions/meg-transition-wipe.html",
+      "preview": "registry/blocks/meg-transition-wipe/preview.jpg"
+    },
+    {
+      "name": "meg-yt-avant-apres-cartes",
+      "brand": "MEG",
+      "title": "Large — avant/après cartes inclinées",
+      "description": "Comparatif 16:9 : deux cartes inclinées qui se chevauchent + visage master en bande basse.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "avant-apres",
+        "cartes",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-avant-apres-cartes.html",
+      "preview": "registry/blocks/meg-yt-avant-apres-cartes/preview.jpg"
+    },
+    {
+      "name": "meg-yt-avant-apres-colonnes",
+      "brand": "MEG",
+      "title": "Large — avant/après deux colonnes",
+      "description": "Comparatif 16:9 : colonnes AVANT/APRÈS côte à côte + visage master en bande basse.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "avant-apres",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-avant-apres-colonnes.html",
+      "preview": "registry/blocks/meg-yt-avant-apres-colonnes/preview.jpg"
+    },
+    {
+      "name": "meg-yt-bande-bas-25",
+      "brand": "MEG",
+      "title": "Large — écran dominant, bande visage bas 25 %",
+      "description": "Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (25 %) en bas.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "bande",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-bande-bas-25.html",
+      "preview": "registry/blocks/meg-yt-bande-bas-25/preview.jpg"
+    },
+    {
+      "name": "meg-yt-bande-bas-33",
+      "brand": "MEG",
+      "title": "Large — écran dominant, bande visage bas 33 %",
+      "description": "Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (33 %) en bas.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "bande",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-bande-bas-33.html",
+      "preview": "registry/blocks/meg-yt-bande-bas-33/preview.jpg"
+    },
+    {
+      "name": "meg-yt-chapitre-bandeau-lateral",
+      "brand": "MEG",
+      "title": "Large — chapitre bandeau latéral",
+      "description": "Carton de chapitre 16:9 : bandeau latéral, posé par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "chapitre",
+        "bandeau-lateral",
+        "meg-large",
+        "meg-youtube-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-yt-chapitre-bandeau-lateral.html",
+      "preview": "registry/blocks/meg-yt-chapitre-bandeau-lateral/preview.jpg"
+    },
+    {
+      "name": "meg-yt-chapitre-barre-basse",
+      "brand": "MEG",
+      "title": "Large — chapitre barre basse + jauge",
+      "description": "Carton de chapitre 16:9 : barre basse + jauge, posé par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "chapitre",
+        "barre-basse",
+        "meg-large",
+        "meg-youtube-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-yt-chapitre-barre-basse.html",
+      "preview": "registry/blocks/meg-yt-chapitre-barre-basse/preview.jpg"
+    },
+    {
+      "name": "meg-yt-chapitre-carton",
+      "brand": "MEG",
+      "title": "Large — chapitre carton numéro",
+      "description": "Carton de chapitre 16:9 : carton numéro, posé par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "chapitre",
+        "carton",
+        "meg-large",
+        "meg-youtube-folder-chapitres"
+      ],
+      "duration": 4,
+      "target": "compositions/meg-yt-chapitre-carton.html",
+      "preview": "registry/blocks/meg-yt-chapitre-carton/preview.jpg"
+    },
+    {
+      "name": "meg-yt-detoure-droite-grand",
+      "brand": "MEG",
+      "title": "Large — détouré droite (grand)",
+      "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à droite (grand). Remplacer par l'asset alpha.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "droite",
+        "meg-large",
+        "meg-youtube-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-detoure-droite-grand.html",
+      "preview": "registry/blocks/meg-yt-detoure-droite-grand/preview.jpg"
+    },
+    {
+      "name": "meg-yt-detoure-droite-moyen",
+      "brand": "MEG",
+      "title": "Large — détouré droite (moyen)",
+      "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à droite (moyen). Remplacer par l'asset alpha.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "droite",
+        "meg-large",
+        "meg-youtube-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-detoure-droite-moyen.html",
+      "preview": "registry/blocks/meg-yt-detoure-droite-moyen/preview.jpg"
+    },
+    {
+      "name": "meg-yt-detoure-gauche-grand",
+      "brand": "MEG",
+      "title": "Large — détouré gauche (grand)",
+      "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à gauche (grand). Remplacer par l'asset alpha.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "meg-large",
+        "meg-youtube-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-detoure-gauche-grand.html",
+      "preview": "registry/blocks/meg-yt-detoure-gauche-grand/preview.jpg"
+    },
+    {
+      "name": "meg-yt-detoure-gauche-moyen",
+      "brand": "MEG",
+      "title": "Large — détouré gauche (moyen)",
+      "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à gauche (moyen). Remplacer par l'asset alpha.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "meg-large",
+        "meg-youtube-folder-detourage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-detoure-gauche-moyen.html",
+      "preview": "registry/blocks/meg-yt-detoure-gauche-moyen/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-jumeaux-bande-carte",
+      "brand": "MEG",
+      "title": "Large — duo 2 écrans jumeaux + bande visage (carte)",
+      "description": "Split 16:9 à deux écrans : 2 écrans jumeaux + bande visage, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "jumeaux-bande",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-jumeaux-bande-carte.html",
+      "preview": "registry/blocks/meg-yt-duo-jumeaux-bande-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-jumeaux-bande-nav",
+      "brand": "MEG",
+      "title": "Large — duo 2 écrans jumeaux + bande visage (nav)",
+      "description": "Split 16:9 à deux écrans : 2 écrans jumeaux + bande visage, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "jumeaux-bande",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-jumeaux-bande-nav.html",
+      "preview": "registry/blocks/meg-yt-duo-jumeaux-bande-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-pile-droite-carte",
+      "brand": "MEG",
+      "title": "Large — duo 2 écrans empilés à droite (carte)",
+      "description": "Split 16:9 à deux écrans : 2 écrans empilés à droite, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "pile-droite",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-pile-droite-carte.html",
+      "preview": "registry/blocks/meg-yt-duo-pile-droite-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-pile-droite-nav",
+      "brand": "MEG",
+      "title": "Large — duo 2 écrans empilés à droite (nav)",
+      "description": "Split 16:9 à deux écrans : 2 écrans empilés à droite, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "pile-droite",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-pile-droite-nav.html",
+      "preview": "registry/blocks/meg-yt-duo-pile-droite-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-pile-gauche-carte",
+      "brand": "MEG",
+      "title": "Large — duo 2 écrans empilés à gauche (carte)",
+      "description": "Split 16:9 à deux écrans : 2 écrans empilés à gauche, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "pile-gauche",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-pile-gauche-carte.html",
+      "preview": "registry/blocks/meg-yt-duo-pile-gauche-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-pile-gauche-nav",
+      "brand": "MEG",
+      "title": "Large — duo 2 écrans empilés à gauche (nav)",
+      "description": "Split 16:9 à deux écrans : 2 écrans empilés à gauche, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "pile-gauche",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-pile-gauche-nav.html",
+      "preview": "registry/blocks/meg-yt-duo-pile-gauche-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-principal-second-carte",
+      "brand": "MEG",
+      "title": "Large — duo écran principal + vignette dessous (carte)",
+      "description": "Split 16:9 à deux écrans : écran principal + vignette dessous, visage master recadré. Style carte.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "principal-second",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-principal-second-carte.html",
+      "preview": "registry/blocks/meg-yt-duo-principal-second-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-duo-principal-second-nav",
+      "brand": "MEG",
+      "title": "Large — duo écran principal + vignette dessous (nav)",
+      "description": "Split 16:9 à deux écrans : écran principal + vignette dessous, visage master recadré. Style nav.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "duo",
+        "principal-second",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-duo-principal-second-nav.html",
+      "preview": "registry/blocks/meg-yt-duo-principal-second-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-55-bord",
+      "brand": "MEG",
+      "title": "Large — écran droite 55 % (bord à bord)",
+      "description": "Split 16:9 : écran bord à bord à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "bord",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-55-bord.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-55-bord/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-55-carte",
+      "brand": "MEG",
+      "title": "Large — écran droite 55 % (carte crème)",
+      "description": "Split 16:9 : écran carte crème à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-55-carte.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-55-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-55-nav",
+      "brand": "MEG",
+      "title": "Large — écran droite 55 % (fenêtre navigateur)",
+      "description": "Split 16:9 : écran fenêtre navigateur à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-55-nav.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-55-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-62-incline",
+      "brand": "MEG",
+      "title": "Large — écran droite 62 % incliné",
+      "description": "Split 16:9 dynamique : carte écran inclinée (-2°) à droite, visage master sur le reste.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "incline",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-62-incline.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-62-incline/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-65-bord",
+      "brand": "MEG",
+      "title": "Large — écran droite 65 % (bord à bord)",
+      "description": "Split 16:9 : écran bord à bord à droite (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "bord",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-65-bord.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-65-bord/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-65-carte",
+      "brand": "MEG",
+      "title": "Large — écran droite 65 % (carte crème)",
+      "description": "Split 16:9 : écran carte crème à droite (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-65-carte.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-65-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-65-nav",
+      "brand": "MEG",
+      "title": "Large — écran droite 65 % (fenêtre navigateur)",
+      "description": "Split 16:9 : écran fenêtre navigateur à droite (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-65-nav.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-65-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-75-bord",
+      "brand": "MEG",
+      "title": "Large — écran droite 75 % (bord à bord)",
+      "description": "Split 16:9 : écran bord à bord à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "bord",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-75-bord.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-75-bord/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-75-carte",
+      "brand": "MEG",
+      "title": "Large — écran droite 75 % (carte crème)",
+      "description": "Split 16:9 : écran carte crème à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-75-carte.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-75-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-droite-75-nav",
+      "brand": "MEG",
+      "title": "Large — écran droite 75 % (fenêtre navigateur)",
+      "description": "Split 16:9 : écran fenêtre navigateur à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "droite",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-droite-75-nav.html",
+      "preview": "registry/blocks/meg-yt-ecran-droite-75-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-55-bord",
+      "brand": "MEG",
+      "title": "Large — écran gauche 55 % (bord à bord)",
+      "description": "Split 16:9 : écran bord à bord à gauche (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "bord",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-55-bord.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-55-bord/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-55-carte",
+      "brand": "MEG",
+      "title": "Large — écran gauche 55 % (carte crème)",
+      "description": "Split 16:9 : écran carte crème à gauche (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-55-carte.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-55-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-55-nav",
+      "brand": "MEG",
+      "title": "Large — écran gauche 55 % (fenêtre navigateur)",
+      "description": "Split 16:9 : écran fenêtre navigateur à gauche (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-55-nav.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-55-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-62-incline",
+      "brand": "MEG",
+      "title": "Large — écran gauche 62 % incliné",
+      "description": "Split 16:9 dynamique : carte écran inclinée (-2°) à gauche, visage master sur le reste.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "incline",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-62-incline.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-62-incline/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-65-bord",
+      "brand": "MEG",
+      "title": "Large — écran gauche 65 % (bord à bord)",
+      "description": "Split 16:9 : écran bord à bord à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "bord",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-65-bord.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-65-bord/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-65-carte",
+      "brand": "MEG",
+      "title": "Large — écran gauche 65 % (carte crème)",
+      "description": "Split 16:9 : écran carte crème à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-65-carte.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-65-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-65-nav",
+      "brand": "MEG",
+      "title": "Large — écran gauche 65 % (fenêtre navigateur)",
+      "description": "Split 16:9 : écran fenêtre navigateur à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-65-nav.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-65-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-75-bord",
+      "brand": "MEG",
+      "title": "Large — écran gauche 75 % (bord à bord)",
+      "description": "Split 16:9 : écran bord à bord à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "bord",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-75-bord.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-75-bord/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-75-carte",
+      "brand": "MEG",
+      "title": "Large — écran gauche 75 % (carte crème)",
+      "description": "Split 16:9 : écran carte crème à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "carte",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-75-carte.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-75-carte/preview.jpg"
+    },
+    {
+      "name": "meg-yt-ecran-gauche-75-nav",
+      "brand": "MEG",
+      "title": "Large — écran gauche 75 % (fenêtre navigateur)",
+      "description": "Split 16:9 : écran fenêtre navigateur à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "split",
+        "gauche",
+        "nav",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-ecran-gauche-75-nav.html",
+      "preview": "registry/blocks/meg-yt-ecran-gauche-75-nav/preview.jpg"
+    },
+    {
+      "name": "meg-yt-habillage-bandes-cinema",
+      "brand": "MEG",
+      "title": "Large — habillage bandes cinéma",
+      "description": "Habillage plein cadre 16:9 : bandes cinéma par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "habillage",
+        "overlay",
+        "bandes-cinema",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-habillage-bandes-cinema.html",
+      "preview": "registry/blocks/meg-yt-habillage-bandes-cinema/preview.jpg"
+    },
+    {
+      "name": "meg-yt-habillage-cadre-fin-or",
+      "brand": "MEG",
+      "title": "Large — habillage cadre fin or",
+      "description": "Habillage plein cadre 16:9 : cadre fin or par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "habillage",
+        "overlay",
+        "cadre-fin-or",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-habillage-cadre-fin-or.html",
+      "preview": "registry/blocks/meg-yt-habillage-cadre-fin-or/preview.jpg"
+    },
+    {
+      "name": "meg-yt-habillage-header-marque",
+      "brand": "MEG",
+      "title": "Large — habillage bande de marque haute",
+      "description": "Habillage plein cadre 16:9 : bande de marque haute par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "habillage",
+        "overlay",
+        "header-marque",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-habillage-header-marque.html",
+      "preview": "registry/blocks/meg-yt-habillage-header-marque/preview.jpg"
+    },
+    {
+      "name": "meg-yt-habillage-vignette-focus",
+      "brand": "MEG",
+      "title": "Large — habillage vignette de focus",
+      "description": "Habillage plein cadre 16:9 : vignette de focus par-dessus le master intact.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "habillage",
+        "overlay",
+        "vignette-focus",
+        "meg-large",
+        "meg-youtube-folder-habillages"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-habillage-vignette-focus.html",
+      "preview": "registry/blocks/meg-yt-habillage-vignette-focus/preview.jpg"
+    },
+    {
+      "name": "meg-yt-intro-hook-chiffre",
+      "brand": "MEG",
+      "title": "Large — intro chiffre choc",
+      "description": "Intro 16:9 : chiffre choc plein cadre + visage master en bande basse. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "intro",
+        "hook-chiffre",
+        "meg-large",
+        "meg-youtube-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-yt-intro-hook-chiffre.html",
+      "preview": "registry/blocks/meg-yt-intro-hook-chiffre/preview.jpg"
+    },
+    {
+      "name": "meg-yt-intro-question",
+      "brand": "MEG",
+      "title": "Large — intro question centrale",
+      "description": "Intro 16:9 : question centrale plein cadre + visage master en bande basse. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "intro",
+        "question",
+        "meg-large",
+        "meg-youtube-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-yt-intro-question.html",
+      "preview": "registry/blocks/meg-yt-intro-question/preview.jpg"
+    },
+    {
+      "name": "meg-yt-intro-sommaire",
+      "brand": "MEG",
+      "title": "Large — intro sommaire",
+      "description": "Intro 16:9 : sommaire 3 points à gauche + visage master pleine hauteur à droite.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "intro",
+        "sommaire",
+        "meg-large",
+        "meg-youtube-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-yt-intro-sommaire.html",
+      "preview": "registry/blocks/meg-yt-intro-sommaire/preview.jpg"
+    },
+    {
+      "name": "meg-yt-intro-titre-plein",
+      "brand": "MEG",
+      "title": "Large — intro grand titre",
+      "description": "Intro 16:9 : grand titre plein cadre + visage master en bande basse. Textes à remplacer.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "intro",
+        "titre-plein",
+        "meg-large",
+        "meg-youtube-folder-intros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-yt-intro-titre-plein.html",
+      "preview": "registry/blocks/meg-yt-intro-titre-plein/preview.jpg"
+    },
+    {
+      "name": "meg-yt-outro-carte-marque",
+      "brand": "MEG",
+      "title": "Large — outro carte de marque",
+      "description": "Outro 16:9 plein cadre : marque MEG + invitation indirecte + URL mise en avant.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "outro",
+        "marque",
+        "meg-large",
+        "meg-youtube-folder-cta-outros"
+      ],
+      "duration": 5,
+      "target": "compositions/meg-yt-outro-carte-marque.html",
+      "preview": "registry/blocks/meg-yt-outro-carte-marque/preview.jpg"
+    },
+    {
+      "name": "meg-yt-outro-ecran-fin",
+      "brand": "MEG",
+      "title": "Large — écran de fin",
+      "description": "Écran de fin 16:9 : visage master à gauche + deux emplacements vidéos suivantes à droite (zones end-screen YouTube).",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "outro",
+        "ecran-fin",
+        "meg-large",
+        "meg-youtube-folder-cta-outros"
+      ],
+      "duration": 8,
+      "target": "compositions/meg-yt-outro-ecran-fin.html",
+      "preview": "registry/blocks/meg-yt-outro-ecran-fin/preview.jpg"
+    },
+    {
+      "name": "meg-yt-outro-recap",
+      "brand": "MEG",
+      "title": "Large — outro récap 3 points",
+      "description": "Outro 16:9 : récapitulatif 3 points à gauche + visage master à droite.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "outro",
+        "recap",
+        "meg-large",
+        "meg-youtube-folder-cta-outros"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-outro-recap.html",
+      "preview": "registry/blocks/meg-yt-outro-recap/preview.jpg"
+    },
+    {
+      "name": "meg-yt-trio-colonne-droite",
+      "brand": "MEG",
+      "title": "Large — trio colonne droite",
+      "description": "Split 16:9 à trois écrans empilés à droite, visage master pleine hauteur à gauche.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "trio",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-trio-colonne-droite.html",
+      "preview": "registry/blocks/meg-yt-trio-colonne-droite/preview.jpg"
+    },
+    {
+      "name": "meg-yt-trio-grille",
+      "brand": "MEG",
+      "title": "Large — trio en grille",
+      "description": "Split 16:9 : 3 écrans en grille 2×2, visage master dans le quart bas-droit.",
+      "tags": [
+        "meg",
+        "youtube",
+        "16-9",
+        "layout",
+        "trio",
+        "grille",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage"
+      ],
+      "duration": 6,
+      "target": "compositions/meg-yt-trio-grille.html",
+      "preview": "registry/blocks/meg-yt-trio-grille/preview.jpg"
+    },
+    {
+      "name": "captions-dss",
+      "brand": "DSS",
+      "title": "Captions DSS",
+      "description": "Style de captions DSS : une phrase par capsule encre, texte blanc, 2 lignes max.",
+      "tags": [
+        "meg",
+        "dss",
+        "captions"
+      ],
+      "duration": 15,
+      "target": "templates-dss/captions-dss.html",
+      "preview": "registry/blocks/captions-dss/preview.jpg"
+    },
+    {
+      "name": "layout-face-9-16",
+      "brand": "DSS",
+      "title": "Layout DSS visage 9:16",
+      "description": "Layout DSS plein cadre visage (la video est fournie par la timeline).",
+      "tags": [
+        "meg",
+        "dss",
+        "layout",
+        "visage"
+      ],
+      "duration": 15,
+      "target": "templates-dss/layout-face-9-16.html",
+      "preview": "registry/blocks/layout-face-9-16/preview.jpg"
+    },
+    {
+      "name": "layout-plein-16-9",
+      "brand": "DSS",
+      "title": "Layout DSS plein 16:9 flou",
+      "description": "Layout DSS 16:9 centre avec bandes floutees haut et bas.",
+      "tags": [
+        "meg",
+        "dss",
+        "layout",
+        "plein"
+      ],
+      "duration": 15,
+      "target": "templates-dss/layout-plein-16-9.html",
+      "preview": "registry/blocks/layout-plein-16-9/preview.jpg"
+    },
+    {
+      "name": "layout-sequence",
+      "brand": "DSS",
+      "title": "Layout DSS sequence",
+      "description": "Layout DSS sequence visage puis plein (deux videos de la timeline).",
+      "tags": [
+        "meg",
+        "dss",
+        "layout",
+        "sequence"
+      ],
+      "duration": 15,
+      "target": "templates-dss/layout-sequence.html",
+      "preview": "registry/blocks/layout-sequence/preview.jpg"
+    },
+    {
+      "name": "titre-tiktok-dss",
+      "brand": "DSS",
+      "title": "Titre TikTok DSS",
+      "description": "Titre TikTok DSS : deux lignes, une boite arrondie par ligne, bloc en haut.",
+      "tags": [
+        "meg",
+        "dss",
+        "titre",
+        "tiktok"
+      ],
+      "duration": 15,
+      "target": "templates-dss/titre-tiktok-dss.html",
+      "preview": "registry/blocks/titre-tiktok-dss/preview.jpg"
+    }
+  ]
+}

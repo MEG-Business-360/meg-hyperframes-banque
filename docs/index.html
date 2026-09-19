@@ -78,24 +78,12 @@ function render() {
 }
 
 async function load() {
-  const reg = await (await fetch(new URL("registry.json", REGISTRY), { cache: "no-store" })).json();
-  const names = reg.items.filter((i) => i.type === "hyperframes:block").map((i) => i.name);
-  const out = [];
-  for (const name of names) {
-    let meta = {};
-    try {
-      meta = await (await fetch(new URL("blocks/" + name + "/registry-item.json", REGISTRY), { cache: "no-store" })).json();
-    } catch (e) {}
-    const tags = meta.tags || [];
-    out.push({
-      name, tags,
-      brand: tags.includes("dss") ? "DSS" : "MEG",
-      title: meta.title || name,
-      description: meta.description || "",
-      preview: new URL("blocks/" + name + "/preview.jpg", REGISTRY).href,
-    });
-  }
-  items = out;
+  // 1 seul fichier : docs/catalog.json (regenere a chaque publication)
+  const data = await (await fetch(new URL("catalog.json", location.href), { cache: "no-store" })).json();
+  items = data.items.map((it) => ({
+    ...it,
+    preview: it.preview ? new URL("../" + it.preview, location.href).href : null,
+  }));
   document.getElementById("st").textContent = items.length + " blocs - " + new Date().toLocaleTimeString("fr-FR");
   render();
 }

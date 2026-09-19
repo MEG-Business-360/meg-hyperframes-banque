@@ -3,11 +3,27 @@
 import { createServer } from "node:http";
 import { readFile, readdir, stat } from "node:fs/promises";
 import { createReadStream } from "node:fs";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { extname, join, resolve } from "node:path";
 
 const ROOT = resolve(new URL("..", import.meta.url).pathname);
 const BLOCKS = join(ROOT, "registry", "blocks");
 const PORT = Number(process.env.MEG_CATALOG_PORT || 3020);
+const execFileAsync = promisify(execFile);
+let lastPull = 0;
+
+// La banque suit Git : un pull silencieux (max 1 fois par minute) garde la page a jour.
+async function syncFromGit() {
+  if (Date.now() - lastPull < 60_000) return null;
+  lastPull = Date.now();
+  try {
+    const { stdout } = await execFileAsync("git", ["pull", "--ff-only", "--quiet"], { cwd: ROOT, timeout: 20_000 });
+    return stdout.trim();
+  } catch {
+    return null;
+  }
+}
 
 const MIME = {
   ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png",
@@ -16,6 +32,7 @@ const MIME = {
 };
 
 async function readItems() {
+  await syncFromGit();
   const registry = JSON.parse(await readFile(join(ROOT, "registry", "registry.json"), "utf8"));
   const names = registry.items.filter((i) => i.type === "hyperframes:block").map((i) => i.name);
   const dirs = new Set(await readdir(BLOCKS));

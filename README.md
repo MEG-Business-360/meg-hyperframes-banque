@@ -25,6 +25,8 @@ La synchronisation installe uniquement les blocs absents dans `compositions/`. E
 - `registry/` : layouts MEG adaptés et directement utilisables dans HyperFrames Studio.
 - `sources/` : cinq banques Remotion MIT téléchargées (`onda`, `remocn`, `rve-templates`, `captions-themes`, `scenes`). Elles servent de matière première et ne sont jamais chargées directement dans une timeline HyperFrames.
 - `scripts/sync-project.mjs` : synchronisation universelle des blocs manquants.
+- `scripts/lib-format.mjs` : règle unique du classement (format par dimensions réelles + socle commun).
+- `scripts/build-public-catalog.mjs` : génère `docs/catalog.json` (marque, format, commun) pour la page publique.
 - `borumi/` : kit portable Borumi MEG (83 favoris, manifeste externe, rendu de titres A/B/E et installateur macOS en lecture seule par défaut). Voir [`borumi/README.md`](borumi/README.md).
 
 Les licences et crédits propres à chaque banque source restent dans son dossier. Le code MEG de la registry demeure la propriété de MEG Business 360.
@@ -33,8 +35,34 @@ Les licences et crédits propres à chaque banque source restent dans son dossie
 
 Lancer : node scripts/catalog.mjs — puis ouvrir http://localhost:3020/
 
-La page lit le registre en direct (rafraîchissement toutes les 15 s) et sépare **MEG** de **DSS Real Estate**,
-avec recherche, aperçus, tags et la commande d'installation de chaque bloc.
+Le serveur local sert la **même page que la page publique** (`docs/index.html` + `docs/catalog.json`),
+avec pull silencieux (1x/min) et rafraîchissement automatique toutes les 15 s en local.
+
+## Ranger la banque : marque, FORMAT, COMMUN
+
+La page publique et le catalogue local affichent, dans cet ordre :
+
+1. **Commun (MEG + DSS)** — les blocs montés par les deux marques (tag `commun` du manifeste) ;
+2. **MEG** puis **DSS Real Estate**, chacun en deux sous-groupes de format :
+   **Mobile (9:16 · 1080×1920)** et **YouTube (16:9 · 1920×1080)**.
+
+Un bloc qui n'est ni 1080×1920 ni 1920×1080 est rangé dans le groupe de **sa dimension réelle**
+(jamais dans un format inventé) ; une marque sans bloc pour un format affiche « Aucun bloc pour ce format. ».
+
+### Ce qui rend un bloc « commun »
+
+Un bloc est commun **uniquement** avec une preuve d'usage par les deux marques :
+
+- la même source (contenu identique) est présente dans un projet **MEG** et dans un projet **DSS** ; ou
+- le manifeste le déclare pour les deux marques (`tags: ["meg", "dss", ...]`) et cet usage est constaté des deux côtés.
+
+Une ressemblance de nom ne suffit jamais. Le détail des preuves (chemin de chaque copie) est tenu dans le
+rapport de la passe du 19/09/2026 ; le tag `commun` est la trace durable dans le manifeste.
+
+Blocs communs au 19/09/2026 (13) : `meg-face-full`, `meg-tiktok-title-classic`, `meg-face-proof-split-t04`,
+`meg-face-proof-split-t17`, `meg-proof-full`, `meg-face-cta-arrows`, `meg-captions-global`,
+`meg-masked-face-stage`, `captions-dss`, `layout-sequence`, `titre-tiktok-dss`, `layout-face-9-16`,
+`layout-plein-16-9`.
 
 ## Publier un nouveau layout dans la banque
 

@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // Genere docs/catalog.json : un seul fichier pour la page publique (et le catalogue local).
-import { readFile, readdir, stat, writeFile, mkdir } from "node:fs/promises";
+// Chaque item porte sa MARQUE, son FORMAT (dimensions reelles) et son socle COMMUN.
+import { readFile, stat, writeFile, mkdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
+import { formatDe, estCommun } from "./lib-format.mjs";
 
 const ROOT = resolve(new URL("..", import.meta.url).pathname);
 const BLOCKS = join(ROOT, "registry", "blocks");
@@ -20,9 +22,15 @@ for (const name of names) {
     try { await stat(join(BLOCKS, name, file)); preview = file; break; } catch {}
   }
   const tags = meta.tags || [];
+  const format = formatDe(meta);
   items.push({
     name,
     brand: tags.includes("dss") ? "DSS" : "MEG",
+    commun: estCommun(meta),
+    format: format.key,
+    formatLabel: format.label,
+    ratio: format.ratio,
+    dimensions: { width: format.width, height: format.height },
     title: meta.title || name,
     description: meta.description || "",
     tags,
@@ -36,4 +44,20 @@ items.sort((a, b) => (a.brand === b.brand ? a.name.localeCompare(b.name) : a.bra
 await mkdir(join(ROOT, "docs"), { recursive: true });
 const payload = { generatedAt: new Date().toISOString(), count: items.length, items };
 await writeFile(join(ROOT, "docs", "catalog.json"), JSON.stringify(payload, null, 2) + "\n");
-console.log(JSON.stringify({ items: items.length, meg: items.filter((i) => i.brand === "MEG").length, dss: items.filter((i) => i.brand === "DSS").length }));
+
+// Compteurs par groupe, relus a chaque generation : la page affiche le socle
+// COMMUN en tete (vue transversale) puis chaque marque, chaque fois par format.
+const groupes = {};
+const ajoute = (cle, n) => { groupes[cle] = (groupes[cle] || 0) + n; };
+for (const forme of [...new Set(items.map((i) => i.formatLabel))]) {
+  ajoute("Commun (MEG + DSS) / " + forme, items.filter((i) => i.commun && i.formatLabel === forme).length);
+  ajoute("MEG / " + forme, items.filter((i) => i.brand === "MEG" && i.formatLabel === forme).length);
+  ajoute("DSS Real Estate / " + forme, items.filter((i) => i.brand === "DSS" && i.formatLabel === forme).length);
+}
+console.log(JSON.stringify({
+  items: items.length,
+  commun: items.filter((i) => i.commun).length,
+  meg: items.filter((i) => i.brand === "MEG").length,
+  dss: items.filter((i) => i.brand === "DSS").length,
+  groupes,
+}, null, 2));

@@ -124,6 +124,7 @@ verifie(
   "5/5 elements presents"
 );
 verifie("page : mention discrete quand un format est vide", html.includes("vide-msg") && html.includes("Aucun bloc pour ce format."), "classe .vide-msg");
+verifie("page : le socle commun dit qu'il est repris dans sa marque", html.includes("restent aussi listés dans leur marque"), "note .note-sec");
 verifie("page : compteurs par section", html.includes("nb(s.count)") && html.includes("plan.duFormat"), "section + resume");
 
 // 7. Compte rendu.

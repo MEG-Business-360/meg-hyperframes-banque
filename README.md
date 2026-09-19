@@ -64,6 +64,12 @@ Blocs communs au 19/09/2026 (13) : `meg-face-full`, `meg-tiktok-title-classic`, 
 `meg-masked-face-stage`, `captions-dss`, `layout-sequence`, `titre-tiktok-dss`, `layout-face-9-16`,
 `layout-plein-16-9`.
 
+Précision de preuve (19/09/2026) : `layout-face-9-16`, `layout-plein-16-9` et `layout-sequence` ont une copie
+**identique** au registry dans la librairie du skill `meg-clipping` (`templates/layouts/`) ; leurs copies dans
+les projets vidéo MEG et DSS sont en retard d'une ligne — elles portent encore `data-composition-vars` alors que
+le registry utilise `data-variable-values` (correction du 19/09/2026, commit `daf8c45`). Le bloc est le même :
+la propagation de l'attribut dans les projets reste à faire, elle ne change pas le classement.
+
 ## Publier un nouveau layout dans la banque
 
 Lancer : node scripts/publish-layout.mjs --file /chemin/layout.html --name mon-layout --brand dss --title "Mon layout" --desc "Description courte" --target templates-dss/mon-layout.html --push

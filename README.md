@@ -29,6 +29,20 @@ La synchronisation installe uniquement les blocs absents dans `compositions/`. E
 
 Les licences et crédits propres à chaque banque source restent dans son dossier. Le code MEG de la registry demeure la propriété de MEG Business 360.
 
+## Catalogue local (voir les layouts de manière dynamique)
+
+Lancer : node scripts/catalog.mjs — puis ouvrir http://localhost:3020/
+
+La page lit le registre en direct (rafraîchissement toutes les 15 s) et sépare **MEG** de **DSS Real Estate**,
+avec recherche, aperçus, tags et la commande d'installation de chaque bloc.
+
+## Publier un nouveau layout dans la banque
+
+Lancer : node scripts/publish-layout.mjs --file /chemin/layout.html --name mon-layout --brand dss --title "Mon layout" --desc "Description courte" --target templates-dss/mon-layout.html --push
+
+Le script copie le fichier dans registry/blocks/<nom>/, écrit son registry-item.json, met à jour
+registry/registry.json et, avec --push, commit et pousse sur main. Le catalogue le montre immédiatement.
+
 ## Ajouter un layout
 
 1. Chercher d’abord un existant dans `registry/` et `sources/`.

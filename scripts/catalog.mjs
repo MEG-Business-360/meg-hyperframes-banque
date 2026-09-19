@@ -1,0 +1,153 @@
+#!/usr/bin/env node
+// Catalogue local de la banque HyperFrames MEG : lecture en direct du registre.
+import { createServer } from "node:http";
+import { readFile, readdir, stat } from "node:fs/promises";
+import { createReadStream } from "node:fs";
+import { extname, join, resolve } from "node:path";
+
+const ROOT = resolve(new URL("..", import.meta.url).pathname);
+const BLOCKS = join(ROOT, "registry", "blocks");
+const PORT = Number(process.env.MEG_CATALOG_PORT || 3020);
+
+const MIME = {
+  ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png",
+  ".mp4": "video/mp4", ".webm": "video/webm", ".html": "text/html; charset=utf-8",
+  ".css": "text/css", ".js": "text/javascript", ".woff2": "font/woff2",
+};
+
+async function readItems() {
+  const registry = JSON.parse(await readFile(join(ROOT, "registry", "registry.json"), "utf8"));
+  const names = registry.items.filter((i) => i.type === "hyperframes:block").map((i) => i.name);
+  const dirs = new Set(await readdir(BLOCKS));
+  const out = [];
+  for (const name of names) {
+    let meta = {};
+    try {
+      meta = JSON.parse(await readFile(join(BLOCKS, name, "registry-item.json"), "utf8"));
+    } catch {
+      meta = { name, title: name, description: "", tags: [] };
+    }
+    const tags = meta.tags || [];
+    const brand = tags.includes("dss") ? "DSS" : "MEG";
+    let preview = null;
+    for (const file of ["preview.jpg", "preview.png", "preview.mp4"]) {
+      try {
+        await stat(join(BLOCKS, name, file));
+        preview = file;
+        break;
+      } catch {}
+    }
+    out.push({
+      name,
+      brand,
+      title: meta.title || name,
+      description: meta.description || "",
+      tags,
+      duration: meta.duration || null,
+      target: (meta.files || []).filter((f) => f.type === "hyperframes:composition").map((f) => f.target)[0] || null,
+      preview: preview ? "/media/" + name + "/" + preview : null,
+      installed: dirs.has(name),
+    });
+  }
+  return out;
+}
+
+const PAGE = [
+  "<!doctype html><html lang=fr><head><meta charset=utf-8>",
+  "<meta name=viewport content='width=device-width,initial-scale=1'>",
+  "<title>Banque HyperFrames MEG</title>",
+  "<style>",
+  ":root{--bg:#0b0d12;--card:#151922;--line:#252b38;--txt:#eef1f7;--dim:#98a2b3;--meg:#3ddc97;--dss:#5aa9ff}",
+  "*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}",
+  "header{position:sticky;top:0;background:rgba(11,13,18,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 20px;z-index:5}",
+  "h1{margin:0 0 10px;font-size:18px;font-weight:650}.sub{color:var(--dim);font-size:12px}",
+  ".bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}",
+  ".tabs{display:flex;gap:6px}.tab{border:1px solid var(--line);background:#101420;color:var(--dim);padding:6px 14px;border-radius:999px;cursor:pointer;font-size:13px}",
+  ".tab.on{color:#0b0d12;background:var(--txt);border-color:var(--txt);font-weight:600}",
+  "input[type=search]{flex:1;min-width:200px;background:#101420;border:1px solid var(--line);color:var(--txt);padding:8px 12px;border-radius:10px;font-size:14px}",
+  "main{padding:18px 20px 60px}",
+  "section{margin-bottom:34px}",
+  "h2{display:flex;align-items:center;gap:10px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px}",
+  "h2 .dot{width:10px;height:10px;border-radius:50%}h2 .n{color:var(--dim);font-size:12px;letter-spacing:0;text-transform:none}",
+  ".grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}",
+  ".card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}",
+  ".thumb{aspect-ratio:9/16;max-height:260px;background:#0d1017 center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#3a4354;font-size:12px}",
+  ".body{padding:10px 12px 12px}.name{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--dim);word-break:break-all}",
+  ".title{font-weight:600;margin:4px 0 6px;font-size:14px}.desc{color:var(--dim);font-size:12.5px;min-height:34px}",
+  ".tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tag{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:2px 8px}",
+  ".cmd{display:flex;gap:6px;align-items:flex-start;margin-top:auto}code{flex:1;font-size:11.5px;background:#0d1017;border:1px solid var(--line);border-radius:8px;padding:6px 8px;white-space:pre-wrap;word-break:break-all;line-height:1.35}",
+  "button.copy{flex:0 0 auto;border:1px solid var(--line);background:#101420;color:var(--txt);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:12px}",
+  ".empty{color:var(--dim);font-size:13px}",
+  "</style></head><body>",
+  "<header><h1>Banque HyperFrames MEG</h1>",
+  "<div class=bar><div class=tabs>",
+  "<button class='tab on' data-f=ALL>Tout</button>",
+  "<button class=tab data-f=MEG>MEG</button>",
+  "<button class=tab data-f=DSS>DSS</button>",
+  "</div><input type=search id=q placeholder='Rechercher un layout, un tag...'>",
+  "<span class=sub id=st>lecture...</span></div></header>",
+  "<main id=out></main>",
+  "<script>",
+  "let items=[],filter='ALL',q='';",
+  "function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}",
+  "function card(it){",
+  "  const thumb=it.preview?\"<div class=thumb style=\\\"background-image:url('\"+it.preview+\"')\\\"></div>\":\"<div class=thumb>apercu a venir</div>\";",
+  "  const tags=it.tags.map(t=>\"<span class=tag>\"+esc(t)+\"</span>\").join('');",
+  "  const cmd='npx hyperframes add '+it.name;",
+  "  return \"<div class=card>\"+thumb+\"<div class=body><div class=name>\"+esc(it.name)+\"</div><div class=title>\"+esc(it.title)+\"</div><div class=desc>\"+esc(it.description)+\"</div><div class=tags>\"+tags+\"</div><div class=cmd><code>\"+cmd+\"</code><button class=copy data-c=\\\"\"+cmd+\"\\\">copier</button></div></div></div>\";",
+  "}",
+  "function render(){",
+  "  const list=items.filter(i=>(filter=='ALL'||i.brand==filter)&&(!q||(i.name+' '+i.title+' '+i.description+' '+i.tags.join(' ')).toLowerCase().includes(q)));",
+  "  const meg=list.filter(i=>i.brand=='MEG'),dss=list.filter(i=>i.brand=='DSS');",
+  "  let html='';",
+  "  if((filter=='ALL'||filter=='MEG'))html+=\"<section><h2><span class=dot style='background:var(--meg)'></span>MEG <span class=n>\"+meg.length+\" blocs</span></h2><div class=grid>\"+meg.map(card).join('')+'</div></section>';",
+  "  if((filter=='ALL'||filter=='DSS'))html+=\"<section><h2><span class=dot style='background:var(--dss)'></span>DSS Real Estate <span class=n>\"+dss.length+\" blocs</span></h2><div class=grid>\"+dss.map(card).join('')+'</div></section>';",
+  "  document.getElementById('out').innerHTML=html||\"<p class=empty>Aucun bloc pour ce filtre.</p>\";",
+  "}",
+  "async function load(){",
+  "  const r=await fetch('/api/items',{cache:'no-store'});items=await r.json();",
+  "  document.getElementById('st').textContent=items.length+' blocs - '+new Date().toLocaleTimeString('fr-FR');",
+  "  render();",
+  "}",
+  "document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');filter=b.dataset.f;render();});",
+  "document.getElementById('q').oninput=e=>{q=e.target.value.toLowerCase();render();};",
+  "document.addEventListener('click',e=>{const b=e.target.closest('.copy');if(!b)return;navigator.clipboard.writeText(b.dataset.c);b.textContent='copie';setTimeout(()=>b.textContent='copier',1200);});",
+  "load();setInterval(load,15000);",
+  "</script></body></html>",
+].join("");
+
+const server = createServer(async (req, res) => {
+  const url = new URL(req.url, "http://localhost");
+  try {
+    if (url.pathname === "/") {
+      res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+      res.end(PAGE);
+      return;
+    }
+    if (url.pathname === "/api/items") {
+      const items = await readItems();
+      res.writeHead(200, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" });
+      res.end(JSON.stringify(items));
+      return;
+    }
+    if (url.pathname.startsWith("/media/")) {
+      const [, , name, file] = url.pathname.split("/");
+      const safe = /^[A-Za-z0-9._-]+$/.test(name) && /^[A-Za-z0-9._-]+$/.test(file || "");
+      if (!safe) { res.writeHead(400); res.end(); return; }
+      const full = join(BLOCKS, name, file);
+      if (!full.startsWith(BLOCKS)) { res.writeHead(400); res.end(); return; }
+      await stat(full);
+      res.writeHead(200, { "content-type": MIME[extname(full)] || "application/octet-stream" });
+      createReadStream(full).pipe(res);
+      return;
+    }
+    res.writeHead(404); res.end("not found");
+  } catch (error) {
+    res.writeHead(500, { "content-type": "text/plain; charset=utf-8" });
+    res.end(String(error && error.message ? error.message : error));
+  }
+});
+
+server.listen(PORT, "127.0.0.1", () => {
+  console.log("Catalogue banque MEG : http://localhost:" + PORT + "/");
+});

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr"
+      data-composition-variables='[{"id":"title","type":"string","label":"Titre","default":"DEFAUT"},{"id":"accent","type":"color","label":"Accent","default":"#3ddc97"}]'>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      html,body{width:540px;height:960px;margin:0;overflow:hidden;background:#0b0d12;color:#fff;font-family:sans-serif}
+      .clip{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px}
+      h1{font-size:54px;margin:0;color:var(--accent)}
+      .sub{font-size:32px;opacity:.8}
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-root" id="root" data-composition-id="main" data-root="true" data-start="0"
+         data-width="540" data-height="960" data-fps="30" data-duration="2">
+      <div class="clip">
+        <h1 data-var-text="title" data-start="0" data-duration="2">DEFAUT</h1>
+        <div class="sub"
+             data-composition-id="sous-test"
+             data-composition-src="compositions/sous.html"
+             data-start="0" data-duration="2" data-track-index="1" data-width="540" data-height="960"
+             data-variable-values='{"ligne":"SOUS TEST C"}'></div>
+      </div>
+    </div>
+  </body>
+</html>

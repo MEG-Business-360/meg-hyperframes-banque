@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T15:46:07.663Z",
+  "generatedAt": "2026-09-19T15:52:20.615Z",
   "count": 280,
   "items": [
     {
@@ -7277,7 +7277,7 @@
     {
       "name": "captions-dss",
       "brand": "DSS",
-      "commun": true,
+      "commun": false,
       "format": "mobile",
       "formatLabel": "Mobile (9:16 · 1080×1920)",
       "ratio": "9:16",
@@ -7290,7 +7290,6 @@
       "tags": [
         "meg",
         "dss",
-        "commun",
         "captions"
       ],
       "duration": 15,
@@ -7372,7 +7371,7 @@
     {
       "name": "titre-tiktok-dss",
       "brand": "DSS",
-      "commun": true,
+      "commun": false,
       "format": "mobile",
       "formatLabel": "Mobile (9:16 · 1080×1920)",
       "ratio": "9:16",
@@ -7385,7 +7384,6 @@
       "tags": [
         "meg",
         "dss",
-        "commun",
         "titre",
         "tiktok"
       ],

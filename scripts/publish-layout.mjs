@@ -68,8 +68,15 @@ if (!registry.items.some((i) => i.name === name)) {
 
 console.log(JSON.stringify({ published: name, brand: tags.includes("dss") ? "DSS" : "MEG", target, dir }, null, 2));
 
+try {
+  const { stdout } = await execFileAsync("node", ["scripts/build-public-catalog.mjs"], { cwd: ROOT });
+  console.log("catalogue public : " + stdout.trim());
+} catch (error) {
+  console.error("catalogue public non regenere : " + (error && error.message ? error.message : error));
+}
+
 if (a.push) {
-  await execFileAsync("git", ["add", "registry"], { cwd: ROOT });
+  await execFileAsync("git", ["add", "registry", "docs"], { cwd: ROOT });
   await execFileAsync("git", ["commit", "-m", "feat(registry): publie " + name], { cwd: ROOT });
   const { stdout } = await execFileAsync("git", ["push", "origin", "main"], { cwd: ROOT });
   console.log(stdout.trim());

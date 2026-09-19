@@ -41,7 +41,12 @@ avec recherche, aperçus, tags et la commande d'installation de chaque bloc.
 Lancer : node scripts/publish-layout.mjs --file /chemin/layout.html --name mon-layout --brand dss --title "Mon layout" --desc "Description courte" --target templates-dss/mon-layout.html --push
 
 Le script copie le fichier dans registry/blocks/<nom>/, écrit son registry-item.json, met à jour
-registry/registry.json et, avec --push, commit et pousse sur main. Le catalogue le montre immédiatement.
+registry/registry.json, régénère docs/catalog.json et, avec --push, commit et pousse sur main.
+Catalogue local : http://localhost:3020/ — il fait un git pull silencieux (1x/min) et affiche
+immédiatement tout layout publié dans Git.
+
+Page publique : https://meg-business-360.github.io/meg-hyperframes-banque/ (GitHub Pages, source main /)
+— mise à jour automatique à chaque push.
 
 ## Ajouter un layout
 

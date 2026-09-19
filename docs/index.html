@@ -55,8 +55,10 @@ button.copy{flex:0 0 auto;border:1px solid var(--line);background:#101420;color:
 function dataBase() {
   const q = location.search.replace(/^\?/, "");
   if (location.hostname === "htmlpreview.github.io" && q.startsWith("http")) {
-    const raw = q.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
-    return new URL("./", raw);
+    // via htmlpreview : les donnees passent par jsDelivr (CORS + cache CDN)
+    const m = q.match(/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\//);
+    if (m) return new URL("https://cdn.jsdelivr.net/gh/" + m[1] + "/" + m[2] + "@" + m[3] + "/");
+    return new URL("./", location.href);
   }
   return new URL("./", location.href);
 }

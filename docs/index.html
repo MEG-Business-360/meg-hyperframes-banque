@@ -103,13 +103,13 @@ function formatsDe(items) {
 const texteDe = (it) => (it.name + " " + it.title + " " + it.description + " " + (it.tags || []).join(" ")).toLowerCase();
 const correspond = (it, q) => !q || texteDe(it).includes(q);
 
-// Une seule regle : format d'abord, puis marque (Commun en tete, vue
-// transversale reprise dans sa marque), puis recherche.
+// Une seule regle : format d'abord, puis marque. Partition stricte : un bloc
+// commun ne vit que dans Commun, chaque marque ne liste que ses blocs propres.
 function planDe(items, formatKey, q) {
   const duFormat = items.filter((i) => i.format === formatKey);
   const trouves = duFormat.filter((i) => correspond(i, q));
   const sections = MARQUES.map((m) => {
-    const dedans = (i) => (m.commun ? !!i.commun : marqueDe(i) === m.key);
+    const dedans = (i) => (m.commun ? !!i.commun : marqueDe(i) === m.key && !i.commun);
     return { ...m, total: duFormat.filter(dedans).length, count: trouves.filter(dedans).length, items: trouves.filter(dedans) };
   });
   return { formatKey, q: q || "", duFormat: duFormat.length, trouves: trouves.length, sections, autres: items.filter((i) => i.format !== formatKey && correspond(i, q)) };
@@ -156,7 +156,7 @@ function blocSection(s, actif) {
       ? "<p class=vide-msg>Aucun bloc ne correspond à la recherche.</p>"
       : "<div class=grid>" + s.items.map(carte).join("") + "</div>";
   const note = s.commun && s.count
-    ? "<p class=note-sec>Ces blocs sont montés par MEG et par DSS : ils restent aussi listés dans leur marque.</p>"
+    ? "<p class=note-sec>Un bloc n'apparaît qu'une fois : ces blocs communs ne sont pas recomptés dans MEG ni dans DSS.</p>"
     : "";
   return '<section id="marque-' + s.key + '"><h2><span class=dot style="background:' + s.couleur + '"></span>' + esc(s.titre) +
     "<span class=n>" + nb(s.count) + '</span><span class=f>' + esc(actif.formatLabel) + "</span></h2>" + note + corps + "</section>";

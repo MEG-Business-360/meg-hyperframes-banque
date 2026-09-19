@@ -43,6 +43,8 @@ for (const name of names) {
 items.sort((a, b) => (a.brand === b.brand ? a.name.localeCompare(b.name) : a.brand === "MEG" ? -1 : 1));
 // Compteurs FORMAT d'abord, relus a chaque generation : la page publique fait
 // choisir Mobile (9:16) ou YouTube (16:9), puis affiche Commun, MEG, DSS.
+// Partition stricte : un bloc commun compte dans Commun seul, chaque marque ne
+// compte que ses blocs propres — la somme des trois sections fait le format.
 const cles = [
   ...FORMATS.map((f) => f.key),
   ...[...new Set(items.map((i) => i.format))].filter((k) => !FORMATS.some((f) => f.key === k)).sort(),
@@ -56,12 +58,12 @@ const formats = cles.map((cle) => {
     count: lot.length,
     sections: {
       commun: compte((i) => i.commun),
-      meg: compte((i) => i.brand === "MEG"),
-      dss: compte((i) => i.brand === "DSS"),
+      meg: compte((i) => i.brand === "MEG" && !i.commun),
+      dss: compte((i) => i.brand === "DSS" && !i.commun),
     },
   };
 });
-const sommeMarques = formats.reduce((n, f) => n + f.sections.meg + f.sections.dss, 0);
+const sommeSections = formats.reduce((n, f) => n + f.sections.commun + f.sections.meg + f.sections.dss, 0);
 
 await mkdir(join(ROOT, "docs"), { recursive: true });
 const payload = { generatedAt: new Date().toISOString(), count: items.length, formats, items };
@@ -73,5 +75,5 @@ console.log(JSON.stringify({
   meg: items.filter((i) => i.brand === "MEG").length,
   dss: items.filter((i) => i.brand === "DSS").length,
   formats: formats.map((f) => f.label + " : " + f.count + " (Commun " + f.sections.commun + " · MEG " + f.sections.meg + " · DSS " + f.sections.dss + ")"),
-  controle: "somme des marques par format = " + sommeMarques + " / " + items.length,
+  controle: "somme des sections (Commun + MEG + DSS) par format = " + sommeSections + " / " + items.length,
 }, null, 2));

@@ -2,8 +2,9 @@
 // Audit machine de la page publique (docs/index.html + docs/catalog.json).
 //
 // Il ne rejoue pas une copie des regles : il extrait le coeur de classement de
-// la page elle-meme (bloc AUDIT-CORE) et le relance sur le catalogue, puis
-// verifie qu'aucun bloc ne disparait, ne se duplique ou ne change de format.
+// la page elle-meme (bloc AUDIT-CORE) et le relance sur le catalogue. Il verifie
+// la partition stricte : chaque bloc est affiche une seule fois, dans la seule
+// section de sa marque pour le format choisi.
 //
 //   node scripts/audit-public-page.mjs
 //   node scripts/audit-public-page.mjs --url https://meg-business-360.github.io/meg-hyperframes-banque/docs/
@@ -68,6 +69,12 @@ verifie("catalogue = registry (aucun bloc perdu a la generation)", items.length 
 verifie("effectif de reference 280", items.length === 280, items.length + " blocs");
 verifie("catalogue : noms uniques", new Set(items.map((i) => i.name)).size === items.length, new Set(items.map((i) => i.name)).size + " noms / " + items.length + " items");
 verifie("catalogue : chaque bloc a un apercu", items.every((i) => i.preview), items.filter((i) => !i.preview).length + " sans apercu");
+if (Array.isArray(catalogue.formats)) {
+  const juste = catalogue.formats.every((f) => f.sections.commun + f.sections.meg + f.sections.dss === f.count);
+  const somme = catalogue.formats.reduce((n, f) => n + f.count, 0);
+  verifie("catalog.json : sections (Commun + MEG + DSS) = total du format", juste && somme === items.length,
+    catalogue.formats.map((f) => f.key + " " + f.sections.commun + "+" + f.sections.meg + "+" + f.sections.dss + "=" + f.count).join(" · "));
+}
 
 if (!formatsDe || !planDe) {
   point("FAIL", "coeur de classement indisponible — audit interrompu", erreurCoeur || "fonctions formatsDe / planDe absentes");
@@ -82,36 +89,51 @@ const totalFormats = formats.reduce((n, f) => n + f.count, 0);
 verifie("chaque bloc appartient a un format propose par la page", totalFormats === items.length, totalFormats + " / " + items.length);
 verifie("les deux formats connus ont leur bouton", formats.filter((f) => f.connu).length === 2, formats.filter((f) => f.connu).map((f) => f.key).join(", "));
 
-// 4. Par format : sections de marque, doublons, oublis, socle commun.
-const nomsVus = [];
+// 4. Partition par format : Commun + MEG + DSS, chaque bloc une seule fois.
+const nomsPage = [];
 for (const f of formats) {
   const plan = planDe(items, f.key, "");
-  const sections = plan.sections.filter((s) => !s.commun);
-  const somme = sections.reduce((n, s) => n + s.count, 0);
+  const parCle = Object.fromEntries(plan.sections.map((s) => [s.key, s]));
+  const sections = [parCle.COMMUN, parCle.MEG, parCle.DSS];
   const vus = sections.flatMap((s) => s.items.map((i) => i.name));
+  const doublons = vus.filter((n, i) => vus.indexOf(n) !== i);
   const attendus = items.filter((i) => i.format === f.key).map((i) => i.name).sort();
-  const communs = plan.sections.find((s) => s.commun);
-  const attendusCommuns = items.filter((i) => i.format === f.key && i.commun).length;
-  nomsVus.push(...vus);
-  verifie("format " + f.key + " — sections de marque = blocs du format", somme === plan.duFormat, somme + " / " + plan.duFormat);
-  verifie("format " + f.key + " — aucun doublon de bloc", new Set(vus).size === vus.length, vus.length + " lignes / " + new Set(vus).size + " noms");
-  verifie("format " + f.key + " — aucun bloc oublie", JSON.stringify([...vus].sort()) === JSON.stringify(attendus), attendus.length + " attendus / " + vus.length + " affiches");
-  verifie("format " + f.key + " — section Commun = blocs communs du format", communs.count === attendusCommuns, communs.count + " / " + attendusCommuns);
-  for (const s of sections) info(f.label + " — " + s.label + " : " + s.count + " bloc" + (s.count > 1 ? "s" : ""), s.count === 0 ? "aucun bloc pour ce format" : s.items.slice(0, 2).map((i) => i.name).join(", ") + (s.count > 2 ? ", …" : ""));
-}
-verifie("aucun bloc partage entre deux formats", new Set(nomsVus).size === nomsVus.length, nomsVus.length + " noms / " + new Set(nomsVus).size + " uniques");
-verifie("somme des marques et des formats = 280", nomsVus.length === items.length && nomsVus.length === 280, nomsVus.length + " / 280");
+  const communs = items.filter((i) => i.format === f.key && i.commun).length;
+  const propres = items.filter((i) => i.format === f.key && !i.commun).length;
+  const somme = parCle.COMMUN.count + parCle.MEG.count + parCle.DSS.count;
+  nomsPage.push(...vus);
 
-// 5. La recherche reste dans le filtre actif et ne perd rien.
+  verifie("format " + f.key + " — partition Commun + MEG + DSS = total du format", somme === plan.duFormat,
+    parCle.COMMUN.count + " + " + parCle.MEG.count + " + " + parCle.DSS.count + " = " + somme + " / " + plan.duFormat);
+  verifie("format " + f.key + " — anti-doublon : aucune carte en double", doublons.length === 0 && new Set(vus).size === vus.length,
+    vus.length + " cartes / " + new Set(vus).size + " noms uniques" + (doublons.length ? " — doublons " + [...new Set(doublons)].join(", ") : ""));
+  verifie("format " + f.key + " — aucun bloc oublie", JSON.stringify([...vus].sort()) === JSON.stringify(attendus), attendus.length + " attendus / " + vus.length + " affiches");
+  verifie("format " + f.key + " — Commun = blocs communs du format", parCle.COMMUN.count === communs, parCle.COMMUN.count + " / " + communs);
+  verifie("format " + f.key + " — MEG + DSS = blocs non communs du format", parCle.MEG.count + parCle.DSS.count === propres,
+    parCle.MEG.count + " + " + parCle.DSS.count + " = " + (parCle.MEG.count + parCle.DSS.count) + " / " + propres);
+  verifie("format " + f.key + " — aucun bloc commun dans MEG ni dans DSS",
+    parCle.MEG.items.every((i) => !i.commun) && parCle.DSS.items.every((i) => !i.commun),
+    parCle.MEG.items.filter((i) => i.commun).length + parCle.DSS.items.filter((i) => i.commun).length + " commun(s) egare(s)");
+  info(f.label + " — Commun " + parCle.COMMUN.count + " · MEG " + parCle.MEG.count + " · DSS " + parCle.DSS.count, "= " + somme + " blocs");
+}
+
+// 5. Anti-doublon global : tout le catalogue, tous formats confondus.
+const doublonsPage = nomsPage.filter((n, i) => nomsPage.indexOf(n) !== i);
+verifie("anti-doublon — total page : 280 cartes, 280 noms uniques", nomsPage.length === 280 && new Set(nomsPage).size === 280 && doublonsPage.length === 0,
+  nomsPage.length + " cartes / " + new Set(nomsPage).size + " noms uniques" + (doublonsPage.length ? " — doublons " + [...new Set(doublonsPage)].join(", ") : ""));
+verifie("anti-doublon — chaque nom du catalogue est affiche exactement une fois",
+  JSON.stringify([...nomsPage].sort()) === JSON.stringify(items.map((i) => i.name).sort()), new Set(nomsPage).size + " / " + items.length);
+
+// 6. La recherche reste dans le filtre actif et ne perd rien.
 for (const q of ["meg-face", "layout", "dss", "zzz-introuvable"]) {
   for (const f of formats) {
     const plan = planDe(items, f.key, q);
-    const somme = plan.sections.filter((s) => !s.commun).reduce((n, s) => n + s.count, 0);
+    const somme = plan.sections.reduce((n, s) => n + s.count, 0);
     verifie("recherche « " + q + " » en " + f.key + " — sections = resultats", somme === plan.trouves, somme + " / " + plan.trouves);
   }
 }
 
-// 6. La page elle-meme : ordre Format puis Marque, et rien de retire des cartes.
+// 7. La page elle-meme : ordre Format puis Marque, et rien de retire des cartes.
 const avant = html.indexOf("1 · Format");
 const apres = html.indexOf("2 · Marque");
 verifie("page : le Format est demande avant la Marque", avant > -1 && apres > avant, "Format@" + avant + " < Marque@" + apres);
@@ -124,9 +146,9 @@ verifie(
   "5/5 elements presents"
 );
 verifie("page : mention discrete quand un format est vide", html.includes("vide-msg") && html.includes("Aucun bloc pour ce format."), "classe .vide-msg");
-verifie("page : le socle commun dit qu'il est repris dans sa marque", html.includes("restent aussi listés dans leur marque"), "note .note-sec");
+verifie("page : note de partition (un bloc n'apparait qu'une fois)", html.includes("un bloc n'apparaît qu'une fois") || html.includes("Un bloc n'apparaît qu'une fois"), "note .note-sec");
 verifie("page : compteurs par section", html.includes("nb(s.count)") && html.includes("plan.duFormat"), "section + resume");
 
-// 7. Compte rendu.
+// 8. Compte rendu.
 affiche();
 process.exit(fails ? 1 : 0);

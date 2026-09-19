@@ -46,16 +46,18 @@ La page publique et le catalogue local demandent d'abord le **format**, puis aff
 1. **Format** — deux boutons toujours visibles, **Mobile (9:16 · 1080×1920)** et **YouTube (16:9 · 1920×1080)**,
    chacun avec son nombre de blocs. Le format retenu filtre toute la page (recherche et compteurs compris)
    et se garde dans l'adresse (`?f=youtube`).
-2. **Marque** — dans ce format : **Commun (MEG + DSS)** en tête (vue transversale, les blocs communs restent
-   aussi listés dans leur marque), puis **MEG** et **DSS Real Estate**, chacun avec son compte.
+2. **Marque** — dans ce format, une **partition stricte** (chaque bloc apparaît une seule fois) :
+   **Commun (MEG + DSS)** — les blocs montés par les deux marques et eux seuls —, puis **MEG** et
+   **DSS Real Estate** avec leurs blocs **non communs** seulement, chacun avec son compte.
 
 Un bloc qui n'est ni 1080×1920 ni 1920×1080 garde le groupe de **sa dimension réelle** et son propre bouton
 de format (jamais un format inventé) ; une marque sans bloc pour le format affiché garde la mention discrète
 « Aucun bloc pour ce format. ».
 
-Rien ne disparaît : `node scripts/audit-public-page.mjs` relit la page publiée ou locale, rejoue le
-classement réel et vérifie que la somme des marques par format fait bien 280 blocs, sans doublon.
-Résultat du 20/09/2026 : Mobile 191 (Commun 11 · MEG 186 · DSS 5) + YouTube 89 (Commun 0 · MEG 89 · DSS 0) = 280.
+Rien ne disparaît et rien n'est compté deux fois : `node scripts/audit-public-page.mjs` relit la page
+publiée ou locale, rejoue le classement réel et vérifie que Commun + MEG + DSS font exactement le total
+du format, que chaque nom n'apparaît qu'une fois et que les 280 blocs sont tous affichés.
+Résultat du 20/09/2026 : Mobile 191 = Commun 11 + MEG 178 + DSS 2 ; YouTube 89 = Commun 0 + MEG 89 + DSS 0.
 
 ### Ce qui rend un bloc « commun »
 

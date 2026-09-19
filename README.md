@@ -27,6 +27,7 @@ La synchronisation installe uniquement les blocs absents dans `compositions/`. E
 - `scripts/sync-project.mjs` : synchronisation universelle des blocs manquants.
 - `scripts/lib-format.mjs` : règle unique du classement (format par dimensions réelles + socle commun).
 - `scripts/build-public-catalog.mjs` : génère `docs/catalog.json` (marque, format, commun) pour la page publique.
+- `scripts/audit-public-page.mjs` : audit machine de la page publique — rejoue le classement de `docs/index.html` sur le catalogue et refuse tout bloc perdu ou dupliqué.
 - `borumi/` : kit portable Borumi MEG (83 favoris, manifeste externe, rendu de titres A/B/E et installateur macOS en lecture seule par défaut). Voir [`borumi/README.md`](borumi/README.md).
 
 Les licences et crédits propres à chaque banque source restent dans son dossier. Le code MEG de la registry demeure la propriété de MEG Business 360.
@@ -38,16 +39,23 @@ Lancer : node scripts/catalog.mjs — puis ouvrir http://localhost:3020/
 Le serveur local sert la **même page que la page publique** (`docs/index.html` + `docs/catalog.json`),
 avec pull silencieux (1x/min) et rafraîchissement automatique toutes les 15 s en local.
 
-## Ranger la banque : marque, FORMAT, COMMUN
+## Ranger la banque : FORMAT d'abord, puis marque
 
-La page publique et le catalogue local affichent, dans cet ordre :
+La page publique et le catalogue local demandent d'abord le **format**, puis affichent les marques :
 
-1. **Commun (MEG + DSS)** — les blocs montés par les deux marques (tag `commun` du manifeste) ;
-2. **MEG** puis **DSS Real Estate**, chacun en deux sous-groupes de format :
-   **Mobile (9:16 · 1080×1920)** et **YouTube (16:9 · 1920×1080)**.
+1. **Format** — deux boutons toujours visibles, **Mobile (9:16 · 1080×1920)** et **YouTube (16:9 · 1920×1080)**,
+   chacun avec son nombre de blocs. Le format retenu filtre toute la page (recherche et compteurs compris)
+   et se garde dans l'adresse (`?f=youtube`).
+2. **Marque** — dans ce format : **Commun (MEG + DSS)** en tête (vue transversale, les blocs communs restent
+   aussi listés dans leur marque), puis **MEG** et **DSS Real Estate**, chacun avec son compte.
 
-Un bloc qui n'est ni 1080×1920 ni 1920×1080 est rangé dans le groupe de **sa dimension réelle**
-(jamais dans un format inventé) ; une marque sans bloc pour un format affiche « Aucun bloc pour ce format. ».
+Un bloc qui n'est ni 1080×1920 ni 1920×1080 garde le groupe de **sa dimension réelle** et son propre bouton
+de format (jamais un format inventé) ; une marque sans bloc pour le format affiché garde la mention discrète
+« Aucun bloc pour ce format. ».
+
+Rien ne disparaît : `node scripts/audit-public-page.mjs` relit la page publiée ou locale, rejoue le
+classement réel et vérifie que la somme des marques par format fait bien 280 blocs, sans doublon.
+Résultat du 20/09/2026 : Mobile 191 (Commun 11 · MEG 186 · DSS 5) + YouTube 89 (Commun 0 · MEG 89 · DSS 0) = 280.
 
 ### Ce qui rend un bloc « commun »
 
@@ -59,10 +67,10 @@ Un bloc est commun **uniquement** avec une preuve d'usage par les deux marques :
 Une ressemblance de nom ne suffit jamais. Le détail des preuves (chemin de chaque copie) est tenu dans le
 rapport de la passe du 19/09/2026 ; le tag `commun` est la trace durable dans le manifeste.
 
-Blocs communs au 19/09/2026 (13) : `meg-face-full`, `meg-tiktok-title-classic`, `meg-face-proof-split-t04`,
-`meg-face-proof-split-t17`, `meg-proof-full`, `meg-face-cta-arrows`, `meg-captions-global`,
-`meg-masked-face-stage`, `captions-dss`, `layout-sequence`, `titre-tiktok-dss`, `layout-face-9-16`,
-`layout-plein-16-9`.
+Blocs communs au 20/09/2026 (11, tous en Mobile 9:16) : `meg-face-full`, `meg-tiktok-title-classic`,
+`meg-face-proof-split-t04`, `meg-face-proof-split-t17`, `meg-proof-full`, `meg-face-cta-arrows`,
+`meg-captions-global`, `meg-masked-face-stage`, `layout-sequence`, `layout-face-9-16`, `layout-plein-16-9`.
+`captions-dss` et `titre-tiktok-dss` sont revenus DSS seulement (commit `723e011`, presets non partagés).
 
 Précision de preuve (19/09/2026) : `layout-face-9-16`, `layout-plein-16-9` et `layout-sequence` ont une copie
 **identique** au registry dans la librairie du skill `meg-clipping` (`templates/layouts/`) ; leurs copies dans

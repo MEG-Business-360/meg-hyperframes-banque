@@ -3,7 +3,7 @@
 // Chaque item porte sa MARQUE, son FORMAT (dimensions reelles) et son socle COMMUN.
 import { readFile, stat, writeFile, mkdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
-import { formatDe, estCommun } from "./lib-format.mjs";
+import { formatDe, estCommun, FORMATS } from "./lib-format.mjs";
 
 const ROOT = resolve(new URL("..", import.meta.url).pathname);
 const BLOCKS = join(ROOT, "registry", "blocks");
@@ -41,23 +41,37 @@ for (const name of names) {
 }
 
 items.sort((a, b) => (a.brand === b.brand ? a.name.localeCompare(b.name) : a.brand === "MEG" ? -1 : 1));
+// Compteurs FORMAT d'abord, relus a chaque generation : la page publique fait
+// choisir Mobile (9:16) ou YouTube (16:9), puis affiche Commun, MEG, DSS.
+const cles = [
+  ...FORMATS.map((f) => f.key),
+  ...[...new Set(items.map((i) => i.format))].filter((k) => !FORMATS.some((f) => f.key === k)).sort(),
+];
+const formats = cles.map((cle) => {
+  const lot = items.filter((i) => i.format === cle);
+  const compte = (garde) => lot.filter(garde).length;
+  return {
+    key: cle,
+    label: lot[0]?.formatLabel || cle,
+    count: lot.length,
+    sections: {
+      commun: compte((i) => i.commun),
+      meg: compte((i) => i.brand === "MEG"),
+      dss: compte((i) => i.brand === "DSS"),
+    },
+  };
+});
+const sommeMarques = formats.reduce((n, f) => n + f.sections.meg + f.sections.dss, 0);
+
 await mkdir(join(ROOT, "docs"), { recursive: true });
-const payload = { generatedAt: new Date().toISOString(), count: items.length, items };
+const payload = { generatedAt: new Date().toISOString(), count: items.length, formats, items };
 await writeFile(join(ROOT, "docs", "catalog.json"), JSON.stringify(payload, null, 2) + "\n");
 
-// Compteurs par groupe, relus a chaque generation : la page affiche le socle
-// COMMUN en tete (vue transversale) puis chaque marque, chaque fois par format.
-const groupes = {};
-const ajoute = (cle, n) => { groupes[cle] = (groupes[cle] || 0) + n; };
-for (const forme of [...new Set(items.map((i) => i.formatLabel))]) {
-  ajoute("Commun (MEG + DSS) / " + forme, items.filter((i) => i.commun && i.formatLabel === forme).length);
-  ajoute("MEG / " + forme, items.filter((i) => i.brand === "MEG" && i.formatLabel === forme).length);
-  ajoute("DSS Real Estate / " + forme, items.filter((i) => i.brand === "DSS" && i.formatLabel === forme).length);
-}
 console.log(JSON.stringify({
   items: items.length,
   commun: items.filter((i) => i.commun).length,
   meg: items.filter((i) => i.brand === "MEG").length,
   dss: items.filter((i) => i.brand === "DSS").length,
-  groupes,
+  formats: formats.map((f) => f.label + " : " + f.count + " (Commun " + f.sections.commun + " · MEG " + f.sections.meg + " · DSS " + f.sections.dss + ")"),
+  controle: "somme des marques par format = " + sommeMarques + " / " + items.length,
 }, null, 2));

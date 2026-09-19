@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-09-19T15:52:20.615Z",
+  "generatedAt": "2026-09-19T21:27:12.790Z",
   "count": 280,
+  "formats": [
+    {
+      "key": "mobile",
+      "label": "Mobile (9:16 · 1080×1920)",
+      "count": 191,
+      "sections": {
+        "commun": 11,
+        "meg": 186,
+        "dss": 5
+      }
+    },
+    {
+      "key": "youtube",
+      "label": "YouTube (16:9 · 1920×1080)",
+      "count": 89,
+      "sections": {
+        "commun": 0,
+        "meg": 89,
+        "dss": 0
+      }
+    }
+  ],
   "items": [
     {
       "name": "meg-anim-accent-cercle-reel",

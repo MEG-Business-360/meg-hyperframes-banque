@@ -3,32 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Banque HyperFrames MEG</title>
+<title>Banque HyperFrames MEG — choisir Mobile (9:16) ou YouTube (16:9)</title>
 <style>
 :root{--bg:#0b0d12;--card:#151922;--line:#252b38;--txt:#eef1f7;--dim:#98a2b3;--meg:#3ddc97;--dss:#5aa9ff;--commun:#f0c860}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{position:sticky;top:0;background:rgba(11,13,18,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 20px;z-index:5}
-h1{margin:0 0 10px;font-size:18px;font-weight:650}
-.sub{color:var(--dim);font-size:12px}
-.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.tabs{display:flex;gap:6px}
-.tab{border:1px solid var(--line);background:#101420;color:var(--dim);padding:6px 14px;border-radius:999px;cursor:pointer;font-size:13px}
-.tab.on{color:#0b0d12;background:var(--txt);border-color:var(--txt);font-weight:600}
-input[type=search]{flex:1;min-width:200px;background:#101420;border:1px solid var(--line);color:var(--txt);padding:8px 12px;border-radius:10px;font-size:14px}
-main{padding:18px 20px 60px}
-section{margin-bottom:38px}
-h2{display:flex;align-items:center;gap:10px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px}
-h2 .dot{width:10px;height:10px;border-radius:50%}
+header{position:sticky;top:0;z-index:5;background:rgba(11,13,18,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px 13px}
+.titre{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h1{margin:0;font-size:17px;font-weight:650}
+.stat{color:var(--dim);font-size:12.5px}
+.choix{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:9px}
+.etape{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex:0 0 auto}
+.fmt{display:flex;gap:8px}
+.fmt button{display:flex;flex-direction:column;align-items:flex-start;min-width:172px;padding:7px 14px;border-radius:12px;border:1px solid var(--line);background:#101420;color:var(--txt);cursor:pointer;font:inherit;text-align:left;line-height:1.25}
+.fmt button .t{font-size:15px;font-weight:650}
+.fmt button .r,.fmt button .c{font-size:11.5px;color:var(--dim)}
+.fmt button[aria-pressed=true]{background:var(--txt);color:#0b0d12;border-color:var(--txt)}
+.fmt button[aria-pressed=true] .r,.fmt button[aria-pressed=true] .c{color:#3d4657}
+.marques{display:flex;gap:6px;flex-wrap:wrap}
+.marques button{border:1px solid var(--line);background:#101420;color:var(--dim);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:12.5px}
+.marques button b{color:var(--txt);font-weight:600}
+input[type=search]{flex:1;min-width:190px;background:#101420;border:1px solid var(--line);color:var(--txt);padding:8px 12px;border-radius:10px;font:inherit;font-size:14px}
+main{padding:16px 20px 90px}
+.resume{background:#101420;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 24px;font-size:13.5px;color:var(--dim)}
+.resume b{color:var(--txt);font-weight:600}
+section{margin:0 0 46px;scroll-margin-top:200px}
+h2{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
+h2 .dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
 h2 .n{color:var(--dim);font-size:12px;letter-spacing:0;text-transform:none}
-h3{display:flex;align-items:baseline;gap:8px;font-size:13px;margin:0 0 10px;color:#cdd5e2;border-top:1px solid var(--line);padding-top:12px}
-h3 .n{color:var(--dim);font-size:11.5px}
-.groupe{margin-bottom:26px}
+h2 .f{color:var(--dim);font-size:11.5px;letter-spacing:0;text-transform:none;border:1px solid var(--line);border-radius:999px;padding:2px 9px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.thumb{aspect-ratio:9/16;max-height:260px;background:#0d1017 center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#3a4354;font-size:12px}
+.thumb{position:relative;aspect-ratio:9/16;max-height:280px;background:#0d1017;display:flex;align-items:center;justify-content:center;color:#3a4354;font-size:12px}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .thumb.land{aspect-ratio:16/9}
-.body{padding:10px 12px 12px}
+.thumb .vide{display:none}
+.thumb.sans-apercu .vide{display:block}
+.body{padding:10px 12px 12px;display:flex;flex-direction:column;flex:1}
 .name{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--dim);word-break:break-all}
 .title{font-weight:600;margin:4px 0 6px;font-size:14px}
 .desc{color:var(--dim);font-size:12.5px;min-height:34px}
@@ -37,123 +48,192 @@ h3 .n{color:var(--dim);font-size:11.5px}
 .tag.commun{color:#0b0d12;background:var(--commun);border-color:var(--commun);font-weight:600}
 .cmd{display:flex;gap:6px;align-items:flex-start;margin-top:auto}
 code{flex:1;font-size:11.5px;background:#0d1017;border:1px solid var(--line);border-radius:8px;padding:6px 8px;white-space:pre-wrap;word-break:break-all;line-height:1.35}
-button.copy{flex:0 0 auto;border:1px solid var(--line);background:#101420;color:var(--txt);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:12px}
-.empty{color:var(--dim);font-size:13px}
-.note{color:var(--dim);font-size:12.5px;margin:-8px 0 16px}
+button.copy{flex:0 0 auto;border:1px solid var(--line);background:#101420;color:var(--txt);border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:12px}
+.vide-msg{color:#5f6a7e;font-size:12.5px;font-style:italic;margin:2px 0 0}
+.piste{color:var(--dim);font-size:12.5px;margin:22px 0 0}
+.piste button{border:1px solid var(--line);background:#101420;color:var(--txt);border-radius:8px;padding:4px 10px;cursor:pointer;font:inherit;font-size:12.5px;margin-left:6px}
 </style>
 </head>
 <body>
 <header>
-  <h1>Banque HyperFrames MEG</h1>
-  <div class=bar>
-    <div class=tabs>
-      <button class="tab on" data-f="ALL">Tout</button>
-      <button class=tab data-f="COMMUN">Commun</button>
-      <button class=tab data-f="MEG">MEG</button>
-      <button class=tab data-f="DSS">DSS</button>
-    </div>
-    <input type=search id=q placeholder="Rechercher un layout, un tag...">
-    <span class=sub id=st>lecture...</span>
+  <div class=titre>
+    <h1>Banque HyperFrames MEG</h1>
+    <span class=stat id=st>lecture…</span>
+  </div>
+  <div class=choix>
+    <span class=etape>1 · Format</span>
+    <div class=fmt id=fmt></div>
+  </div>
+  <div class=choix>
+    <span class=etape>2 · Marque</span>
+    <div class=marques id=marques></div>
+    <input type=search id=q placeholder="Rechercher un bloc, un tag…">
   </div>
 </header>
-<main id=out></main>
+<main>
+  <p class=resume id=resume>lecture…</p>
+  <div id=out></div>
+</main>
 <script>
-// Base de donnees : marche en direct (githack / Pages / serveur local) et via htmlpreview.github.io
-function dataBase() {
-  const q = location.search.replace(/^\?/, "");
-  if (location.hostname === "htmlpreview.github.io" && q.startsWith("http")) {
-    // via htmlpreview : les donnees passent par jsDelivr (CORS + cache CDN)
-    const m = q.match(/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\//);
+"use strict";
+/* AUDIT-CORE-START — coeur de classement rejoue par scripts/audit-public-page.mjs */
+const FORMATS_CONNUS = [
+  { key: "mobile", label: "Mobile", ratio: "9:16", dims: "1080×1920", formatLabel: "Mobile (9:16 · 1080×1920)" },
+  { key: "youtube", label: "YouTube", ratio: "16:9", dims: "1920×1080", formatLabel: "YouTube (16:9 · 1920×1080)" },
+];
+const MARQUES = [
+  { key: "COMMUN", label: "Commun", titre: "Commun (MEG + DSS)", couleur: "var(--commun)", commun: true },
+  { key: "MEG", label: "MEG", titre: "MEG", couleur: "var(--meg)" },
+  { key: "DSS", label: "DSS", titre: "DSS Real Estate", couleur: "var(--dss)" },
+];
+const marqueDe = (it) => (it.brand === "DSS" ? "DSS" : "MEG");
+
+// Deux formats connus, toujours proposes (meme a 0 bloc) ; tout autre format
+// garde son propre bouton : aucun bloc ne peut disparaitre de la page.
+function formatsDe(items) {
+  const connus = FORMATS_CONNUS.map((f) => ({ ...f, connu: true, count: items.filter((i) => i.format === f.key).length }));
+  const autres = [...new Set(items.map((i) => i.format))].filter((k) => !FORMATS_CONNUS.some((f) => f.key === k)).sort();
+  return connus.concat(autres.map((k) => {
+    const lot = items.filter((i) => i.format === k);
+    return { key: k, label: lot[0].formatLabel || k, ratio: lot[0].ratio || "", dims: "", formatLabel: lot[0].formatLabel || k, connu: false, count: lot.length };
+  }));
+}
+
+const texteDe = (it) => (it.name + " " + it.title + " " + it.description + " " + (it.tags || []).join(" ")).toLowerCase();
+const correspond = (it, q) => !q || texteDe(it).includes(q);
+
+// Une seule regle : format d'abord, puis marque (Commun en tete, vue
+// transversale reprise dans sa marque), puis recherche.
+function planDe(items, formatKey, q) {
+  const duFormat = items.filter((i) => i.format === formatKey);
+  const trouves = duFormat.filter((i) => correspond(i, q));
+  const sections = MARQUES.map((m) => {
+    const dedans = (i) => (m.commun ? !!i.commun : marqueDe(i) === m.key);
+    return { ...m, total: duFormat.filter(dedans).length, count: trouves.filter(dedans).length, items: trouves.filter(dedans) };
+  });
+  return { formatKey, q: q || "", duFormat: duFormat.length, trouves: trouves.length, sections, autres: items.filter((i) => i.format !== formatKey && correspond(i, q)) };
+}
+/* AUDIT-CORE-END */
+
+// Base de donnees : marche en direct (Pages / serveur local) et via htmlpreview.github.io
+function baseDeDonnees() {
+  const c = location.search.replace(/^\?/, "");
+  if (location.hostname === "htmlpreview.github.io" && c.startsWith("http")) {
+    const m = c.match(/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\//);
     if (m) return new URL("https://cdn.jsdelivr.net/gh/" + m[1] + "/" + m[2] + "@" + m[3] + "/");
     return new URL("./", location.href);
   }
   return new URL("./", location.href);
 }
-const BASE = dataBase();
-let items = [], filter = "ALL", q = "";
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
-const FORMATS_CONNUS = ["mobile", "youtube"];
-const FORMAT_LABELS = { mobile: "Mobile (9:16 · 1080×1920)", youtube: "YouTube (16:9 · 1920×1080)" };
+const BASE = baseDeDonnees();
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const nb = (n) => n + (n > 1 ? " blocs" : " bloc");
+const commande = (it) => "npx hyperframes add " + it.name;
 
-// Regroupement par FORMAT. Un bloc hors 1080x1920 / 1920x1080 garde le groupe
-// de sa dimension reelle (jamais un groupe invente).
-function groupesDe(list) {
-  const groupes = FORMATS_CONNUS.map((key) => ({
-    key,
-    label: FORMAT_LABELS[key],
-    items: list.filter((i) => i.format === key),
-  }));
-  const autres = new Map();
-  list.filter((i) => !FORMATS_CONNUS.includes(i.format)).forEach((i) => {
-    if (!autres.has(i.format)) autres.set(i.format, { key: i.format, label: i.formatLabel, items: [] });
-    autres.get(i.format).items.push(i);
-  });
-  return groupes.concat([...autres.values()]);
+let items = [], formats = [], formatActif = "mobile", q = "";
+
+const carte = (it) => [
+  "<div class=card>",
+  '<div class="thumb' + (it.format === "youtube" ? " land" : "") + (it.preview ? "" : " sans-apercu") + '">',
+  it.preview ? '<img src="' + it.preview + '" alt="Aperçu — ' + esc(it.title) + '" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'sans-apercu\')">' : "",
+  "<span class=vide>aperçu à venir</span>",
+  "</div>",
+  "<div class=body>",
+  "<div class=name>" + esc(it.name) + "</div>",
+  "<div class=title>" + esc(it.title) + "</div>",
+  "<div class=desc>" + esc(it.description) + "</div>",
+  '<div class=tags>' + (it.tags || []).map((t) => '<span class="tag' + (t === "commun" ? " commun" : "") + '">' + esc(t) + "</span>").join("") + "</div>",
+  '<div class=cmd><code>' + esc(commande(it)) + '</code><button class=copy data-c="' + esc(commande(it)) + '">copier</button></div>',
+  "</div></div>",
+].join("");
+
+function blocSection(s, actif) {
+  const corps = s.total === 0
+    ? "<p class=vide-msg>Aucun bloc pour ce format.</p>"
+    : s.count === 0
+      ? "<p class=vide-msg>Aucun bloc ne correspond à la recherche.</p>"
+      : "<div class=grid>" + s.items.map(carte).join("") + "</div>";
+  return '<section id="marque-' + s.key + '"><h2><span class=dot style="background:' + s.couleur + '"></span>' + esc(s.titre) +
+    "<span class=n>" + nb(s.count) + '</span><span class=f>' + esc(actif.formatLabel) + "</span></h2>" + corps + "</section>";
 }
 
-function card(it) {
-  const land = it.format === "youtube" ? " land" : "";
-  const img = it.preview
-    ? '<div class="thumb' + land + '" style="background-image:url(\'' + it.preview + '\')"></div>'
-    : '<div class="thumb' + land + '">apercu a venir</div>';
-  const tags = it.tags.map((t) => '<span class="tag' + (t === "commun" ? " commun" : "") + '">' + esc(t) + "</span>").join("");
-  const cmd = "npx hyperframes add " + it.name;
-  return "<div class=card>" + img + '<div class=body><div class=name>' + esc(it.name) + '</div><div class=title>' + esc(it.title) +
-    '</div><div class=desc>' + esc(it.description) + '</div><div class=tags>' + tags +
-    '</div><div class=cmd><code>' + cmd + '</code><button class=copy data-c="' + cmd + '">copier</button></div></div></div>';
+function piste(plan, actif) {
+  if (!q || plan.trouves || !plan.autres.length) return "";
+  const cles = [...new Set(plan.autres.map((i) => i.format))];
+  return cles.map((k) => {
+    const f = formats.find((x) => x.key === k) || { key: k, label: k };
+    const n = plan.autres.filter((i) => i.format === k).length;
+    return "<p class=piste>Aucun résultat en " + esc(actif.label) + " — " + nb(n) + " en " + esc(f.label) +
+      '.<button type=button data-f="' + k + '">Voir en ' + esc(f.label) + "</button></p>";
+  }).join("");
 }
 
-function groupe({ label, items: list }) {
-  const cartes = list.map(card).join("");
-  return '<div class=groupe><h3>' + esc(label) + '<span class=n>' + list.length + " bloc" + (list.length > 1 ? "s" : "") + "</span></h3>" +
-    (cartes ? '<div class=grid>' + cartes + "</div>" : '<p class=empty>Aucun bloc pour ce format.</p>') + "</div>";
+function majUrl() {
+  const p = new URLSearchParams();
+  p.set("f", formatActif);
+  if (q) p.set("q", q);
+  history.replaceState(null, "", location.pathname + "?" + p.toString());
 }
 
-function section(titre, couleur, list, note) {
-  return "<section><h2><span class=dot style=\"background:" + couleur + "\"></span>" + titre +
-    '<span class=n>' + list.length + " blocs</span></h2>" + (note ? '<p class=note>' + note + "</p>" : "") +
-    groupesDe(list).map(groupe).join("") + "</section>";
+function rendu() {
+  const plan = planDe(items, formatActif, q);
+  const actif = formats.find((f) => f.key === formatActif) || formats[0];
+  $("fmt").innerHTML = formats.map((f) => '<button type=button data-f="' + f.key + '" aria-pressed="' + (f.key === formatActif) + '" title="' + esc(f.formatLabel) + '">' +
+    "<span class=t>" + esc(f.label) + '</span><span class=r>' + esc((f.ratio ? f.ratio + " · " : "") + (f.dims || f.formatLabel)) + '</span><span class=c>' + nb(f.count) + "</span></button>").join("");
+  $("marques").innerHTML = plan.sections.map((s) => '<button type=button data-cible="' + s.key + '"><b>' + esc(s.label) + "</b> " + s.count + "</button>").join("");
+  const compteurs = plan.sections.map((s) => "<b>" + esc(s.label) + "</b> " + s.count).join(" · ");
+  $("resume").innerHTML = q
+    ? "Format <b>" + esc(actif.formatLabel) + "</b> · recherche « " + esc(q) + " » : <b>" + plan.trouves + "</b> blocs sur " + plan.duFormat + " · " + compteurs
+    : "Format <b>" + esc(actif.formatLabel) + "</b> · <b>" + plan.duFormat + "</b> blocs · " + compteurs;
+  $("out").innerHTML = plan.sections.map((s) => blocSection(s, actif)).join("") + piste(plan, actif);
 }
 
-function render() {
-  const list = items.filter((i) => (!q || (i.name + " " + i.title + " " + i.description + " " + i.tags.join(" ")).toLowerCase().includes(q)));
-  const commun = list.filter((i) => i.commun);
-  const meg = list.filter((i) => i.brand === "MEG");
-  const dss = list.filter((i) => i.brand === "DSS");
-  const met = (quel) => filter === "ALL" || filter === quel;
-  let html = "";
-  if (met("COMMUN")) html += section("Commun (MEG + DSS)", "var(--commun)", commun,
-    "Blocs montes par MEG et par DSS (tag commun) — ils restent aussi listes dans leur marque.");
-  if (met("MEG")) html += section("MEG", "var(--meg)", meg);
-  if (met("DSS")) html += section("DSS Real Estate", "var(--dss)", dss);
-  document.getElementById("out").innerHTML = html || '<p class=empty>Aucun bloc pour ce filtre.</p>';
+function choisirFormat(cle) {
+  if (!formats.some((f) => f.key === cle)) return;
+  formatActif = cle;
+  majUrl();
+  rendu();
+  window.scrollTo(0, 0);
 }
 
-async function load() {
-  // 1 seul fichier : docs/catalog.json (regenere a chaque publication)
-  const data = await (await fetch(new URL("catalog.json", BASE), { cache: "no-store" })).json();
-  items = data.items.map((it) => ({
-    ...it,
-    preview: it.preview ? new URL("../" + it.preview, BASE).href : null,
-  }));
-  const communs = items.filter((i) => i.commun).length;
-  document.getElementById("st").textContent = items.length + " blocs - " + communs + " communs - " + new Date().toLocaleTimeString("fr-FR");
-  render();
-}
-
-document.querySelectorAll(".tab").forEach((b) => b.onclick = () => {
-  document.querySelectorAll(".tab").forEach((x) => x.classList.remove("on"));
-  b.classList.add("on"); filter = b.dataset.f; render();
-});
-document.getElementById("q").oninput = (e) => { q = e.target.value.toLowerCase(); render(); };
 document.addEventListener("click", (e) => {
-  const b = e.target.closest(".copy"); if (!b) return;
-  navigator.clipboard.writeText(b.dataset.c);
-  b.textContent = "copie"; setTimeout(() => b.textContent = "copier", 1200);
+  const copie = e.target.closest(".copy");
+  if (copie) {
+    navigator.clipboard.writeText(copie.dataset.c);
+    copie.textContent = "copié";
+    setTimeout(() => { copie.textContent = "copier"; }, 1200);
+    return;
+  }
+  const f = e.target.closest("button[data-f]");
+  if (f) { choisirFormat(f.dataset.f); return; }
+  const m = e.target.closest("button[data-cible]");
+  if (m) {
+    const cible = $("marque-" + m.dataset.cible);
+    if (cible) cible.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 });
-load();
+
+$("q").oninput = (e) => { q = e.target.value.trim().toLowerCase(); majUrl(); rendu(); };
+
+async function charge() {
+  const data = await (await fetch(new URL("catalog.json", BASE), { cache: "no-store" })).json();
+  items = data.items.map((it) => ({ ...it, preview: it.preview ? new URL("../" + it.preview, BASE).href : null }));
+  formats = formatsDe(items);
+  const p = new URLSearchParams(location.search);
+  const voulu = p.get("f");
+  formatActif = voulu && formats.some((f) => f.key === voulu)
+    ? voulu
+    : (formats.find((f) => f.key === "mobile" && f.count) || formats.find((f) => f.count) || formats[0]).key;
+  q = (p.get("q") || "").trim().toLowerCase();
+  $("q").value = p.get("q") || "";
+  const date = data.generatedAt ? new Date(data.generatedAt).toLocaleString("fr-FR") : "date inconnue";
+  $("st").textContent = items.length + " blocs · " + items.filter((i) => i.commun).length + " communs · catalogue du " + date;
+  rendu();
+}
+charge();
 // Catalogue local (node scripts/catalog.mjs) : la page se rafraichit seule.
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1") setInterval(load, 15000);
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") setInterval(charge, 15000);
 </script>
 </body>
 </html>

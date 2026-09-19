@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" data-composition-variables="[{&quot;id&quot;: &quot;presentation&quot;, &quot;type&quot;: &quot;enum&quot;, &quot;label&quot;: &quot;Presentation&quot;, &quot;options&quot;: [{&quot;value&quot;: &quot;face&quot;, &quot;label&quot;: &quot;Visage 9:16&quot;}, {&quot;value&quot;: &quot;plein&quot;, &quot;label&quot;: &quot;16:9 net + flou&quot;}], &quot;default&quot;: &quot;face&quot;}, {&quot;id&quot;: &quot;video_face&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Video visage&quot;, &quot;default&quot;: &quot;assets/frame.mp4&quot;}, {&quot;id&quot;: &quot;video_plein&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Video 16:9&quot;, &quot;default&quot;: &quot;assets/frame-plein.mp4&quot;}, {&quot;id&quot;: &quot;debut&quot;, &quot;type&quot;: &quot;number&quot;, &quot;label&quot;: &quot;Debut dans la source (s)&quot;, &quot;default&quot;: 0}, {&quot;id&quot;: &quot;duree&quot;, &quot;type&quot;: &quot;number&quot;, &quot;label&quot;: &quot;Duree (s)&quot;, &quot;default&quot;: 5}, {&quot;id&quot;: &quot;zoom&quot;, &quot;type&quot;: &quot;number&quot;, &quot;label&quot;: &quot;Zoom visage&quot;, &quot;min&quot;: 1, &quot;max&quot;: 1.6, &quot;step&quot;: 0.05, &quot;default&quot;: 1}, {&quot;id&quot;: &quot;cadrage&quot;, &quot;type&quot;: &quot;number&quot;, &quot;label&quot;: &quot;Centrage vertical (%)&quot;, &quot;min&quot;: -25, &quot;max&quot;: 25, &quot;step&quot;: 1, &quot;default&quot;: 0}]">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+</head>
+<body>
+<!--
+  LAYOUT « SEQUENCE » - on choisit la presentation, la video va dedans.
+  Host :
+    <div data-composition-id="layout-sequence"
+         data-composition-src="compositions/DSS/layout-sequence.html"
+         data-variable-values='{"presentation":"face","debut":140,"duree":46.133,"zoom":1.3,"cadrage":-6}' ...></div>
+  presentation : "face" (visage 9:16) ou "plein" (16:9 net au centre, haut/bas floutes).
+  zoom / cadrage : recadrage du visage (1 = brut ; 1.3 = serre ; cadrage en % vers le haut si negatif).
+-->
+<template>
+  <style>
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; background: #2f2c00; }
+    #cadre-face, #cadre-plein { position: absolute; inset: 0; transform-origin: 50% 40%; }
+    #seq-face, #seq-plein { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+  </style>
+  <div data-hf-id="hf-ro38" id="root" data-composition-id="layout-sequence" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <div data-hf-id="hf-adbq" id="cadre-face">
+      <video data-hf-id="hf-pnej" id="seq-face" class="clip" data-var-src="video_face" src="assets/frame.mp4" data-start="0" data-duration="5" data-track-index="0" muted playsinline></video>
+    </div>
+    <div data-hf-id="hf-r5gj" id="cadre-plein" style="display:none">
+      <video data-hf-id="hf-6dvg" id="seq-plein" class="clip" data-var-src="video_plein" src="assets/frame-plein.mp4" data-start="0" data-duration="5" data-track-index="0" muted playsinline></video>
+    </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    window.__timelines["layout-sequence"] = gsap.timeline({paused: true});
+    (() => {
+      const v = window.__hyperframes?.getVariables?.() || {};
+      const plein = v.presentation === "plein";
+      const cadreFace = document.getElementById("cadre-face");
+      const cadrePlein = document.getElementById("cadre-plein");
+      if (cadreFace) cadreFace.style.display = plein ? "none" : "";
+      if (cadrePlein) cadrePlein.style.display = plein ? "" : "none";
+      const zoom = Number(v.zoom) > 0 ? Number(v.zoom) : 1;
+      const cadrage = Number(v.cadrage) || 0;
+      const transform = "scale(" + zoom + ") translateY(" + cadrage + "%)";
+      for (const cadre of [cadreFace, cadrePlein]) if (cadre) cadre.style.transform = transform;
+      for (const el of [document.getElementById("seq-face"), document.getElementById("seq-plein")]) {
+        if (!el) continue;
+        if (v.debut) el.setAttribute("data-media-start", String(v.debut));
+        if (v.duree) el.setAttribute("data-duration", String(v.duree));
+      }
+      const host = document.getElementById("root");
+      if (host && v.duree) host.setAttribute("data-duration", String(v.duree));
+    })();
+  </script>
+</template>
+</body>
+</html>

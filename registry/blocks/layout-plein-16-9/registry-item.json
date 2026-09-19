@@ -1,0 +1,25 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "layout-plein-16-9",
+  "type": "hyperframes:block",
+  "title": "Layout DSS plein 16:9 flou",
+  "description": "Layout DSS 16:9 centre avec bandes floutees haut et bas.",
+  "tags": [
+    "meg",
+    "dss",
+    "layout",
+    "plein"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "layout-plein-16-9.html",
+      "target": "templates-dss/layout-plein-16-9.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

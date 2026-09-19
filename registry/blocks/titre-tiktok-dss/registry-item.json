@@ -1,0 +1,25 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "titre-tiktok-dss",
+  "type": "hyperframes:block",
+  "title": "Titre TikTok DSS",
+  "description": "Titre TikTok DSS : deux lignes, une boite arrondie par ligne, bloc en haut.",
+  "tags": [
+    "meg",
+    "dss",
+    "titre",
+    "tiktok"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "titre-tiktok-dss.html",
+      "target": "templates-dss/titre-tiktok-dss.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

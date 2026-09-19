@@ -1,0 +1,18 @@
+<!--
+  CAPTIONS DSS — une carte = UNE phrase, 1 ou 2 lignes maximum, jamais 3.
+  Style : capsule rgba(10,14,18,.86), texte #FFFFFF, 70 px (toujours plus petit que le titre),
+  rayon 22, padding 30x16, texte CENTRE, bas de capsule a 490 px du bas.
+  Le texte de chaque carte est verbatim ; les groupes de chiffres sont insecables
+  (140 000, 35 000 €, 7 %). Si une phrase ne tient pas en 2 lignes, on la coupe sur une pause
+  (jamais de debordement : verifier la largeur reelle avec la police avant de rendre).
+-->
+<style>
+  .clip.overlay.bas { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-end; }
+  .capsule { margin-bottom: 490px; padding: 16px 30px; border-radius: 22px;
+             background: rgba(10,14,18,.86); color: #FFFFFF; text-align: center;
+             font-family: "TikTok Sans", system-ui, sans-serif; font-weight: 750;
+             font-size: 70px; line-height: 1.1; letter-spacing: -0.01em; white-space: nowrap; }
+</style>
+<div class="clip overlay bas" data-start="0" data-duration="2" data-track-index="5">
+  <div class="capsule">Une phrase entiere<br>sur deux lignes</div>
+</div>

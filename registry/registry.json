@@ -1098,6 +1098,30 @@
     {
       "name": "meg-transition-whip-yt",
       "type": "hyperframes:block"
+    },
+    {
+      "name": "meg-catalog-preview",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "captions-dss",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "layout-face-9-16",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "layout-plein-16-9",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "layout-sequence",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "titre-tiktok-dss",
+      "type": "hyperframes:block"
     }
   ]
 }

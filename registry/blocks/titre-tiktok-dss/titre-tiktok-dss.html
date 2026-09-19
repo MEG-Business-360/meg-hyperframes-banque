@@ -1,0 +1,27 @@
+<!--
+  TITRE TIKTOK DSS — version validee par Mohamed le 17/09/2026 (reel DSS 01).
+  A copier dans la composition. Regles NON negociables :
+   - 1 ligne bien placee, OU 2 lignes : la 1re plus courte que la 2e ;
+   - les DEUX boites gardent leurs 4 coins arrondis (26 px) ; la 2e REMONTE de 10 px
+     (margin-top:-10px) : elle masque l'arrondi du bas de la 1re et laisse voir ses propres
+     coins HAUTS puisqu'elle est plus large. Jamais de 2e bloc en coins carres ;
+   - padding 32x20 ("l'espacement parfait"), rayon 26 px, TikTok Sans Bold750 ;
+   - taille auto-ajustee : la ligne la plus large + 2 x padding <= 1030 px (max 84 px) ;
+   - deux paires de couleurs autorisees : fond #FFFFFF + texte #0A0E12, ou fond #0A0E12 +
+     texte #FFFFFF ;
+   - bloc en haut du cadre : ligne 1 a 221 px, ligne 2 = 221 + hauteur + -10 px
+     (hauteur = taille x 1.15 + 2 x padding y) ;
+   - duree 5 s par defaut, coupee a la fin de la phrase du hook.
+-->
+<style>
+  .titre-calque { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-start; }
+  .titre-boite { padding: 20px 32px; border-radius: 26px; background: #FFFFFF; color: #0A0E12;
+                 font-family: "TikTok Sans", system-ui, sans-serif; font-weight: 750;
+                 font-size: 74px; line-height: 1.15; letter-spacing: -0.01em; white-space: nowrap; }
+</style>
+<div class="clip titre-calque" data-start="0" data-duration="5" data-track-index="1">
+  <div>
+    <div class="titre-boite" style="margin-top:221px">Ligne une</div>
+    <div class="titre-boite" style="margin-top:-10px">Ligne deux plus longue</div>
+  </div>
+</div>

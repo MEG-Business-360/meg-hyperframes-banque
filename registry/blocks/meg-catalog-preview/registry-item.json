@@ -1,0 +1,24 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-catalog-preview",
+  "type": "hyperframes:block",
+  "title": "Apercu catalogue MEG",
+  "description": "Bloc plein ecran d'apercu catalogue MEG (grille de biens).",
+  "tags": [
+    "meg",
+    "catalogue",
+    "apercu"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "meg-catalog-preview.html",
+      "target": "compositions/meg-catalog-preview.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

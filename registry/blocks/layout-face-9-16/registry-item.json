@@ -1,0 +1,25 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "layout-face-9-16",
+  "type": "hyperframes:block",
+  "title": "Layout DSS visage 9:16",
+  "description": "Layout DSS plein cadre visage (la video est fournie par la timeline).",
+  "tags": [
+    "meg",
+    "dss",
+    "layout",
+    "visage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "layout-face-9-16.html",
+      "target": "templates-dss/layout-face-9-16.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

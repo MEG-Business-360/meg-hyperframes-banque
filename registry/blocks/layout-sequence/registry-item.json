@@ -1,0 +1,25 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "layout-sequence",
+  "type": "hyperframes:block",
+  "title": "Layout DSS sequence",
+  "description": "Layout DSS sequence visage puis plein (deux videos de la timeline).",
+  "tags": [
+    "meg",
+    "dss",
+    "layout",
+    "sequence"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "layout-sequence.html",
+      "target": "templates-dss/layout-sequence.html",
+      "type": "hyperframes:composition"
+    }
+  ]
+}

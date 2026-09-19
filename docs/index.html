@@ -51,7 +51,17 @@ button.copy{flex:0 0 auto;border:1px solid var(--line);background:#101420;color:
 </header>
 <main id=out></main>
 <script>
-const REGISTRY = new URL("../registry/", location.href);
+// Base de donnees : marche en direct (githack / Pages / serveur local) et via htmlpreview.github.io
+function dataBase() {
+  const q = location.search.replace(/^\?/, "");
+  if (location.hostname === "htmlpreview.github.io" && q.startsWith("http")) {
+    const raw = q.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+    return new URL("./", raw);
+  }
+  return new URL("./", location.href);
+}
+const BASE = dataBase();
+const REGISTRY = new URL("../registry/", BASE);
 let items = [], filter = "ALL", q = "";
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
@@ -79,10 +89,10 @@ function render() {
 
 async function load() {
   // 1 seul fichier : docs/catalog.json (regenere a chaque publication)
-  const data = await (await fetch(new URL("catalog.json", location.href), { cache: "no-store" })).json();
+  const data = await (await fetch(new URL("catalog.json", BASE), { cache: "no-store" })).json();
   items = data.items.map((it) => ({
     ...it,
-    preview: it.preview ? new URL("../" + it.preview, location.href).href : null,
+    preview: it.preview ? new URL("../" + it.preview, BASE).href : null,
   }));
   document.getElementById("st").textContent = items.length + " blocs - " + new Date().toLocaleTimeString("fr-FR");
   render();

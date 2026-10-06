@@ -1,0 +1,36 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "rouge-vue-entiere-dss",
+  "type": "hyperframes:block",
+  "title": "Rouge sur vue entière 16:9",
+  "description": "Le rouge descend, l'image 16:9 entière sur flou descend de 482 px et se recentre sous le filet.",
+  "tags": [
+    "meg",
+    "dss",
+    "broll",
+    "rouge",
+    "vue-entiere",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "rouge-vue-entiere-dss.html",
+      "target": "templates-dss/rouge-vue-entiere-dss.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/TikTokSans-Bold750.ttf",
+      "target": "assets/TikTokSans-Bold750.ttf",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -2,8 +2,8 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "titre-tiktok-dss",
   "type": "hyperframes:block",
-  "title": "Titre TikTok DSS",
-  "description": "Titre TikTok DSS : deux lignes, une boite arrondie par ligne, bloc en haut.",
+  "title": "Ancienne version — Titre TikTok DSS",
+  "description": "Ancienne version → utiliser titre-tiktok-dss-v2. Titre TikTok DSS : deux lignes, une boite arrondie par ligne, bloc en haut.",
   "tags": [
     "meg",
     "dss",

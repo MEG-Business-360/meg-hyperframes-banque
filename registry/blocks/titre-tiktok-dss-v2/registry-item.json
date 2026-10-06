@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "titre-tiktok-dss-v2",
+  "type": "hyperframes:block",
+  "title": "Titre accroche DSS",
+  "description": "2 boîtes blanches empilées, mot fort surligné jaune, flash blanc à la fin de l'accroche (validé JVT).",
+  "tags": [
+    "meg",
+    "dss",
+    "titre",
+    "accroche",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4.3,
+  "files": [
+    {
+      "path": "titre-tiktok-dss-v2.html",
+      "target": "templates-dss/titre-tiktok-dss-v2.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/TikTokSans-Bold750.ttf",
+      "target": "assets/TikTokSans-Bold750.ttf",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

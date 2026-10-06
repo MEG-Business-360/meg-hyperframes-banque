@@ -1,0 +1,36 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "prix-comparatif-dss",
+  "type": "hyperframes:block",
+  "title": "Prix comparatif DSS",
+  "description": "Panneau encre : 2 barres qui montent avec leur compteur au mot prononcé, valeur d'aujourd'hui en jaune.",
+  "tags": [
+    "meg",
+    "dss",
+    "motion",
+    "prix",
+    "chiffres",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "prix-comparatif-dss.html",
+      "target": "templates-dss/prix-comparatif-dss.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/TikTokSans-Bold750.ttf",
+      "target": "assets/TikTokSans-Bold750.ttf",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

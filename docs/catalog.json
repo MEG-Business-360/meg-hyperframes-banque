@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-19T21:30:58.864Z",
-  "count": 280,
+  "generatedAt": "2026-10-06T17:21:44.493Z",
+  "count": 288,
   "formats": [
     {
       "key": "mobile",
       "label": "Mobile (9:16 · 1080×1920)",
-      "count": 191,
+      "count": 199,
       "sections": {
         "commun": 11,
         "meg": 178,
-        "dss": 2
+        "dss": 10
       }
     },
     {
@@ -7307,8 +7307,8 @@
         "width": 1080,
         "height": 1920
       },
-      "title": "Captions DSS",
-      "description": "Style de captions DSS : une phrase par capsule encre, texte blanc, 2 lignes max.",
+      "title": "Ancienne version — Captions DSS",
+      "description": "Ancienne version → utiliser captions-dss-v2. Style de captions DSS : une phrase par capsule encre, texte blanc, 2 lignes max.",
       "tags": [
         "meg",
         "dss",
@@ -7317,6 +7317,30 @@
       "duration": 15,
       "target": "templates-dss/captions-dss.html",
       "preview": "registry/blocks/captions-dss/preview.jpg"
+    },
+    {
+      "name": "captions-dss-v2",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Sous-titres DSS",
+      "description": "Capsule encre, texte blanc 60 px, 1 mot clé jaune, 2 lignes équilibrées, bas à 424 px (validé JVT).",
+      "tags": [
+        "meg",
+        "dss",
+        "captions",
+        "sous-titres",
+        "dss-montage"
+      ],
+      "duration": 3,
+      "target": "templates-dss/captions-dss-v2.html",
+      "preview": "registry/blocks/captions-dss-v2/preview.jpg"
     },
     {
       "name": "layout-face-9-16",
@@ -7391,6 +7415,154 @@
       "preview": "registry/blocks/layout-sequence/preview.jpg"
     },
     {
+      "name": "outro-dss",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Outro YouTube DSS",
+      "description": "8 s : la suite sur YouTube, lecteur avec extrait de l'épisode, chaîne, abonnement et bouton.",
+      "tags": [
+        "meg",
+        "dss",
+        "outro",
+        "youtube",
+        "dss-montage"
+      ],
+      "duration": 8,
+      "target": "templates-dss/outro-dss.html",
+      "preview": "registry/blocks/outro-dss/preview.jpg"
+    },
+    {
+      "name": "pastille-date-dss",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Pastille date DSS",
+      "description": "Pastille jaune avec calendrier au-dessus du sous-titre quand une date est citée (validé JVT).",
+      "tags": [
+        "meg",
+        "dss",
+        "captions",
+        "date",
+        "dss-montage"
+      ],
+      "duration": 3,
+      "target": "templates-dss/pastille-date-dss.html",
+      "preview": "registry/blocks/pastille-date-dss/preview.jpg"
+    },
+    {
+      "name": "prix-comparatif-dss",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Prix comparatif DSS",
+      "description": "Panneau encre : 2 barres qui montent avec leur compteur au mot prononcé, valeur d'aujourd'hui en jaune.",
+      "tags": [
+        "meg",
+        "dss",
+        "motion",
+        "prix",
+        "chiffres",
+        "dss-montage"
+      ],
+      "duration": 6,
+      "target": "templates-dss/prix-comparatif-dss.html",
+      "preview": "registry/blocks/prix-comparatif-dss/preview.jpg"
+    },
+    {
+      "name": "rouge-dss",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Rouge B-roll — transition naturelle",
+      "description": "Rouge à remplacer qui descend avec son filet blanc, le plan descend sous le filet visage entier, le sous-titre monte ; tout remonte (par défaut).",
+      "tags": [
+        "meg",
+        "dss",
+        "broll",
+        "rouge",
+        "transition",
+        "dss-montage"
+      ],
+      "duration": 5,
+      "target": "templates-dss/rouge-dss.html",
+      "preview": "registry/blocks/rouge-dss/preview.jpg"
+    },
+    {
+      "name": "rouge-figee-dss",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Rouge B-roll — transition figée",
+      "description": "Même rouge, posé sans mouvement : autorisé seulement avec un motif écrit (coupe caméra, plan déjà en bas).",
+      "tags": [
+        "meg",
+        "dss",
+        "broll",
+        "rouge",
+        "transition",
+        "dss-montage"
+      ],
+      "duration": 4,
+      "target": "templates-dss/rouge-figee-dss.html",
+      "preview": "registry/blocks/rouge-figee-dss/preview.jpg"
+    },
+    {
+      "name": "rouge-vue-entiere-dss",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Rouge sur vue entière 16:9",
+      "description": "Le rouge descend, l'image 16:9 entière sur flou descend de 482 px et se recentre sous le filet.",
+      "tags": [
+        "meg",
+        "dss",
+        "broll",
+        "rouge",
+        "vue-entiere",
+        "dss-montage"
+      ],
+      "duration": 5,
+      "target": "templates-dss/rouge-vue-entiere-dss.html",
+      "preview": "registry/blocks/rouge-vue-entiere-dss/preview.jpg"
+    },
+    {
       "name": "titre-tiktok-dss",
       "brand": "DSS",
       "commun": false,
@@ -7401,8 +7573,8 @@
         "width": 1080,
         "height": 1920
       },
-      "title": "Titre TikTok DSS",
-      "description": "Titre TikTok DSS : deux lignes, une boite arrondie par ligne, bloc en haut.",
+      "title": "Ancienne version — Titre TikTok DSS",
+      "description": "Ancienne version → utiliser titre-tiktok-dss-v2. Titre TikTok DSS : deux lignes, une boite arrondie par ligne, bloc en haut.",
       "tags": [
         "meg",
         "dss",
@@ -7412,6 +7584,30 @@
       "duration": 15,
       "target": "templates-dss/titre-tiktok-dss.html",
       "preview": "registry/blocks/titre-tiktok-dss/preview.jpg"
+    },
+    {
+      "name": "titre-tiktok-dss-v2",
+      "brand": "DSS",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Titre accroche DSS",
+      "description": "2 boîtes blanches empilées, mot fort surligné jaune, flash blanc à la fin de l'accroche (validé JVT).",
+      "tags": [
+        "meg",
+        "dss",
+        "titre",
+        "accroche",
+        "dss-montage"
+      ],
+      "duration": 4.3,
+      "target": "templates-dss/titre-tiktok-dss-v2.html",
+      "preview": "registry/blocks/titre-tiktok-dss-v2/preview.jpg"
     }
   ]
 }

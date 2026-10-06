@@ -1,0 +1,36 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "rouge-dss",
+  "type": "hyperframes:block",
+  "title": "Rouge B-roll — transition naturelle",
+  "description": "Rouge à remplacer qui descend avec son filet blanc, le plan descend sous le filet visage entier, le sous-titre monte ; tout remonte (par défaut).",
+  "tags": [
+    "meg",
+    "dss",
+    "broll",
+    "rouge",
+    "transition",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "rouge-dss.html",
+      "target": "templates-dss/rouge-dss.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/TikTokSans-Bold750.ttf",
+      "target": "assets/TikTokSans-Bold750.ttf",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -2,8 +2,8 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "captions-dss",
   "type": "hyperframes:block",
-  "title": "Captions DSS",
-  "description": "Style de captions DSS : une phrase par capsule encre, texte blanc, 2 lignes max.",
+  "title": "Ancienne version — Captions DSS",
+  "description": "Ancienne version → utiliser captions-dss-v2. Style de captions DSS : une phrase par capsule encre, texte blanc, 2 lignes max.",
   "tags": [
     "meg",
     "dss",

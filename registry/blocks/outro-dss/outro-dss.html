@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=1080,height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script><title>Outro YouTube DSS</title></head>
+  <body>
+<!--
+  OUTRO DSS (YouTube, 8 s, valide JVT) — « la suite sur YouTube » : lecteur avec extrait de l'episode, chaine, abonnement, CTA.
+  Modele unique : genoutro.py ecrit outro-cNN.html depuis variables.json et chapitres.json ; ne pas le recopier a la main.
+  Fournis par la banque (assets/outro/) : polices Cabinet Grotesk, logo DSS, logo YouTube blanc, grain.
+  Propres a chaque episode, prepares par preparer.sh et JAMAIS commites : extrait.mp4, ambiance.jpg, miniature.jpg,
+  avatar.jpg, assets/son/outro-extrait.m4a (sons sfx-* : dossier outro du projet). L'apercu montre l'episode JVT.
+-->
+      <style>
+      /* MODELE OUTRO YOUTUBE DSS : les textes et timecodes viennent des variables (variables.json), les medias de ./preparer.sh */
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Regular.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Medium.otf") format("opentype"); font-weight: 500; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Bold.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Extrabold.otf") format("opentype"); font-weight: 800; }
+      #outro { position: absolute; inset: 0; z-index: 2; overflow: hidden; font-family: "Cabinet", system-ui, sans-serif; color: #FCF6ED; }
+      #outro .clip { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+      #outro, #outro * { box-sizing: border-box; }
+
+      /* fond bordeaux DSS + mode Ambiance YouTube */
+      #o-fond { position: absolute; inset: 0; background:
+        radial-gradient(70% 36% at 50% 0%, rgba(110,30,36,0.5) 0%, rgba(110,30,36,0) 100%),
+        linear-gradient(180deg, #3A0C10 0%, #2A080B 52%, #150506 100%); }
+      #o-ambiance { position: absolute; left: 90px; top: 760px; width: 900px; height: 470px; background: url("assets/outro/ambiance.jpg") center / cover; filter: blur(90px) saturate(1.3); opacity: 0; }
+      #o-vignette { position: absolute; inset: 0; background: radial-gradient(90% 60% at 50% 46%, rgba(21,5,6,0) 40%, rgba(21,5,6,0.72) 100%); }
+      #o-bas, #o-haut, #o-chaine, #o-cta, #o-onde { opacity: 0; }
+      #o-grain { position: absolute; inset: 0; background: url("assets/outro/grain.png") repeat; opacity: 0.05; mix-blend-mode: overlay; }
+
+      /* marque : logo seul en haut, puis le groupe kicker + titre */
+      #o-logo { position: absolute; left: 0; right: 0; top: 176px; margin: 0 auto; width: 118px; height: auto; display: block; }
+      #o-kicker { position: absolute; left: 0; right: 0; top: 326px; display: flex; justify-content: center; align-items: center; gap: 16px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; color: rgba(252,246,237,0.74); }
+      #o-kicker img { height: 35px; width: auto; display: block; margin-top: 2px; }
+      .ligne-titre { position: absolute; left: 0; right: 0; height: 104px; overflow: hidden; text-align: center; line-height: 0; }
+      .ligne-titre span { display: inline-block; vertical-align: top; font-weight: 800; font-size: 80px; line-height: 100px; letter-spacing: -0.03em; color: #FCF6ED; white-space: nowrap; }
+      .ligne-titre em { font-style: normal; color: #E8B65C; }
+      #o-l1 { top: 408px; }
+      #o-l2 { top: 500px; }
+
+      /* lecteur YouTube DSS (16:9) */
+      #o-lecteur { position: absolute; left: 60px; top: 704px; width: 960px; height: 540px; border-radius: 32px; box-shadow: 0 50px 100px rgba(8,2,3,0.72), 0 12px 30px rgba(8,2,3,0.45); }
+      #o-bord { position: absolute; inset: -2px; border-radius: 34px; background: linear-gradient(140deg, rgba(240,204,134,0.88) 0%, rgba(240,204,134,0.14) 32%, rgba(240,204,134,0.04) 62%, rgba(240,204,134,0.48) 100%); }
+      #o-ecran { position: absolute; inset: 0; border-radius: 32px; overflow: hidden; background: #0B0506; }
+      #o-cadre-video { position: absolute; inset: 0; transform-origin: 52% 46%; }
+      #o-video { position: absolute; left: 0; top: 0; width: 960px; height: 540px; object-fit: cover; }
+      #o-haut { position: absolute; left: 0; right: 0; top: 0; height: 150px; background: linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0) 100%); }
+      #o-haut .rang { position: absolute; left: 28px; right: 28px; top: 24px; display: flex; align-items: center; gap: 18px; }
+      #o-haut i { width: 58px; height: 58px; flex: none; border-radius: 50%; background: url("assets/outro/avatar.jpg") center / cover; }
+      #o-haut b { font-weight: 700; font-size: 29px; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,0.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.005em; }
+      #o-bas { position: absolute; left: 0; right: 0; bottom: 0; height: 190px; }
+      #o-degrade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.74) 100%); }
+      #o-piste { position: absolute; left: 28px; right: 28px; bottom: 78px; height: 7px; transform-origin: 50% 100%; }
+      .seg { position: absolute; top: 0; height: 7px; border-radius: 2px; background: rgba(255,255,255,0.3); }
+      #o-lu { position: absolute; left: 0; top: 0; height: 7px; }
+      #o-lu .seg { background: #FF0033; }
+      #o-tete { position: absolute; left: 0; top: -8.5px; width: 24px; height: 24px; margin-left: -12px; border-radius: 50%; background: #FF0033; }
+      #o-ligne { position: absolute; left: 28px; right: 28px; bottom: 16px; height: 46px; display: flex; align-items: center; gap: 22px; font-weight: 500; font-size: 25px; color: #fff; white-space: nowrap; }
+      #o-ligne svg { height: 36px; width: 36px; flex: none; }
+      #o-temps, #o-chapitre { position: relative; height: 46px; line-height: 46px; }
+      #o-temps { width: 172px; flex: none; }
+      #o-chapitre { flex: 1; min-width: 0; overflow: hidden; }
+      #o-temps span, #o-chapitre span { position: absolute; left: 0; top: 0; opacity: 0; }
+      #o-ligne .droite { display: flex; gap: 22px; flex: none; }
+      #o-cc { position: absolute; left: 0; right: 0; bottom: 124px; display: flex; justify-content: center; }
+      #o-cc span { position: absolute; padding: 3px 14px; background: rgba(8,8,8,0.75); color: #fff; font-weight: 500; font-size: 34px; opacity: 0; white-space: nowrap; }
+      #o-mini { position: absolute; inset: 0; background: url("assets/outro/miniature.jpg") center / cover; }
+      #o-mini-duree { position: absolute; right: 20px; bottom: 26px; padding: 4px 12px; border-radius: 9px; background: rgba(10,10,10,0.82); color: #fff; font-weight: 700; font-size: 28px; }
+      #o-mini-vu { position: absolute; left: 0; bottom: 0; width: 100%; height: 8px; background: rgba(255,255,255,0.32); }
+      #o-mini-vu i { display: block; height: 100%; width: 20%; background: #FF0033; }
+      #o-bouton-play { position: absolute; left: 50%; top: 50%; width: 136px; height: 96px; margin: -48px 0 0 -68px; }
+      #o-onde { position: absolute; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; background: rgba(255,255,255,0.5); }
+
+      /* chaine */
+      #o-chaine { position: absolute; left: 60px; right: 60px; top: 1314px; height: 96px; display: flex; align-items: center; gap: 22px; }
+      #o-anneau { width: 92px; height: 92px; flex: none; border-radius: 50%; padding: 3px; background: linear-gradient(140deg, #F0CC86, #B98330); }
+      #o-anneau i { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #2A080B; background: url("assets/outro/avatar.jpg") center / cover; }
+      #o-nom { flex: 1; min-width: 0; }
+      #o-nom b { display: block; font-size: 40px; font-weight: 700; color: #FCF6ED; letter-spacing: -0.015em; line-height: 1.1; }
+      #o-nom small { display: block; font-size: 26px; font-weight: 500; color: rgba(252,246,237,0.58); margin-top: 4px; }
+      #o-abo { position: relative; width: 196px; height: 60px; flex: none; }
+      #o-abo .etat { position: absolute; inset: 0; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 25px; font-weight: 700; letter-spacing: -0.005em; }
+      #o-abo-off { background: linear-gradient(180deg, #FF2D55 0%, #FF0033 60%, #E3002D 100%); color: #FFFFFF; box-shadow: 0 8px 22px rgba(255,0,51,0.22), inset 0 1px 0 rgba(255,255,255,0.28); }
+      #o-abo-on { background: rgba(252,246,237,0.1); border: 1.5px solid rgba(252,246,237,0.16); color: #FCF6ED; opacity: 0; }
+      #o-abo-on svg { width: 28px; height: 28px; flex: none; }
+      #o-cloche { transform-origin: 50% 12%; }
+      #o-tap { position: absolute; left: 50%; top: 50%; width: 110px; height: 110px; margin: -55px 0 0 -55px; border-radius: 50%; background: rgba(252,246,237,0.3); opacity: 0; }
+
+      /* appel a l'action */
+      #o-cta { position: absolute; left: 0; right: 0; margin: 0 auto; top: 1512px; width: 680px; height: 92px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 20px;
+        background: linear-gradient(180deg, #FF2D55 0%, #FF0033 55%, #E3002D 100%); color: #FFFFFF; font-size: 37px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap;
+        box-shadow: 0 20px 44px rgba(255,0,51,0.24), 0 10px 26px rgba(8,2,3,0.5), inset 0 1.5px 0 rgba(255,255,255,0.32); }
+      #o-cta svg { width: 50px; height: 36px; flex: none; position: relative; }
+      #o-cta .txt { position: relative; }
+      #o-zone-reflet { position: absolute; inset: 0; border-radius: 999px; overflow: hidden; }
+      #o-reflet { position: absolute; top: -20px; left: 0; width: 120px; height: 140px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.32) 50%, rgba(255,255,255,0) 100%); transform: translateX(-160px) skewX(-20deg); }
+    </style>
+      <div data-hf-id="hf-iwnd" id="outro" data-composition-id="outro" data-start="0" data-width="1080" data-height="1920" data-duration="8">
+    <div data-hf-id="hf-qlfz" id="o-scene" class="clip" data-start="0" data-duration="8" data-track-index="1">
+      <div data-hf-id="hf-2by2" id="o-fond"></div>
+      <div data-hf-id="hf-bgmc" id="o-ambiance" data-layout-allow-overflow=""></div>
+      <div data-hf-id="hf-6krn" id="o-vignette"></div>
+
+      <img data-hf-id="hf-7pao" id="o-logo" src="assets/outro/logo-dss.png" alt="DSS Real Estate">
+      <div data-hf-id="hf-00sb" id="o-kicker">LA SUITE SUR<img data-hf-id="hf-xa1n" src="assets/outro/yt-logo-blanc.svg" alt="YouTube"></div>
+      <div data-hf-id="hf-d3uj" id="o-l1" class="ligne-titre"><span data-hf-id="hf-ygcf">Vlog JVT</span></div>
+      <div data-hf-id="hf-4fyo" id="o-l2" class="ligne-titre"><span data-hf-id="hf-k1sx">et cash-flow <em data-hf-id="hf-jfa0">Airbnb</em></span></div>
+
+      <div data-hf-id="hf-cgwn" id="o-lecteur">
+        <div data-hf-id="hf-39gy" id="o-bord"></div>
+        <div data-hf-id="hf-vjtg" id="o-ecran">
+          <div data-hf-id="hf-ndu9" id="o-cadre-video" data-layout-allow-overflow="">
+            <video data-hf-id="hf-40on" id="o-video" class="clip" src="assets/outro/extrait.mp4" data-start="0.8" data-duration="7.2" data-media-start="0" data-track-index="2" muted playsinline></video>
+          </div>
+          <div data-hf-id="hf-3ifb" id="o-cc"><span data-hf-id="hf-srwg" id="o-cc1">Je te remets les clés.</span><span data-hf-id="hf-7ocr" id="o-cc2">C'est un plaisir.</span></div>
+          <div data-hf-id="hf-p2mn" id="o-haut"><div data-hf-id="hf-ye5y" class="rang"><i data-hf-id="hf-wt6k"></i><b data-hf-id="hf-l20j" id="o-episode">Vlog JVT - Parcs, écoles… et cash-flow AirBnb</b></div></div>
+          <div data-hf-id="hf-toxd" id="o-bas">
+            <div data-hf-id="hf-eci1" id="o-degrade"></div>
+            <div data-hf-id="hf-r2pi" id="o-piste"><div data-hf-id="hf-c0qm" id="o-base"></div><div data-hf-id="hf-34ys" id="o-lu"></div><div data-hf-id="hf-fwpp" id="o-tete"></div></div>
+            <div data-hf-id="hf-v52c" id="o-ligne">
+              <svg data-hf-id="hf-ulu9" viewBox="0 0 24 24"><path data-hf-id="hf-8ob2" d="M6.5 5h3.6v14H6.5zM13.9 5h3.6v14h-3.6z" fill="#fff" /></svg>
+              <svg data-hf-id="hf-1tol" viewBox="0 0 24 24"><path data-hf-id="hf-loj0" d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" fill="#fff" /></svg>
+              <svg data-hf-id="hf-30lo" viewBox="0 0 24 24"><path data-hf-id="hf-f3cy" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="#fff" /></svg>
+              <div data-hf-id="hf-3aoi" id="o-temps"></div>
+              <div data-hf-id="hf-t6mr" id="o-chapitre"><span data-hf-id="hf-9md5" id="o-chap-a">• Passion foot ›</span><span data-hf-id="hf-m027" id="o-chap-b">• Remise officielle des clés ›</span></div>
+              <div data-hf-id="hf-yfdz" class="droite">
+                <svg data-hf-id="hf-2man" viewBox="0 0 24 24"><path data-hf-id="hf-8h3w" d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 7H9.5v-.5h-2v3h2V13H11v1c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1zm7 0h-1.5v-.5h-2v3h2V13H18v1c0 .55-.45 1-1 1h-3c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1z" fill="#fff" /><rect data-hf-id="hf-husq" x="4" y="22" width="16" height="2" rx="1" fill="#FF0033" /></svg>
+                <svg data-hf-id="hf-3t7q" viewBox="0 0 24 24"><path data-hf-id="hf-huvh" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="#fff" /></svg>
+                <svg data-hf-id="hf-3ewp" viewBox="0 0 24 24"><path data-hf-id="hf-fogh" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="#fff" /></svg>
+              </div>
+            </div>
+          </div>
+          <div data-hf-id="hf-ku3k" id="o-mini">
+            <div data-hf-id="hf-cmwk" id="o-mini-duree">42:04</div>
+            <div data-hf-id="hf-jhfa" id="o-mini-vu"><i data-hf-id="hf-zeb8"></i></div>
+            <svg data-hf-id="hf-0yjn" id="o-bouton-play" viewBox="0 0 28 20"><rect data-hf-id="hf-pk1j" width="28" height="20" rx="5.5" fill="#FF0033" /><path data-hf-id="hf-y8zy" d="M11.2 5.8v8.4l7.3-4.2z" fill="#fff" /></svg>
+            <div data-hf-id="hf-4jrz" id="o-onde"></div>
+          </div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-q67d" id="o-chaine">
+        <div data-hf-id="hf-sbql" id="o-anneau"><i data-hf-id="hf-y7e5"></i></div>
+        <div data-hf-id="hf-xgg1" id="o-nom"><b data-hf-id="hf-7bad">Salimou Sidibe</b><small data-hf-id="hf-3zzw">@SalimouDSS</small></div>
+        <div data-hf-id="hf-ha2v" id="o-abo">
+          <div data-hf-id="hf-kh27" id="o-abo-off" class="etat">S'abonner</div>
+          <div data-hf-id="hf-zseb" id="o-abo-on" class="etat">
+            <svg data-hf-id="hf-e9zh" id="o-cloche" viewBox="0 0 24 24"><path data-hf-id="hf-3rn7" d="M12 3.2a5.8 5.8 0 0 0-5.8 5.8v4.6L4.4 16.6v1h15.2v-1l-1.8-3V9A5.8 5.8 0 0 0 12 3.2zM9.6 19.2a2.4 2.4 0 0 0 4.8 0" fill="none" stroke="#FCF6ED" stroke-width="1.8" stroke-linejoin="round" /></svg>
+            Abonné
+            <svg data-hf-id="hf-4lts" viewBox="0 0 24 24"><path data-hf-id="hf-ssjq" d="M7.4 9.6 12 14.2l4.6-4.6" fill="none" stroke="#FCF6ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div data-hf-id="hf-e6ww" id="o-tap"></div>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-sfrt" id="o-cta">
+        <div data-hf-id="hf-3111" id="o-zone-reflet" data-layout-allow-overflow=""><div data-hf-id="hf-9xpq" id="o-reflet" data-layout-allow-overflow=""></div></div>
+        <svg data-hf-id="hf-qo5d" viewBox="0 0 28 20"><rect data-hf-id="hf-7axx" width="28" height="20" rx="5.5" fill="#FFFFFF" /><path data-hf-id="hf-8u7e" d="M11.2 5.8v8.4l7.3-4.2z" fill="#FF0033" /></svg>
+        <span data-hf-id="hf-ny5x" class="txt">Regarder l'épisode complet</span>
+      </div>
+      <div data-hf-id="hf-dkia" id="o-grain"></div>
+    </div>
+    <audio data-hf-id="hf-en33" id="o-voix" src="assets/son/outro-extrait.m4a" data-start="0.8" data-duration="7.2" data-media-start="0" data-track-index="199" data-volume="1"></audio>
+    <audio data-hf-id="hf-wsb6" id="o-sfx-entree" src="assets/outro/sfx-whoosh-court.wav" data-start="0.04" data-duration="0.48" data-media-start="0" data-track-index="191" data-volume="0.13"></audio>
+    <audio data-hf-id="hf-2aif" id="o-sfx-lecture" src="assets/outro/sfx-clic-micro.wav" data-start="0.55" data-duration="0.2" data-media-start="0" data-track-index="192" data-volume="0.16"></audio>
+    <audio data-hf-id="hf-lxmn" id="o-sfx-abonne" src="assets/outro/sfx-tic-toggle.wav" data-start="2.32" data-duration="0.9" data-media-start="0" data-track-index="193" data-volume="0.13"></audio>
+      </div>
+      <script>
+(() => {
+    // Variables : valeurs par defaut declarees sur <html>, remplacees par variables.json au rendu
+    const V = {"titre1": "Vlog JVT : parcs, écoles…", "titre2": "et cash-flow Airbnb", "motOr": "JVT", "episode": "Vlog JVT - Parcs, écoles… et cash-flow AirBnb", "duree": "24:57", "chapitres": "0,428,615,842,1260,1497", "depart": 37.15, "arrivee": 17.8, "chapitreAvant": "JVT reste sous-coté", "chapitreApres": "JVT reste sous-coté", "cc1": "Bienvenue à Jumeirah Village Triangle,", "cc1Debut": 18.05, "cc1Fin": 21.65, "cc2": "plus connu sous le nom de JVT", "cc2Debut": 22.25, "cc2Fin": 24.25};
+
+    const EXTRAIT = 7.2, T0 = 0.8, FIN = 8;
+    const CHAP = String(V.chapitres).split(/[ ,;]+/).filter(Boolean).map(Number);
+    const TOTAL = CHAP[CHAP.length - 1];
+    const DEPART = Number(V.depart), ARRIVEE = Number(V.arrivee);
+    const LARG = 904, ECART = 4;
+
+    // titre : 1 ou 2 lignes, mot en or, taille ajustee a 960 px max
+    function ecrire(el, texte, mot) {
+      el.textContent = "";
+      const i = mot ? texte.indexOf(mot) : -1;
+      if (i < 0) { el.textContent = texte; return; }
+      const em = document.createElement("em"); em.textContent = mot;
+      el.append(texte.slice(0, i), em, texte.slice(i + mot.length));
+    }
+    const s1 = document.querySelector("#o-l1 span"), s2 = document.querySelector("#o-l2 span");
+    ecrire(s1, String(V.titre1), String(V.motOr || ""));
+    if (String(V.titre2 || "").trim()) ecrire(s2, String(V.titre2), String(V.motOr || ""));
+    else { document.getElementById("o-l2").style.display = "none"; document.getElementById("o-l1").style.top = "454px"; }
+    function ajuster() { for (const s of [s1, s2]) { s.style.fontSize = ""; const w = s.offsetWidth; if (w > 960) s.style.fontSize = (80 * 960 / w).toFixed(1) + "px"; } }
+    ajuster();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuster);
+
+    document.getElementById("o-episode").textContent = V.episode;
+    document.getElementById("o-mini-duree").textContent = V.duree;
+    document.querySelector("#o-mini-vu i").style.width = (DEPART / TOTAL * 100).toFixed(2) + "%";
+    document.getElementById("o-chap-a").textContent = "• " + V.chapitreAvant + " ›";
+    document.getElementById("o-chap-b").textContent = "• " + V.chapitreApres + " ›";
+    document.getElementById("o-cc1").textContent = V.cc1;
+    document.getElementById("o-cc2").textContent = V.cc2 || "";
+
+    // barre de progression decoupee en chapitres
+    const base = document.getElementById("o-base"), lu = document.getElementById("o-lu");
+    lu.style.width = LARG + "px";
+    for (let i = 0; i < CHAP.length - 1; i++) {
+      const x = CHAP[i] / TOTAL * LARG, w = (CHAP[i + 1] - CHAP[i]) / TOTAL * LARG - (i < CHAP.length - 2 ? ECART : 0);
+      for (const p of [base, lu]) { const s = document.createElement("div"); s.className = "seg"; s.style.left = x + "px"; s.style.width = Math.max(w, 2) + "px"; p.appendChild(s); }
+    }
+    const fmt = s => { s = Math.floor(s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), r = String(s % 60).padStart(2, "0"); return h ? h + ":" + String(m).padStart(2, "0") + ":" + r : m + ":" + r; };
+    const temps = document.getElementById("o-temps");
+    const secondes = [Math.floor(DEPART)];
+    for (let s = Math.floor(ARRIVEE); s <= Math.floor(ARRIVEE + EXTRAIT); s++) secondes.push(s);
+    secondes.forEach((s, i) => { const e = document.createElement("span"); e.id = "o-t" + i; e.textContent = fmt(s) + " / " + V.duree; temps.appendChild(e); });
+
+    const tl = gsap.timeline({ paused: true });
+    const px = s => s / TOTAL * LARG;
+    const clip = s => "inset(0px " + (LARG - px(s)).toFixed(2) + "px 0px 0px)";
+
+    // entree : fond, lecteur qui se pose, marque, titre
+    tl.fromTo("#o-fond", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 0);
+    tl.fromTo("#o-lecteur", { y: 90, scale: 0.94, rotationX: 12, opacity: 0, transformPerspective: 1800 }, { y: 0, scale: 1, rotationX: 0, opacity: 1, duration: 0.8, ease: "expo.out" }, 0.04);
+    tl.fromTo("#o-ambiance", { opacity: 0 }, { opacity: 0.18, duration: 0.5, ease: "power1.out" }, 0.1);
+    tl.fromTo("#o-logo", { y: -16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 0.1);
+    tl.fromTo("#o-kicker", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("#o-l1 span", { yPercent: 105 }, { yPercent: 0, duration: 0.65, ease: "power4.out" }, 0.26);
+    tl.fromTo("#o-l2 span", { yPercent: 105 }, { yPercent: 0, duration: 0.65, ease: "power4.out" }, 0.36);
+
+    // clic sur lecture
+    tl.to("#o-bouton-play", { scale: 0.86, duration: 0.1, ease: "power1.in" }, 0.55);
+    tl.fromTo("#o-onde", { scale: 0.2, opacity: 0 }, { scale: 1.6, opacity: 0.55, duration: 0.12, ease: "power1.out" }, 0.58);
+    tl.to("#o-onde", { scale: 2.6, opacity: 0, duration: 0.25, ease: "power1.out" }, 0.7);
+    tl.to("#o-bouton-play", { scale: 1, duration: 0.1 }, 0.66);
+    tl.to("#o-mini", { opacity: 0, duration: 0.18, ease: "power1.out" }, T0 - 0.04);
+    tl.fromTo(["#o-bas", "#o-haut"], { opacity: 0 }, { opacity: 1, duration: 0.15 }, T0);
+    tl.to("#o-ambiance", { opacity: 0.6, duration: 1.2, ease: "sine.out" }, T0);
+
+    // saut de la tete de lecture de la fin du clip vers l'extrait
+    tl.set("#o-lu", { clipPath: clip(DEPART) }, 0);
+    tl.set("#o-tete", { x: px(DEPART) }, 0);
+    tl.set("#o-t0", { opacity: 1 }, 0);
+    tl.set("#o-chap-a", { opacity: 1 }, 0);
+    tl.to("#o-lu", { clipPath: clip(ARRIVEE), duration: 0.45, ease: "power3.inOut" }, T0 + 0.05);
+    tl.to("#o-tete", { x: px(ARRIVEE), duration: 0.45, ease: "power3.inOut" }, T0 + 0.05);
+    tl.fromTo("#o-tete", { scale: 1 }, { scale: 1.35, duration: 0.2, yoyo: true, repeat: 1, ease: "sine.inOut" }, T0 + 0.05);
+    tl.to("#o-lu", { clipPath: clip(ARRIVEE + EXTRAIT), duration: EXTRAIT - 0.5, ease: "none" }, T0 + 0.5);
+    tl.to("#o-tete", { x: px(ARRIVEE + EXTRAIT), duration: EXTRAIT - 0.5, ease: "none" }, T0 + 0.5);
+    tl.set("#o-chap-a", { opacity: 0 }, T0 + 0.45);
+    tl.set("#o-chap-b", { opacity: 1 }, T0 + 0.45);
+    tl.set("#o-t0", { opacity: 0 }, T0 + 0.45);
+    tl.set("#o-t1", { opacity: 1 }, T0 + 0.45);
+    for (let i = 2; i < secondes.length; i++) {
+      const t = T0 + (secondes[i] - ARRIVEE);
+      if (t < FIN) { tl.set("#o-t" + (i - 1), { opacity: 0 }, t); tl.set("#o-t" + i, { opacity: 1 }, t); }
+    }
+    // comme sur YouTube : les commandes se masquent, seule la barre rouge reste
+    tl.to(["#o-degrade", "#o-ligne", "#o-haut"], { opacity: 0, duration: 0.4, ease: "power1.out" }, 3.7);
+    tl.to("#o-piste", { y: 70, scaleY: 0.6, duration: 0.4, ease: "power2.inOut" }, 3.7);
+    tl.to("#o-tete", { scale: 0, duration: 0.25, ease: "power1.in" }, 3.7);
+    tl.to("#o-cc", { y: 60, duration: 0.4, ease: "power2.inOut" }, 3.7);
+    // video : lente poussee
+    tl.fromTo("#o-cadre-video", { scale: 1.0 }, { scale: 1.08, duration: EXTRAIT, ease: "sine.inOut" }, T0);
+    // sous-titres facon YouTube CC (temps de l'episode)
+    const cc = (id, debut, fin) => { const a = T0 + (Number(debut) - ARRIVEE), b = T0 + (Number(fin) - ARRIVEE); if (a >= T0 && a < FIN) { tl.set(id, { opacity: 1 }, a); tl.set(id, { opacity: 0 }, Math.min(b, FIN - 0.01)); } };
+    cc("#o-cc1", V.cc1Debut, V.cc1Fin);
+    if (V.cc2) cc("#o-cc2", V.cc2Debut, V.cc2Fin);
+
+    // chaine + abonnement
+    tl.fromTo("#o-chaine", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 1.25);
+    tl.to("#o-abo", { scale: 0.93, duration: 0.1, ease: "power1.in" }, 2.3);
+    tl.fromTo("#o-tap", { scale: 0.3, opacity: 0 }, { scale: 1.4, opacity: 0.5, duration: 0.12 }, 2.33);
+    tl.to("#o-tap", { scale: 2.4, opacity: 0, duration: 0.3 }, 2.45);
+    tl.to("#o-abo", { scale: 1, duration: 0.14, ease: "power2.out" }, 2.4);
+    tl.to("#o-abo-off", { opacity: 0, duration: 0.12 }, 2.4);
+    tl.to("#o-abo-on", { opacity: 1, duration: 0.12 }, 2.4);
+    tl.fromTo("#o-cloche", { rotation: 0 }, { rotation: 16, duration: 0.08, yoyo: true, repeat: 5, ease: "sine.inOut" }, 2.5);
+
+    // appel a l'action + reflet
+    tl.fromTo("#o-cta", { opacity: 0, y: 22, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, 2.95);
+    tl.fromTo("#o-reflet", { x: -160 }, { x: 840, duration: 0.9, ease: "power2.inOut" }, 4.3);
+    tl.fromTo("#o-reflet", { x: -160 }, { x: 840, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 6.2);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["outro"] = tl;
+  })();
+      </script>
+  </body>
+</html>

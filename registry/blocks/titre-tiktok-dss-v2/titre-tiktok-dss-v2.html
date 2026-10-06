@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{margin:0;padding:0;box-sizing:border-box}</style>
+</head>
+<body>
+<!--
+TITRE DSS (v2, valide JVT C01) — pendant l'accroche, puis flash blanc a la coupe.
+  2 boites blanches empilees (65 px, TikTok Sans 750, rayon 26), marge haute 221 px puis -26 px :
+  la 2e boite chevauche la 1re. Le mot fort est surligne jaune #FFD400 (<b>, 1 seul par titre),
+  1 emoji au plus en fin de 2e ligne. Aucune animation d'entree : le titre est la des 0 s.
+  A la fin de l'accroche (ici 4,00 s) : titre retire, flash blanc 0,55 -> 0 en 0,3 s (power2.out).
+  Montage DSS : gen2.py ecrit ce gabarit (classes cNN-tboite, cNN-flash) ; ne pas le recopier a la main.
+-->
+<div id="titre-tiktok-dss-v2" data-composition-id="titre-tiktok-dss-v2" data-start="0" data-duration="4.3" data-width="1080" data-height="1920">
+  <style>
+    @font-face { font-family: "TikTok Sans"; src: url("assets/TikTokSans-Bold750.ttf") format("truetype"); font-weight: 750; }
+    #titre-tiktok-dss-v2 { position: absolute; inset: 0; z-index: 2; overflow: hidden; }
+    .dss-titre { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-start; }
+    .dss-tbloc { display: flex; flex-direction: column; align-items: center; }
+    .dss-tboite { padding: 20px 32px; border-radius: 26px; background: #FFFFFF; color: #0A0E12; font-family: "TikTok Sans", sans-serif; font-weight: 750; font-size: 65px; line-height: 1.15; letter-spacing: -0.01em; white-space: nowrap; }
+    .dss-tboite b { background: #FFD400; color: #0A0E12; font-weight: 750; padding: 0 12px; margin: 0 -4px; border-radius: 14px; }
+    .dss-flash { position: absolute; inset: 0; background: #FFFFFF; opacity: 0; pointer-events: none; }
+  </style>
+  <div class="dss-titre" id="titre-tiktok-dss-v2-titre"><div class="dss-tbloc"><div class="dss-tboite" style="margin-top:221px">Ni Downtown ni Marina&#160;:</div><div class="dss-tboite" style="margin-top:-26px">le quartier le plus <b>sous-coté</b> 💎</div></div></div>
+  <div class="dss-flash" id="titre-tiktok-dss-v2-flash"></div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#titre-tiktok-dss-v2-titre", { autoAlpha: 0 }, 4.00);
+    tl.fromTo("#titre-tiktok-dss-v2-flash", { opacity: 0.55 }, { opacity: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, 4.00);
+    window.__timelines["titre-tiktok-dss-v2"] = tl;
+  </script>
+</div>
+</body>
+</html>

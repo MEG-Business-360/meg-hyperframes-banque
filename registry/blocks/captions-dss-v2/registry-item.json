@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "captions-dss-v2",
+  "type": "hyperframes:block",
+  "title": "Sous-titres DSS",
+  "description": "Capsule encre, texte blanc 60 px, 1 mot clé jaune, 2 lignes équilibrées, bas à 424 px (validé JVT).",
+  "tags": [
+    "meg",
+    "dss",
+    "captions",
+    "sous-titres",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "captions-dss-v2.html",
+      "target": "templates-dss/captions-dss-v2.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/TikTokSans-Bold750.ttf",
+      "target": "assets/TikTokSans-Bold750.ttf",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

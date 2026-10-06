@@ -1,0 +1,36 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "rouge-figee-dss",
+  "type": "hyperframes:block",
+  "title": "Rouge B-roll — transition figée",
+  "description": "Même rouge, posé sans mouvement : autorisé seulement avec un motif écrit (coupe caméra, plan déjà en bas).",
+  "tags": [
+    "meg",
+    "dss",
+    "broll",
+    "rouge",
+    "transition",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "rouge-figee-dss.html",
+      "target": "templates-dss/rouge-figee-dss.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/TikTokSans-Bold750.ttf",
+      "target": "assets/TikTokSans-Bold750.ttf",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{margin:0;padding:0;box-sizing:border-box}</style>
+</head>
+<body>
+<!--
+SOUS-TITRES DSS (v2, valide JVT C01) — 1 capsule = 1 phrase verbatim, 2 lignes au plus.
+  Capsule rgba(10,14,18,0.86), texte blanc 60 px (toujours plus petit que le titre), rayon 22,
+  largeur max 840, lignes equilibrees (text-wrap: balance), bas a 424 px du bas.
+  1 mot cle jaune #FFD400 (<b>) par phrase au plus ; noms propres insecables (.dss-nom) ;
+  groupes de chiffres insecables (700&#160;000). Aucune animation : les capsules se succedent.
+  Pendant un rouge, la capsule monte de 484 px avec lui (bas a 908 px : a cheval sur le filet, raccord, sans couvrir le visage) : voir rouge-dss.
+-->
+<div id="captions-dss-v2" data-composition-id="captions-dss-v2" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <style>
+    @font-face { font-family: "TikTok Sans"; src: url("assets/TikTokSans-Bold750.ttf") format("truetype"); font-weight: 750; }
+    #captions-dss-v2 { position: absolute; inset: 0; z-index: 2; overflow: hidden; }
+    .dss-capc { position: absolute; left: 0; right: 0; bottom: 424px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .dss-capc.dss-capc--raccord { bottom: 908px; }
+    .dss-cap { max-width: 840px; padding: 16px 30px; border-radius: 22px; background: rgba(10,14,18,0.86); color: #FFFFFF; font-family: "TikTok Sans", sans-serif; font-weight: 750; font-size: 60px; line-height: 1.15; text-align: center; white-space: normal; text-wrap: balance; }
+    .dss-cap b { color: #FFD400; font-weight: 750; }
+    .dss-nom { white-space: nowrap; }
+  </style>
+  <div class="dss-capc" id="captions-dss-v2-1"><div class="dss-cap">Bienvenue à <b>Jumeirah Village Triangle</b>,</div></div>
+  <div class="dss-capc" id="captions-dss-v2-2"><div class="dss-cap">plus connu sous le nom de <b>JVT</b>.</div></div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#captions-dss-v2-2", { autoAlpha: 0 }, 0);
+    tl.set("#captions-dss-v2-1", { autoAlpha: 0 }, 1.50);
+    tl.set("#captions-dss-v2-2", { autoAlpha: 1 }, 1.50);
+    window.__timelines["captions-dss-v2"] = tl;
+  </script>
+</div>
+</body>
+</html>

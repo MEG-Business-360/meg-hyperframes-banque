@@ -157,7 +157,8 @@ async function captureBlock(page, name, report) {
         await page.evaluate(
           ([id, at]) => {
             const tl = window.__timelines[id] ?? Object.values(window.__timelines)[0];
-            tl.pause().seek(at);
+            // suppressEvents=false comme le runtime HyperFrames : les onUpdate (compteurs) s'exécutent.
+            tl.pause().seek(at, false);
           },
           [compId, t],
         );

@@ -1122,6 +1122,38 @@
     {
       "name": "titre-tiktok-dss",
       "type": "hyperframes:block"
+    },
+    {
+      "name": "titre-tiktok-dss-v2",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "captions-dss-v2",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "pastille-date-dss",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "rouge-dss",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "rouge-figee-dss",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "rouge-vue-entiere-dss",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "prix-comparatif-dss",
+      "type": "hyperframes:block"
+    },
+    {
+      "name": "outro-dss",
+      "type": "hyperframes:block"
     }
   ]
 }

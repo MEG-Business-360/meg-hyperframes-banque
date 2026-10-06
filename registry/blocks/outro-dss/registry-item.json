@@ -1,0 +1,65 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "outro-dss",
+  "type": "hyperframes:block",
+  "title": "Outro YouTube DSS",
+  "description": "8 s : la suite sur YouTube, lecteur avec extrait de l'épisode, chaîne, abonnement et bouton.",
+  "tags": [
+    "meg",
+    "dss",
+    "outro",
+    "youtube",
+    "dss-montage"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 8,
+  "files": [
+    {
+      "path": "outro-dss.html",
+      "target": "templates-dss/outro-dss.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Bold.woff2",
+      "target": "assets/outro/CabinetGrotesk-Bold.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Extrabold.otf",
+      "target": "assets/outro/CabinetGrotesk-Extrabold.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Medium.otf",
+      "target": "assets/outro/CabinetGrotesk-Medium.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Regular.woff2",
+      "target": "assets/outro/CabinetGrotesk-Regular.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/grain.png",
+      "target": "assets/outro/grain.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/logo-dss.png",
+      "target": "assets/outro/logo-dss.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/yt-logo-blanc.svg",
+      "target": "assets/outro/yt-logo-blanc.svg",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

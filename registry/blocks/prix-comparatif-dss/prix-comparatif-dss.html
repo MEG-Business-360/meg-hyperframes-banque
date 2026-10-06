@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{margin:0;padding:0;box-sizing:border-box}</style>
+</head>
+<body>
+<!--
+PRIX COMPARATIF DSS (motion design, valide JVT C01 13,36 s) — quand le locuteur compare 2 prix (avant / aujourd'hui).
+  Meme gabarit que le rouge (cadre 964, fond encre #0A0E12 956 px + filet blanc 8 px, entree et sortie 0,5 s power3.inOut,
+  plan sous le filet de 700 px, sous-titre qui monte de 484 px). Le titre (pastille contour blanc 44 px) arrive a +0,44 s ;
+  chaque barre monte (scaleY, power3.out) avec son compteur AU MOT prononce ; la valeur d'aujourd'hui est jaune #FFD400.
+  Compteur : Math.round(v / 1000) + " 000 AED". Ici #meg-master-frame est le plan (harnais) ; en montage, gen2.py.
+-->
+<div id="prix-comparatif-dss" data-composition-id="prix-comparatif-dss" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-dss-rouge="956" data-dss-filet="8" data-dss-duree="0.5" data-dss-ease="power3.inOut" data-dss-plein="700" data-dss-fit="482" data-dss-sous-titres="484" data-dss-transition="naturelle">
+  <style>
+    @font-face { font-family: "TikTok Sans"; src: url("assets/TikTokSans-Bold750.ttf") format("truetype"); font-weight: 750; }
+    #prix-comparatif-dss { position: absolute; inset: 0; z-index: 2; overflow: hidden; }
+    .dss-prix { position: absolute; left: 0; top: 0; width: 1080px; height: 964px; overflow: hidden; }
+    .dss-prix-fond { position: absolute; left: 0; top: 0; width: 1080px; height: 956px; background: #0A0E12; border-bottom: 8px solid #FFFFFF; box-sizing: content-box; }
+    .dss-prix-titre { position: absolute; left: 0; right: 0; top: 64px; display: flex; justify-content: center; }
+    .dss-prix-titre div { padding: 14px 34px; border-radius: 999px; border: 4px solid #FFFFFF; color: #FFFFFF; font-family: "TikTok Sans", sans-serif; font-weight: 750; font-size: 44px; line-height: 1; white-space: nowrap; }
+    .dss-col { position: absolute; bottom: 256px; width: 340px; display: flex; flex-direction: column; align-items: center; gap: 18px; font-family: "TikTok Sans", sans-serif; font-weight: 750; }
+    .dss-col--avant { left: 150px; }
+    .dss-col--now { left: 590px; }
+    .dss-val { display: flex; flex-direction: column; align-items: center; color: #FFFFFF; line-height: 1; }
+    .dss-val small { font-size: 34px; opacity: 0.8; margin-bottom: 8px; }
+    .dss-val span { font-size: 68px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .dss-col--now .dss-val span { color: #FFD400; }
+    .dss-barre { width: 260px; border-radius: 22px 22px 0 0; background: #FFFFFF; transform-origin: 50% 100%; }
+    .dss-col--avant .dss-barre { height: 280px; opacity: 0.85; }
+    .dss-col--now .dss-barre { height: 392px; background: #FFD400; }
+    .dss-sol { position: absolute; left: 110px; right: 110px; top: 698px; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.5); }
+    .dss-lab { position: absolute; top: 722px; width: 440px; text-align: center; color: #FFFFFF; font-family: "TikTok Sans", sans-serif; font-weight: 750; font-size: 34px; line-height: 1.1; white-space: nowrap; }
+    .dss-capc { position: absolute; left: 0; right: 0; bottom: 424px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .dss-capc.dss-capc--raccord { bottom: 908px; }
+    .dss-cap { max-width: 840px; padding: 16px 30px; border-radius: 22px; background: rgba(10,14,18,0.86); color: #FFFFFF; font-family: "TikTok Sans", sans-serif; font-weight: 750; font-size: 60px; line-height: 1.15; text-align: center; white-space: normal; text-wrap: balance; }
+    .dss-cap b { color: #FFD400; font-weight: 750; }
+    .dss-nom { white-space: nowrap; }
+  </style>
+  <div class="dss-prix" id="prix-comparatif-dss-prix" data-transition="naturelle"><div class="dss-prix-fond"><div class="dss-prix-titre"><div>Prix d'un studio à JVT</div></div><div class="dss-sol"></div><div class="dss-col dss-col--avant"><div class="dss-val"><small>moins de</small><span id="prix-comparatif-dss-v1">500&#160;000 AED</span></div><div class="dss-barre"></div></div><div class="dss-col dss-col--now"><div class="dss-val"><small>plus de</small><span id="prix-comparatif-dss-v2">700&#160;000 AED</span></div><div class="dss-barre"></div></div><div class="dss-lab" style="left:100px">Il y a quelques années</div><div class="dss-lab" style="left:540px">Aujourd'hui</div></div></div>
+  <div class="dss-capc" id="prix-comparatif-dss-cap"><div class="dss-cap">plus aucun studio sous <b>700&#160;000</b>.</div></div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const fmt = (v) => Math.round(v / 1000) + "\u00a0000 AED";
+    const v1 = document.getElementById("prix-comparatif-dss-v1"), v2 = document.getElementById("prix-comparatif-dss-v2");
+    const n1 = { v: 0 }, n2 = { v: 500000 };
+    const P = "#prix-comparatif-dss-prix";
+    tl.fromTo("#meg-master-frame", { y: 0 }, { y: 700, duration: 0.5, ease: "power3.inOut" }, 0.30);
+    tl.fromTo(P + " .dss-prix-fond", { y: -964 }, { y: 0, duration: 0.5, ease: "power3.inOut" }, 0.30);
+    tl.fromTo("#prix-comparatif-dss-cap", { y: 0 }, { y: -484, duration: 0.5, ease: "power3.inOut" }, 0.30);
+    tl.fromTo(P + " .dss-prix-titre", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.74);
+    tl.fromTo(P + " .dss-col--avant", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 1.00);
+    tl.fromTo(P + " .dss-col--avant .dss-barre", { scaleY: 0 }, { scaleY: 1, duration: 0.8, ease: "power3.out" }, 1.00);
+    tl.fromTo(n1, { v: 0 }, { v: 500000, duration: 0.8, ease: "power2.out", onUpdate: () => { v1.textContent = fmt(n1.v); } }, 1.00);
+    tl.fromTo(P + " .dss-lab", { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 1.0 }, 1.00);
+    tl.fromTo(P + " .dss-col--now", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 2.00);
+    tl.fromTo(P + " .dss-col--now .dss-barre", { scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }, 2.00);
+    tl.fromTo(n2, { v: 500000 }, { v: 700000, duration: 0.9, ease: "power2.out", onUpdate: () => { v2.textContent = fmt(n2.v); } }, 2.00);
+    tl.to("#meg-master-frame", { y: 0, duration: 0.5, ease: "power3.inOut" }, 5.40);
+    tl.to(P + " .dss-prix-fond", { y: -964, duration: 0.5, ease: "power3.inOut" }, 5.40);
+    tl.to("#prix-comparatif-dss-cap", { y: 0, duration: 0.5, ease: "power3.inOut" }, 5.40);
+    window.__timelines["prix-comparatif-dss"] = tl;
+  </script>
+</div>
+</body>
+</html>

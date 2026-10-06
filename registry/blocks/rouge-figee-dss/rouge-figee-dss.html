@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{margin:0;padding:0;box-sizing:border-box}</style>
+</head>
+<body>
+<!--
+ROUGE DSS (B-roll a remplacer, valide JVT C01, mecanisme unique P18) — transition « figee » : le rouge est deja la, le plan deja sous le filet, sans mouvement (hop).
+  Autorisee SEULEMENT avec un motif ecrit dans broll.json (ex. coupe camera exacte, plan deja en bas dans le MP4).
+  Cadre 1080x964 overflow hidden : rouge #D32726 de 956 px + filet blanc 8 px. Le rouge descend du haut
+  pendant que le plan en cours descend de 700 px (plan plein ; 700 a 964 selon la tete) sous le filet, visage ENTIER ;
+  la capsule de sous-titre monte de 484 px (du bas 424 au bas 908 : a cheval sur le filet, raccord, sans couvrir le visage). Tout remonte a la sortie.
+  Duree 0,5 s, power3.inOut, a l'entree (t0) et a la sortie (t1 - 0,5). Un changement de plan sous le filet
+  se fait seulement a l'instant ou le mouvement part, jamais pendant ni juste apres.
+  Ici #meg-master-frame est le plan (harnais de la banque) ; en montage DSS, gen2.py ecrit ce gabarit sur
+  les videos du clip (bloc « // ROUGES cNN », broll.json) : ne jamais l'ecrire a la main.
+  L'encart .dss-ph (data-broll-idee) dit quoi mettre et pourquoi ; il est remplace par le vrai B-roll.
+-->
+<div id="rouge-figee-dss" data-composition-id="rouge-figee-dss" data-start="0" data-duration="4" data-width="1080" data-height="1920" data-dss-rouge="956" data-dss-filet="8" data-dss-duree="0.5" data-dss-ease="power3.inOut" data-dss-plein="700" data-dss-fit="482" data-dss-sous-titres="484" data-dss-transition="figee">
+  <style>
+    @font-face { font-family: "TikTok Sans"; src: url("assets/TikTokSans-Bold750.ttf") format("truetype"); font-weight: 750; }
+    #rouge-figee-dss { position: absolute; inset: 0; z-index: 2; overflow: hidden; }
+    .dss-prix { position: absolute; left: 0; top: 0; width: 1080px; height: 964px; overflow: hidden; }
+    .dss-broll { position: absolute; left: 0; top: 0; width: 1080px; height: 956px; background: #D32726; }
+    .dss-broll.dss-broll--haut { border-bottom: 8px solid #FFFFFF; box-sizing: content-box; }
+    .dss-ph { position: absolute; inset: 28px; border: 5px solid #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #FFFFFF; font-family: "TikTok Sans", sans-serif; font-weight: 750; text-align: center; }
+    .dss-ph b { font-size: 120px; line-height: 1; }
+    .dss-ph span { font-size: 64px; line-height: 1; }
+    .dss-ph small { font-size: 34px; letter-spacing: 0.04em; opacity: 0.9; max-width: 900px; white-space: normal; }
+    .dss-capc { position: absolute; left: 0; right: 0; bottom: 424px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .dss-capc.dss-capc--raccord { bottom: 908px; }
+    .dss-cap { max-width: 840px; padding: 16px 30px; border-radius: 22px; background: rgba(10,14,18,0.86); color: #FFFFFF; font-family: "TikTok Sans", sans-serif; font-weight: 750; font-size: 60px; line-height: 1.15; text-align: center; white-space: normal; text-wrap: balance; }
+    .dss-cap b { color: #FFD400; font-weight: 750; }
+    .dss-nom { white-space: nowrap; }
+  </style>
+  <div class="dss-prix" id="rouge-figee-dss-rouge" data-transition="figee" data-broll-idee="Vue aérienne de JVT et sa forme en triangle ; pourquoi : il explique que le nom vient de la forme en triangle du quartier"><div class="dss-broll dss-broll--haut"><div class="dss-ph"><b>B-ROLL</b><span>À REMPLACER</span><small>VUE AÉRIENNE DE JVT ET SA FORME EN TRIANGLE</small></div></div></div>
+  <div class="dss-capc" id="rouge-figee-dss-cap"><div class="dss-cap">Le nom vient de sa forme en <b>triangle</b>.</div></div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#meg-master-frame", { y: 700 }, 0);
+    tl.set("#rouge-figee-dss .dss-broll", { y: 0 }, 0);
+    tl.set("#rouge-figee-dss-cap", { y: -484 }, 0);
+    window.__timelines["rouge-figee-dss"] = tl;
+  </script>
+</div>
+</body>
+</html>

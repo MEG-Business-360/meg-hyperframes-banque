@@ -1154,6 +1154,10 @@
     {
       "name": "outro-dss",
       "type": "hyperframes:block"
+    },
+    {
+      "name": "outro-whatsapp-dss",
+      "type": "hyperframes:block"
     }
   ]
 }

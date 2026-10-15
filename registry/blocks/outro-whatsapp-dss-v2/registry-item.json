@@ -1,0 +1,61 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "outro-whatsapp-dss-v2",
+  "type": "hyperframes:block",
+  "title": "Outro WhatsApp DSS v2",
+  "description": "v2 de outro-whatsapp-dss (15/10/2026) : photos du sujet en <img> statiques (le chargeur de sous-composition ne réécrit pas un chemin posé en JS : bulle noire loin dans la timeline), conversation et bouton dans la zone sûre Snapchat (#owa-zone). 5 à 7 s, ambiance verte, photos en Ken Burns, doigt sur le bouton vert +971 52 480 4972 ; tout visible dès la 1re frame. Photos fournies par le projet (jamais commitées).",
+  "tags": [
+    "meg",
+    "dss",
+    "outro",
+    "whatsapp",
+    "snapchat",
+    "dss-montage",
+    "v2"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 7,
+  "files": [
+    {
+      "path": "outro-whatsapp-dss-v2.html",
+      "target": "templates-dss/outro-whatsapp-dss-v2.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Bold.woff2",
+      "target": "assets/outro/CabinetGrotesk-Bold.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Extrabold.otf",
+      "target": "assets/outro/CabinetGrotesk-Extrabold.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Medium.otf",
+      "target": "assets/outro/CabinetGrotesk-Medium.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/CabinetGrotesk-Regular.woff2",
+      "target": "assets/outro/CabinetGrotesk-Regular.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/grain.png",
+      "target": "assets/outro/grain.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro/logo-dss.png",
+      "target": "assets/outro/logo-dss.png",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

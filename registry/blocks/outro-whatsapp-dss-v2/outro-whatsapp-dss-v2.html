@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=1080,height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script><title>Outro WhatsApp DSS v2</title></head>
+  <body>
+<!--
+  OUTRO WHATSAPP DSS v2 (Snap 9:16, 5 a 7 s, le meme gabarit a la fin de chaque clip) — miroir vert de l'outro YouTube (outro-dss).
+  Mohamed, 13/10/2026 : « des la premiere frame on voit les choses », « YouTube c'est en rouge, la c'est en vert », « une animation vers le bouton WhatsApp ».
+  Concept : une conversation WhatsApp avec Salimou (comme l'outro YouTube imite le lecteur YouTube). A 0 s tout est deja la : logo, phrase d'appel,
+  en-tete Salimou (vraie photo + « Salimou · DSS »), bulle photo du sujet, message du viewer, bouton WhatsApp avec le numero. Rien n'entre depuis le vide.
+  Pendant : les photos du sujet defilent (Ken Burns), un doigt part du sujet et appuie sur le bouton, le message passe en ✓✓ puis lu (bleu),
+  Salimou « ecrit… », le halo vert du bouton respire et pulse, un reflet balaie le bouton. Toute l'animation converge vers le bouton.
+
+  AVANT DE REMPLIR, ecrire dans le compte rendu (Mohamed, 13/10/2026 : « se poser des questions sur ce qu'on montre ») :
+    1) De quoi parle le clip, en 1 phrase ?
+    2) Que veut revoir le viewer au moment d'ecrire : le projet, le quartier, le service, le chiffre ?
+    3) Projet : quelles photos reelles (vue aerienne, facade, salon, chambre, vue) et dans quel ordre (la plus forte en 1re : c'est la 1re frame) ;
+       autre sujet : quelle image reelle le montre. 1 a 4 photos.
+    4) Duree 5 a 7 s selon ce qu'il y a a montrer (environ 1,7 s par photo au minimum).
+    5) Quel message le viewer enverrait (V.message, court, 1re personne du viewer) ?
+
+  POURQUOI v2 (15/10/2026, lot Snapchat 12-10-2026) : la v1 posait les photos en JS (style.background = url(...)). Le chargeur de
+  sous-composition HyperFrames ne reecrit pas les chemins poses en JS : bulle photo et ambiance noires au rendu et en snapshot des que le
+  clip est loin dans la timeline (outros C09, C13, C20, C21). v2 : photos en <img> statiques dans le HTML, ambiance par url dans le <style>.
+  Et zone sure integree (Mohamed, 15/10/2026 : « la safe zone pour le outro, c'est super important ») : logo, textes, conversation et bouton
+  dans #owa-zone (translate 91,8 px, 137,1 px, scale 0,83) = x 142-938, y 245-1493 ; fond, ambiance, vignette et grain restent plein cadre.
+
+  INSTANCE PAR CLIP (compositions/outro-cNN.html du projet) : copier ce fichier, tout le corps dans <template>, remplacer « owa- » par « cNN-owa- »
+  partout (ids, classes, data-hf-id), data-composition-id « outro-cNN » et la cle window.__timelines["outro-cNN"] ; puis ne modifier QUE :
+    - les photos : 1 a 4 <img class="owa-photo"> dans #owa-photos (src, object-position et transform-origin = le meme cadrage dans la bulle
+      680 x 420 ; opacity:1 sur la 1re, 0 sur les suivantes ; data-hf-id et id owa-photo-0..3) ; jamais de photo posee en JS ;
+    - l'ambiance : url de #owa-ambiance dans le <style> = la 1re photo ;
+    - l'objet V ci-dessous (textes) ;
+    - la duree, une seule source : data-duration de #owa-racine ET de #owa-scene (meme valeur, 5 a 7) ; le script la lit sur la racine.
+  Ne jamais sortir un element de #owa-zone ni changer son transform (controle_lot_snap.py : ALERTE outro hors zone sure).
+  Photos : nouveaux fichiers dans assets/outro/ (cNN-outro-*.jpg), rendus officiels du projet. Jamais de prix ni de nombre d'unites.
+  Fixe pour tous les clips : numero +971 52 480 4972 (confirme le 13/10/2026), signature exacte « Salimou · DSS »,
+  photo de Salimou = assets/outro/salimou.jpg, copie de /Volumes/Externe/hyperframes-studio/_assets-dss/salimou.jpg (portrait officiel validé par Mohamed le 13/10/2026 : veste noire, tee-shirt blanc, fond gris ; jamais la photo costume fond blanc).
+  Charte : ambiance verte WhatsApp (verts profonds, lueur #25D366 maitrisee), bouton #25D366, or DSS #F0CC86/#E8B65C/#B98330 pour la marque, creme #FCF6ED
+  pour le texte ; jamais d'orange ; police Cabinet Grotesk. Aucun son par defaut, jamais de musique.
+  Fournis par la banque (assets/outro/) : polices Cabinet Grotesk, logo DSS, grain.
+  Propres au projet, JAMAIS commites dans la banque (comme avatar.jpg de outro-dss) : assets/outro/salimou.jpg = copie de
+  « 9. JVT/assets/outro/avatar.jpg » (512 px), et les photos du sujet (projet-1..3.jpg ici). L'apercu montre C01 Snap (Nuvana by Wadan), photos projet-1..3.jpg non commitees.
+-->
+    <style>
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Regular.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Medium.otf") format("opentype"); font-weight: 500; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Bold.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Extrabold.otf") format("opentype"); font-weight: 800; }
+      #owa-racine { position: absolute; inset: 0; overflow: hidden; background: #03140D; font-family: "Cabinet", system-ui, sans-serif; color: #FCF6ED; }
+      #owa-racine, #owa-racine * { box-sizing: border-box; }
+      #owa-racine .owa-scene { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+      /* ambiance verte WhatsApp : verts profonds, lueur haute, lueur sous le bouton, photo du sujet floutee derriere la conversation */
+      #owa-fond { position: absolute; inset: 0; background:
+        radial-gradient(70% 30% at 50% 0%, rgba(37,211,102,0.20) 0%, rgba(37,211,102,0) 100%),
+        linear-gradient(180deg, #08301F 0%, #052216 46%, #03140D 100%); }
+      #owa-ambiance { position: absolute; left: 60px; top: 640px; width: 960px; height: 760px; background: url("assets/outro/projet-1.jpg") center / cover; filter: blur(90px) saturate(1.2); opacity: 0.34; }
+      #owa-vignette { position: absolute; inset: 0; background: radial-gradient(90% 60% at 50% 46%, rgba(3,20,13,0) 42%, rgba(3,20,13,0.7) 100%); }
+      #owa-halo { position: absolute; left: 40px; top: 1376px; width: 1000px; height: 380px; background: radial-gradient(50% 50% at 50% 50%, rgba(37,211,102,0.42) 0%, rgba(37,211,102,0.12) 46%, rgba(37,211,102,0) 100%); }
+      #owa-grain { position: absolute; inset: 0; background: url("assets/outro/grain.png") repeat; opacity: 0.05; mix-blend-mode: overlay; }
+
+      /* marque : logo, kicker « ecrivez-moi sur WhatsApp », phrase d'appel */
+      #owa-logo { position: absolute; left: 0; right: 0; top: 130px; margin: 0 auto; width: 128px; height: auto; display: block; }
+      #owa-kicker { position: absolute; left: 0; right: 0; top: 252px; height: 44px; display: flex; justify-content: center; align-items: center; gap: 14px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; color: rgba(252,246,237,0.74); white-space: nowrap; }
+      #owa-kicker svg { width: 40px; height: 40px; flex: none; fill: #25D366; }
+      #owa-kicker b { font-weight: 800; font-size: 31px; letter-spacing: -0.01em; color: #FCF6ED; }
+      .owa-ligne-titre { position: absolute; left: 0; right: 0; height: 100px; overflow: hidden; text-align: center; line-height: 0; }
+      .owa-ligne-titre span { display: inline-block; vertical-align: top; font-weight: 800; font-size: 76px; line-height: 96px; letter-spacing: -0.03em; color: #FCF6ED; white-space: nowrap; }
+      .owa-ligne-titre em { font-style: normal; color: #E8B65C; }
+      #owa-l1 { top: 326px; }
+      #owa-l2 { top: 416px; }
+
+      /* la conversation WhatsApp */
+      #owa-chat { position: absolute; left: 60px; top: 588px; width: 960px; height: 852px; border-radius: 36px; box-shadow: 0 50px 100px rgba(1,10,6,0.72), 0 12px 30px rgba(1,10,6,0.45); }
+      #owa-bord { position: absolute; inset: -2px; border-radius: 38px; background: linear-gradient(140deg, rgba(240,204,134,0.88) 0%, rgba(240,204,134,0.14) 32%, rgba(240,204,134,0.04) 62%, rgba(240,204,134,0.48) 100%); }
+      #owa-ecran { position: absolute; inset: 0; border-radius: 36px; overflow: hidden; background: linear-gradient(180deg, #0B2A1E 0%, #082116 100%); }
+      #owa-entete { position: absolute; left: 0; right: 0; top: 0; height: 128px; background: linear-gradient(180deg, #145238 0%, #0F4129 100%); }
+      #owa-anneau { position: absolute; left: 26px; top: 16px; width: 96px; height: 96px; border-radius: 50%; padding: 3px; background: linear-gradient(140deg, #F0CC86, #B98330); }
+      #owa-anneau i { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #0F4129; background: url("assets/outro/salimou.jpg") 50% 30% / cover; }
+      #owa-nom { position: absolute; left: 144px; top: 20px; font-size: 41px; line-height: 50px; font-weight: 500; color: #F0CC86; white-space: nowrap; letter-spacing: -0.01em; }
+      #owa-nom b { font-weight: 800; color: #FCF6ED; }
+      #owa-statut { position: absolute; left: 144px; top: 72px; width: 560px; height: 36px; }
+      #owa-statut span { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 10px; height: 36px; font-size: 27px; font-weight: 500; color: #8FE6B3; white-space: nowrap; }
+      #owa-pastille { width: 13px; height: 13px; border-radius: 50%; background: #25D366; flex: none; }
+      #owa-ecrit { opacity: 0; }
+      .owa-point { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #8FE6B3; margin-left: 4px; }
+      #owa-entete svg { position: absolute; right: 30px; top: 38px; width: 52px; height: 52px; fill: #25D366; }
+
+      /* bulle recue : la photo du sujet (1 a 4 photos qui defilent) + nom + repere */
+      #owa-recu { position: absolute; left: 26px; top: 152px; width: 700px; height: 566px; padding: 10px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); }
+      #owa-photos { position: absolute; left: 10px; top: 10px; width: 680px; height: 420px; border-radius: 20px; overflow: hidden; background: #082116; }
+      .owa-photo { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; object-fit: cover; }  /* cadrage par photo : object-position et transform-origin en style */
+      #owa-legende { position: absolute; left: 26px; right: 22px; top: 448px; }
+      #owa-sujet { font-size: 48px; line-height: 56px; font-weight: 800; letter-spacing: -0.025em; color: #FCF6ED; white-space: nowrap; }
+      #owa-sujet em { font-style: normal; font-weight: 700; font-size: 31px; letter-spacing: -0.005em; color: #F0CC86; margin-left: 12px; }
+      #owa-repere { display: flex; align-items: center; gap: 10px; margin-top: 8px; height: 40px; font-size: 29px; font-weight: 500; color: rgba(252,246,237,0.84); white-space: nowrap; }
+      #owa-repere svg { width: 30px; height: 30px; flex: none; fill: #E8B65C; }
+      #owa-repere b { font-weight: 700; color: #F0CC86; }
+
+      /* bulle envoyee : le message du viewer, coches */
+      #owa-envoye { position: absolute; right: 26px; top: 742px; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 20px 0 26px; border-radius: 28px 10px 28px 28px; background: #0B6B4F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); white-space: nowrap; }
+      #owa-message { font-size: 33px; font-weight: 500; color: #FFFFFF; letter-spacing: -0.005em; }
+      #owa-coches { position: relative; width: 40px; height: 26px; flex: none; }
+      #owa-coches svg { position: absolute; inset: 0; width: 40px; height: 26px; }
+      #owa-coche2 { opacity: 0; }
+      #owa-lu { opacity: 0; }
+
+      /* bouton WhatsApp : la destination de toute l'animation */
+      #owa-onde { position: absolute; left: 90px; top: 1494px; width: 900px; height: 140px; border-radius: 999px; background: rgba(46,224,111,0.5); filter: blur(12px); opacity: 0; }
+      #owa-wa { position: absolute; left: 90px; top: 1494px; width: 900px; height: 140px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 24px;
+        background: linear-gradient(180deg, #3BE07C 0%, #25D366 55%, #1DB955 100%); color: #FFFFFF; font-weight: 800; font-size: 62px; letter-spacing: -0.005em; white-space: nowrap;
+        box-shadow: 0 24px 54px rgba(37,211,102,0.30), 0 12px 28px rgba(1,10,6,0.55); }
+      #owa-wa svg { width: 74px; height: 74px; flex: none; position: relative; fill: #FFFFFF; }
+      #owa-numero { position: relative; }
+      #owa-zone-reflet { position: absolute; inset: 0; border-radius: 999px; overflow: hidden; }
+      #owa-reflet { position: absolute; top: -20px; left: 0; width: 130px; height: 180px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.36) 50%, rgba(255,255,255,0) 100%); transform: translateX(-180px) skewX(-20deg); }
+
+      /* le doigt : part du sujet, glisse vers le bouton, appuie */
+      /* zone sure 15/10 : logo y 245, bouton WhatsApp bas y 1493, x 142-938 (Instagram/Snap : rien d'important hors x 65-1015, y 240-1500) */
+      #owa-zone { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; transform: translate(91.8px, 137.1px) scale(0.83); }
+
+      #owa-doigt { position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(252,246,237,0.9); box-shadow: 0 0 0 10px rgba(252,246,237,0.22), 0 10px 26px rgba(1,10,6,0.5); }
+    </style>
+    <div data-hf-id="hf-owa-racine" id="owa-racine" data-composition-id="outro-whatsapp-dss-v2" data-start="0" data-duration="7" data-width="1080" data-height="1920">
+      <div data-hf-id="hf-owa-scene" id="owa-scene" class="clip owa-scene" data-start="0" data-duration="7" data-track-index="1">
+        <div data-hf-id="hf-owa-fond" id="owa-fond"></div>
+        <div data-hf-id="hf-owa-ambiance" id="owa-ambiance" data-layout-allow-overflow=""></div>
+        <div data-hf-id="hf-owa-vignette" id="owa-vignette"></div>
+        <div data-hf-id="hf-owa-zone" id="owa-zone">
+        <div data-hf-id="hf-owa-halo" id="owa-halo" data-layout-allow-overflow=""></div>
+
+        <img data-hf-id="hf-owa-logo" id="owa-logo" src="assets/outro/logo-dss.png" alt="DSS Real Estate">
+        <div data-hf-id="hf-owa-kicker" id="owa-kicker"><span data-hf-id="hf-owa-kicker-t" id="owa-kicker-t"></span><svg data-hf-id="hf-owa-kicker-logo" viewBox="0 0 256 256"><path data-hf-id="hf-owa-kicker-logo-p" d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg><b data-hf-id="hf-owa-kicker-wa">WhatsApp</b></div>
+        <div data-hf-id="hf-owa-l1" id="owa-l1" class="owa-ligne-titre"><span data-hf-id="hf-owa-l1-s"></span></div>
+        <div data-hf-id="hf-owa-l2" id="owa-l2" class="owa-ligne-titre"><span data-hf-id="hf-owa-l2-s"></span></div>
+
+        <div data-hf-id="hf-owa-chat" id="owa-chat">
+          <div data-hf-id="hf-owa-bord" id="owa-bord"></div>
+          <div data-hf-id="hf-owa-ecran" id="owa-ecran">
+            <div data-hf-id="hf-owa-entete" id="owa-entete">
+              <div data-hf-id="hf-owa-anneau" id="owa-anneau"><i data-hf-id="hf-owa-visage" role="img" aria-label="Salimou, DSS"></i></div>
+              <div data-hf-id="hf-owa-nom" id="owa-nom"></div>
+              <div data-hf-id="hf-owa-statut" id="owa-statut">
+                <span data-hf-id="hf-owa-en-ligne" id="owa-en-ligne"><i data-hf-id="hf-owa-pastille" id="owa-pastille"></i>en ligne</span>
+                <span data-hf-id="hf-owa-ecrit" id="owa-ecrit">écrit<i data-hf-id="hf-owa-p1" class="owa-point"></i><i data-hf-id="hf-owa-p2" class="owa-point"></i><i data-hf-id="hf-owa-p3" class="owa-point"></i></span>
+              </div>
+              <svg data-hf-id="hf-owa-entete-logo" viewBox="0 0 256 256"><path data-hf-id="hf-owa-entete-logo-p" d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg>
+            </div>
+            <div data-hf-id="hf-owa-recu" id="owa-recu">
+              <div data-hf-id="hf-owa-photos" id="owa-photos" data-layout-allow-overflow="">
+                <img data-hf-id="hf-owa-photo-0" id="owa-photo-0" class="owa-photo" src="assets/outro/projet-1.jpg" alt="" style="object-position:50% 48%;transform-origin:50% 48%;opacity:1">
+                <img data-hf-id="hf-owa-photo-1" id="owa-photo-1" class="owa-photo" src="assets/outro/projet-2.jpg" alt="" style="object-position:45% 60%;transform-origin:45% 60%;opacity:0">
+                <img data-hf-id="hf-owa-photo-2" id="owa-photo-2" class="owa-photo" src="assets/outro/projet-3.jpg" alt="" style="object-position:50% 62%;transform-origin:50% 62%;opacity:0">
+              </div>
+              <div data-hf-id="hf-owa-legende" id="owa-legende">
+                <div data-hf-id="hf-owa-sujet" id="owa-sujet"></div>
+                <div data-hf-id="hf-owa-repere" id="owa-repere"><svg data-hf-id="hf-owa-pin" viewBox="0 0 256 256"><path data-hf-id="hf-owa-pin-p" d="M128,16a88.1,88.1,0,0,0-88,88c0,75.3,80,132.17,83.41,134.55a8,8,0,0,0,9.18,0C136,236.17,216,179.3,216,104A88.1,88.1,0,0,0,128,16Zm0,56a32,32,0,1,1-32,32A32,32,0,0,1,128,72Z"/></svg><span data-hf-id="hf-owa-repere-t" id="owa-repere-t"></span></div>
+              </div>
+            </div>
+            <div data-hf-id="hf-owa-envoye" id="owa-envoye">
+              <span data-hf-id="hf-owa-message" id="owa-message"></span>
+              <div data-hf-id="hf-owa-coches" id="owa-coches">
+                <svg data-hf-id="hf-owa-coche1" id="owa-coche1" viewBox="0 0 40 26"><path data-hf-id="hf-owa-coche1-p" d="M4 14l7 7L25 5" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg data-hf-id="hf-owa-coche2" id="owa-coche2" viewBox="0 0 40 26"><path data-hf-id="hf-owa-coche2-p" d="M4 14l7 7L25 5M17 19l2 2L33 5" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg data-hf-id="hf-owa-lu" id="owa-lu" viewBox="0 0 40 26"><path data-hf-id="hf-owa-lu-p" d="M4 14l7 7L25 5M17 19l2 2L33 5" fill="none" stroke="#53BDEB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-owa-onde" id="owa-onde"></div>
+        <div data-hf-id="hf-owa-wa" id="owa-wa">
+          <div data-hf-id="hf-owa-zone-reflet" id="owa-zone-reflet" data-layout-allow-overflow=""><div data-hf-id="hf-owa-reflet" id="owa-reflet" data-layout-allow-overflow=""></div></div>
+          <svg data-hf-id="hf-owa-wa-logo" viewBox="0 0 256 256"><path data-hf-id="hf-owa-wa-logo-p" d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></svg>
+          <span data-hf-id="hf-owa-numero" id="owa-numero"></span>
+        </div>
+        <div data-hf-id="hf-owa-doigt" id="owa-doigt" data-layout-allow-overflow=""></div>
+        </div>
+        <div data-hf-id="hf-owa-grain" id="owa-grain"></div>
+      </div>
+    </div>
+    <script>
+      (() => {
+        // ===== VARIABLES DU GABARIT outro-whatsapp-dss-v2 : textes par clip (+ <img> de #owa-photos, url de #owa-ambiance, data-duration) =====
+        // photos : jamais ici (v2) : les <img class="owa-photo"> du HTML, la plus forte en 1re (c'est la 1re frame)
+        const V = {
+          sujet: "Nuvana", promoteur: "by Wadan",               // titre du sujet dans la bulle (promoteur facultatif : "")
+          lieu: "Dubai Islands", repere: "Livraison T3 2027",    // ligne repere (repere facultatif : "")
+          kicker: "ÉCRIVEZ-MOI SUR",
+          appel1: "Ce projet vous intéresse ?", appel2: "Écrivez-moi, je vous réponds", motOr: "Écrivez-moi",
+          message: "Bonjour Salimou, Nuvana m’intéresse",      // ce que le viewer enverrait
+          numero: "+971 52 480 4972",                            // confirme par Mohamed le 13/10/2026, toujours celui-ci
+          signe: "Salimou · DSS"                                 // exactement
+        };
+        // ===== fin des variables =====
+        const R = "owa-";
+        const $ = id => document.getElementById(R + id);
+        const D = Math.min(7, Math.max(5, Number($("racine").getAttribute("data-duration")) || 7));
+
+        // textes
+        $("kicker-t").textContent = V.kicker;
+        $("numero").textContent = V.numero;
+        $("wa").setAttribute("data-lien", "https://wa.me/" + V.numero.replace(/\D/g, ""));
+        const sg = V.signe.split(" · "), nom = $("nom"); nom.textContent = "";
+        const nb = document.createElement("b"); nb.textContent = sg[0]; nom.append(nb, sg[1] ? " · " + sg[1] : "");
+        const sj = $("sujet"); sj.textContent = V.sujet;
+        if (V.promoteur) { const e = document.createElement("em"); e.textContent = V.promoteur; sj.append(e); }
+        const rp = $("repere-t"); rp.textContent = V.lieu;
+        if (V.repere) { const b = document.createElement("b"); b.textContent = V.repere; rp.append("  ·  ", b); }
+        $("message").textContent = V.message;
+        function ecrire(el, texte, mot) {
+          el.textContent = ""; const i = mot ? texte.indexOf(mot) : -1;
+          if (i < 0) { el.textContent = texte; return; }
+          const em = document.createElement("em"); em.textContent = mot;
+          el.append(texte.slice(0, i), em, texte.slice(i + mot.length));
+        }
+        const s1 = document.querySelector("#" + R + "l1 span"), s2 = document.querySelector("#" + R + "l2 span");
+        ecrire(s1, V.appel1, V.motOr); ecrire(s2, V.appel2, V.motOr);
+        // 2 lignes a la meme taille, 960 px max ; message et sujet ajustes a leur bulle
+        function ajuster() {
+          for (const s of [s1, s2]) s.style.fontSize = "";
+          const w = Math.max(s1.offsetWidth, s2.offsetWidth);
+          if (w > 960) { const f = (76 * 960 / w).toFixed(1) + "px"; s1.style.fontSize = f; s2.style.fontSize = f; }
+          const m = $("message"); m.style.fontSize = ""; if (m.offsetWidth > 800) m.style.fontSize = (33 * 800 / m.offsetWidth).toFixed(1) + "px";
+          sj.style.fontSize = ""; if (sj.offsetWidth > 652) sj.style.fontSize = (48 * 652 / sj.offsetWidth).toFixed(1) + "px";
+        }
+        ajuster(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuster);
+
+        // photos du sujet dans la bulle : les <img> statiques du HTML (v2 : un chemin pose en JS n'est pas reecrit par le chargeur de
+        // sous-composition, bulle noire) ; l'ambiance garde l'url de son <style>
+        const photos = Array.from($("photos").querySelectorAll("." + R + "photo")).slice(0, 4);
+
+        const tl = gsap.timeline({ paused: true });
+        // REGLE 1re FRAME : aucun fromTo qui part d'une opacite 0 sur un element visible a 0 s ; tout est deja pose a t = 0.
+
+        // photos : Ken Burns des 0 s, fondu enchaine de 0.5 s, partage egal de la duree
+        const n = photos.length, seg = D / n;
+        photos.forEach((el, i) => {
+          const debut = i ? i * seg - 0.25 : 0, fin = i < n - 1 ? (i + 1) * seg + 0.25 : D;
+          if (i) tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut", immediateRender: false }, debut);
+          tl.fromTo(el, { scale: i % 2 ? 1.12 : 1.02 }, { scale: i % 2 ? 1.03 : 1.12, duration: fin - debut, ease: "sine.inOut", immediateRender: !i }, debut);
+        });
+        tl.fromTo("#" + R + "ambiance", { scale: 1 }, { scale: 1.08, duration: D, ease: "sine.inOut" }, 0);
+
+        // le doigt part de la photo du sujet et glisse vers le bouton (courbe : x et y avec 2 courbes differentes)
+        const DX0 = 905, DY0 = 1150, DX1 = 760, DY1 = 1564;
+        tl.set("#" + R + "doigt", { x: DX0, y: DY0, scale: 0.6, opacity: 0 }, 0);   // le pointeur seul se pose (0,12 s), tout le contenu est deja la
+        tl.to("#" + R + "doigt", { scale: 1, opacity: 1, duration: 0.18, ease: "back.out(2)" }, 0.12);
+        tl.to("#" + R + "doigt", { x: DX1, duration: 0.75, ease: "power1.inOut" }, 0.3);
+        tl.to("#" + R + "doigt", { y: DY1, duration: 0.75, ease: "power2.in" }, 0.3);
+        // appui sur le bouton
+        tl.to("#" + R + "doigt", { scale: 0.78, duration: 0.1, ease: "power1.in" }, 1.05);
+        tl.to("#" + R + "wa", { scale: 0.965, duration: 0.1, ease: "power1.in" }, 1.05);
+        tl.to("#" + R + "wa", { scale: 1, duration: 0.18, ease: "power2.out" }, 1.15);
+        tl.to("#" + R + "doigt", { scale: 1.25, opacity: 0, duration: 0.35, ease: "power1.out" }, 1.18);
+        // message envoye : ✓ puis ✓✓ puis lu (bleu), puis Salimou ecrit…
+        tl.set("#" + R + "coche1", { opacity: 0 }, 1.2);
+        tl.set("#" + R + "coche2", { opacity: 1 }, 1.2);
+        tl.fromTo("#" + R + "envoye", { scale: 1 }, { scale: 1.035, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", transformOrigin: "100% 50%" }, 1.2);
+        tl.set("#" + R + "coche2", { opacity: 0 }, 1.75);
+        tl.set("#" + R + "lu", { opacity: 1 }, 1.75);
+        tl.to("#" + R + "en-ligne", { opacity: 0, duration: 0.15 }, 2.15);
+        tl.to("#" + R + "ecrit", { opacity: 1, duration: 0.15 }, 2.2);
+        for (let t = 2.3, k = 0; t < D - 0.3; t += 0.9, k++) {
+          [1, 2, 3].forEach(j => tl.to("#" + R + "p" + j, { y: -8, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, t + (j - 1) * 0.12));
+        }
+        // halo du bouton qui respire, ondes qui partent du bouton, reflet
+        tl.fromTo("#" + R + "halo", { opacity: 0.75 }, { opacity: 1, scale: 1.06, duration: 0.6, yoyo: true, repeat: Math.max(1, Math.floor(D / 0.6) - 1), ease: "sine.inOut" }, 0);
+        const ondes = [1.12]; for (let t = 2.9; t < D - 0.6; t += 1.8) ondes.push(t);
+        ondes.forEach(t => tl.fromTo("#" + R + "onde", { opacity: 0.7, scaleX: 1, scaleY: 1 }, { opacity: 0, scaleX: 1.07, scaleY: 1.4, duration: 0.8, ease: "power2.out", immediateRender: false }, t));
+        tl.fromTo("#" + R + "reflet", { x: -180 }, { x: 1080, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 1.6);
+        if (D >= 5.5) tl.fromTo("#" + R + "reflet", { x: -180 }, { x: 1080, duration: 0.95, ease: "power2.inOut", immediateRender: false }, D - 1.9);
+        tl.to({}, { duration: 0 }, D);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["outro-whatsapp-dss-v2"] = tl;
+      })();
+    </script>
+  </body>
+</html>

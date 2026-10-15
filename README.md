@@ -56,8 +56,8 @@ de format (jamais un format inventé) ; une marque sans bloc pour le format affi
 
 Rien ne disparaît et rien n'est compté deux fois : `node scripts/audit-public-page.mjs` relit la page
 publiée ou locale, rejoue le classement réel et vérifie que Commun + MEG + DSS font exactement le total
-du format, que chaque nom n'apparaît qu'une fois et que les 289 blocs sont tous affichés.
-Résultat du 13/10/2026 : Mobile 200 = Commun 11 + MEG 178 + DSS 11 ; YouTube 89 = Commun 0 + MEG 89 + DSS 0.
+du format, que chaque nom n'apparaît qu'une fois et que les 290 blocs sont tous affichés.
+Résultat du 15/10/2026 : Mobile 201 = Commun 11 + MEG 178 + DSS 12 ; YouTube 89 = Commun 0 + MEG 89 + DSS 0.
 
 ### Ce qui rend un bloc « commun »
 

@@ -66,7 +66,7 @@ const items = catalogue.items;
 const blocsRegistry = registry.items.filter((i) => i.type === "hyperframes:block");
 
 verifie("catalogue = registry (aucun bloc perdu a la generation)", items.length === blocsRegistry.length, items.length + " items / " + blocsRegistry.length + " blocs registry");
-verifie("effectif de reference 289", items.length === 289, items.length + " blocs");
+verifie("effectif de reference 290", items.length === 290, items.length + " blocs");
 verifie("catalogue : noms uniques", new Set(items.map((i) => i.name)).size === items.length, new Set(items.map((i) => i.name)).size + " noms / " + items.length + " items");
 verifie("catalogue : chaque bloc a un apercu", items.every((i) => i.preview), items.filter((i) => !i.preview).length + " sans apercu");
 if (Array.isArray(catalogue.formats)) {
@@ -119,7 +119,7 @@ for (const f of formats) {
 
 // 5. Anti-doublon global : tout le catalogue, tous formats confondus.
 const doublonsPage = nomsPage.filter((n, i) => nomsPage.indexOf(n) !== i);
-verifie("anti-doublon — total page : 289 cartes, 289 noms uniques", nomsPage.length === 289 && new Set(nomsPage).size === 289 && doublonsPage.length === 0,
+verifie("anti-doublon — total page : 290 cartes, 290 noms uniques", nomsPage.length === 290 && new Set(nomsPage).size === 290 && doublonsPage.length === 0,
   nomsPage.length + " cartes / " + new Set(nomsPage).size + " noms uniques" + (doublonsPage.length ? " — doublons " + [...new Set(doublonsPage)].join(", ") : ""));
 verifie("anti-doublon — chaque nom du catalogue est affiche exactement une fois",
   JSON.stringify([...nomsPage].sort()) === JSON.stringify(items.map((i) => i.name).sort()), new Set(nomsPage).size + " / " + items.length);

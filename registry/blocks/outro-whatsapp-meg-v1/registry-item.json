@@ -1,0 +1,74 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "outro-whatsapp-meg-v1",
+  "type": "hyperframes:block",
+  "title": "Outro WhatsApp MEG v1",
+  "description": "Outro 9:16 de 7 s à placer à la fin de chaque vidéo MEG Business 360 (pendant MEG de outro-whatsapp-dss-v2). Tout est visible dès la 1re image : logo MEG, phrase titre, conversation WhatsApp avec la vraie photo ronde de Mohamed et la signature « Mohamed · MEG Business 360 », message du visiteur, réponse de Mohamed au vouvoiement, gros bouton vert +33 6 52 52 48 21 ; puis Ken Burns, « écrit… », un doigt appuie 2 fois sur le bouton (enfoncement + onde), halo et reflet. Paramètres : @MESSAGE@ (message du visiteur, défaut « Je veux créer mon organisme de formation », 70 signes max), @TITRE@ (phrase titre, défaut « Écrivez-nous sur WhatsApp », 40 signes max), @MOT_OR@ (mot du titre en or, défaut « WhatsApp »), @REPONSE@ (réponse de Mohamed, 80 signes max) : remplacer la ligne marquée dans l'objet V du script et le default de la variable dans data-composition-variables, ou --variables au rendu autonome. Titre et bulles s'ajustent sur 2 lignes. Zone sûre #owa-zone x 64-1016, y 285-1580 ; aucun texte sous 20 px ; 0 émoji ; aucun son. Numéro, signature, photo et logo fixes (assets de marque publics).",
+  "tags": [
+    "meg",
+    "outro",
+    "whatsapp",
+    "reel",
+    "snapchat",
+    "cta",
+    "conversation",
+    "v1",
+    "meg-reel",
+    "meg-reel-folder-cta-outros"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 7,
+  "files": [
+    {
+      "path": "outro-whatsapp-meg-v1.html",
+      "target": "compositions/outro-whatsapp-meg-v1.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/outro-meg/CabinetGrotesk-Bold.woff2",
+      "target": "assets/outro-meg/CabinetGrotesk-Bold.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/CabinetGrotesk-Extrabold.otf",
+      "target": "assets/outro-meg/CabinetGrotesk-Extrabold.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/CabinetGrotesk-Medium.otf",
+      "target": "assets/outro-meg/CabinetGrotesk-Medium.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/CabinetGrotesk-Regular.woff2",
+      "target": "assets/outro-meg/CabinetGrotesk-Regular.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/ClashGrotesk-Bold.otf",
+      "target": "assets/outro-meg/ClashGrotesk-Bold.otf",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/grain.png",
+      "target": "assets/outro-meg/grain.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/meg-logo-dark.png",
+      "target": "assets/outro-meg/meg-logo-dark.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/outro-meg/mohamed.jpg",
+      "target": "assets/outro-meg/mohamed.jpg",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

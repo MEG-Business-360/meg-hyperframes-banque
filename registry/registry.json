@@ -1162,6 +1162,10 @@
     {
       "name": "outro-whatsapp-dss-v2",
       "type": "hyperframes:block"
+    },
+    {
+      "name": "outro-whatsapp-meg-v1",
+      "type": "hyperframes:block"
     }
   ]
 }

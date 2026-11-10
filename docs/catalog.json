@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-15T18:14:26.799Z",
-  "count": 290,
+  "generatedAt": "2026-11-10T07:36:28.450Z",
+  "count": 291,
   "formats": [
     {
       "key": "mobile",
       "label": "Mobile (9:16 · 1080×1920)",
-      "count": 201,
+      "count": 202,
       "sections": {
         "commun": 11,
-        "meg": 178,
+        "meg": 179,
         "dss": 12
       }
     },
@@ -7295,6 +7295,35 @@
       "duration": 6,
       "target": "compositions/meg-yt-trio-grille.html",
       "preview": "registry/blocks/meg-yt-trio-grille/preview.jpg"
+    },
+    {
+      "name": "outro-whatsapp-meg-v1",
+      "brand": "MEG",
+      "commun": false,
+      "format": "mobile",
+      "formatLabel": "Mobile (9:16 · 1080×1920)",
+      "ratio": "9:16",
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "title": "Outro WhatsApp MEG v1",
+      "description": "Outro 9:16 de 7 s à placer à la fin de chaque vidéo MEG Business 360 (pendant MEG de outro-whatsapp-dss-v2). Tout est visible dès la 1re image : logo MEG, phrase titre, conversation WhatsApp avec la vraie photo ronde de Mohamed et la signature « Mohamed · MEG Business 360 », message du visiteur, réponse de Mohamed au vouvoiement, gros bouton vert +33 6 52 52 48 21 ; puis Ken Burns, « écrit… », un doigt appuie 2 fois sur le bouton (enfoncement + onde), halo et reflet. Paramètres : @MESSAGE@ (message du visiteur, défaut « Je veux créer mon organisme de formation », 70 signes max), @TITRE@ (phrase titre, défaut « Écrivez-nous sur WhatsApp », 40 signes max), @MOT_OR@ (mot du titre en or, défaut « WhatsApp »), @REPONSE@ (réponse de Mohamed, 80 signes max) : remplacer la ligne marquée dans l'objet V du script et le default de la variable dans data-composition-variables, ou --variables au rendu autonome. Titre et bulles s'ajustent sur 2 lignes. Zone sûre #owa-zone x 64-1016, y 285-1580 ; aucun texte sous 20 px ; 0 émoji ; aucun son. Numéro, signature, photo et logo fixes (assets de marque publics).",
+      "tags": [
+        "meg",
+        "outro",
+        "whatsapp",
+        "reel",
+        "snapchat",
+        "cta",
+        "conversation",
+        "v1",
+        "meg-reel",
+        "meg-reel-folder-cta-outros"
+      ],
+      "duration": 7,
+      "target": "compositions/outro-whatsapp-meg-v1.html",
+      "preview": "registry/blocks/outro-whatsapp-meg-v1/preview.jpg"
     },
     {
       "name": "captions-dss",

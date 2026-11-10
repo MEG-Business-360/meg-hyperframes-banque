@@ -2,8 +2,8 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "outro-whatsapp-meg-v1",
   "type": "hyperframes:block",
-  "title": "Outro WhatsApp MEG v1",
-  "description": "Outro 9:16 de 7 s à placer à la fin de chaque vidéo MEG Business 360 (pendant MEG de outro-whatsapp-dss-v2). Tout est visible dès la 1re image : logo MEG, phrase titre, conversation WhatsApp avec la vraie photo ronde de Mohamed et la signature « Mohamed · MEG Business 360 », message du visiteur, réponse de Mohamed au vouvoiement, gros bouton vert +33 6 52 52 48 21 ; puis Ken Burns, « écrit… », un doigt appuie 2 fois sur le bouton (enfoncement + onde), halo et reflet. Paramètres : @MESSAGE@ (message du visiteur, défaut « Je veux créer mon organisme de formation », 70 signes max), @TITRE@ (phrase titre, défaut « Écrivez-nous sur WhatsApp », 40 signes max), @MOT_OR@ (mot du titre en or, défaut « WhatsApp »), @REPONSE@ (réponse de Mohamed, 80 signes max) : remplacer la ligne marquée dans l'objet V du script et le default de la variable dans data-composition-variables, ou --variables au rendu autonome. Titre et bulles s'ajustent sur 2 lignes. Zone sûre #owa-zone x 64-1016, y 285-1580 ; aucun texte sous 20 px ; 0 émoji ; aucun son. Numéro, signature, photo et logo fixes (assets de marque publics).",
+  "title": "Outro WhatsApp MEG",
+  "description": "Outro 9:16 de 6 à 7 s à placer à la fin de chaque vidéo MEG Business 360, clone de outro-whatsapp-dss-v2 aux couleurs MEG (10/11/2026, remplace la v1 crème refusée). Ambiance verte WhatsApp, logo MEG en tête, kicker « ÉCRIVEZ-NOUS SUR WhatsApp », titre sur 2 lignes avec mot en or, conversation avec avatar = logo MEG (jamais de visage) et nom « MEG Business 360 », bulle sujet avec photos en Ken Burns + sujet + repère, message du visiteur (coches 1 puis 2 puis bleues), « écrit… » et bulle de saisie, réponse de l'équipe vers 3,4 s, bouton vert +33 6 52 52 48 21 pressé 2 fois par un point de toucher rond (onde, halo, reflet) ; tout visible dès la 1re frame. Paramètres (data-composition-variables ou objet V) : appel1, appel2, motOr, sujet, sujetTag, repere, message, reponse ; durée via data-duration (6 à 7 s). Photos : 1 à 4 <img class=\"owa-photo\"> statiques, assets/outro-meg/sujet-1.jpg.. fournis par le projet (680x372, jamais commités). Zone sûre #owa-zone identique à DSS ; 0 émoji ; aucun son. Numéro, nom et logo fixes (assets de marque publics).",
   "tags": [
     "meg",
     "outro",
@@ -12,7 +12,6 @@
     "snapchat",
     "cta",
     "conversation",
-    "v1",
     "meg-reel",
     "meg-reel-folder-cta-outros"
   ],
@@ -48,23 +47,13 @@
       "type": "hyperframes:asset"
     },
     {
-      "path": "assets/outro-meg/ClashGrotesk-Bold.otf",
-      "target": "assets/outro-meg/ClashGrotesk-Bold.otf",
-      "type": "hyperframes:asset"
-    },
-    {
       "path": "assets/outro-meg/grain.png",
       "target": "assets/outro-meg/grain.png",
       "type": "hyperframes:asset"
     },
     {
-      "path": "assets/outro-meg/meg-logo-dark.png",
-      "target": "assets/outro-meg/meg-logo-dark.png",
-      "type": "hyperframes:asset"
-    },
-    {
-      "path": "assets/outro-meg/mohamed.jpg",
-      "target": "assets/outro-meg/mohamed.jpg",
+      "path": "assets/outro-meg/meg-logo-light.png",
+      "target": "assets/outro-meg/meg-logo-light.png",
       "type": "hyperframes:asset"
     }
   ],

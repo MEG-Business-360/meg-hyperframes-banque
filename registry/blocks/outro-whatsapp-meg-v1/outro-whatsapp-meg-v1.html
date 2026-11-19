@@ -7,8 +7,6 @@
   {"id":"sujetTag","type":"string","label":"Etiquette du sujet (or, facultative)","default":"Réalisation","maxLength":20},
   {"id":"repere","type":"string","label":"Ligne repère sous le sujet","default":"Suivie de juillet à novembre 2026","maxLength":44},
   {"id":"message","type":"string","label":"Message du visiteur","default":"Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon accès au portail EDOF.","maxLength":120},
-  {"id":"vTitre","type":"string","label":"Vignette : titre (aligné à gauche)","default":"Demande EDOF acceptée","maxLength":40},
-  {"id":"vSous","type":"string","label":"Vignette : sous-titre or","default":"du premier coup","maxLength":30},
   {"id":"reponse","type":"string","label":"Réponse de l’équipe MEG","default":"Top, je vous appelle dans quelques minutes 🤝","maxLength":48}
 ]'>
   <head><meta charset="utf-8">
@@ -25,11 +23,6 @@
   coches 1 -> 2 (1,2 s) -> lues bleues (1,75 s), « en ligne » -> « écrit… » + bulle « ••• » (2,2 s), reponse de l'equipe (3,4 s),
   2e appui qui part de la reponse vers le bouton (5,55 s), halo qui respire, ondes, reflets. Toute l'animation converge vers le bouton.
 
-  VERSION VALIDEE SOLEAD (20/11/2026) : prospect a GAUCHE (message), reponse MEG a DROITE avec le logo MEG dans la bulle, reponse par defaut
-  « Top, je vous appelle dans quelques minutes 🤝 », message par defaut « Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon
-  accès au portail [service]. » ([service] = EDOF, Qualiopi... a ecrire dans message). VIGNETTE de bulle reutilisable #owa-vignette : texte
-  a gauche (variables vTitre / vSous), illustration a gauche dans #owa-illu = SEUL bloc a changer selon le sujet, avec mini animation ;
-  jamais de capture, de rayons/soleil ni d'image floue. Couleurs (fond vert, « Écrivez-nous » or) inchangees.
   PARAMETRES
     - textes : data-composition-variables ci-dessus (default = valeur du gabarit) ET objet V du script (meme valeur) ;
       rendu autonome : npx hyperframes render --variables '{"message":"...","reponse":"..."}'.
@@ -97,21 +90,6 @@
       /* bulle recue : la photo du sujet (1 a 4 photos qui defilent) + sujet + repere */
       #owa-recu { position: absolute; left: 26px; top: 146px; width: 700px; height: 508px; padding: 10px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); }
       #owa-photos { position: absolute; left: 10px; top: 10px; width: 680px; height: 372px; border-radius: 20px; overflow: hidden; background: #082116; }
-      /* VIGNETTE de la realisation (gabarit) : texte aligne a gauche, illustration a gauche dans #owa-illu (seul bloc a changer selon le sujet) */
-      #owa-vignette { position: absolute; inset: 0; background: #FFFCD6; display: flex; align-items: center; gap: 30px; padding: 0 34px 0 30px; box-sizing: border-box; }
-      #owa-illu { position: relative; width: 236px; height: 300px; flex: none; }
-      #owa-vtexte { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
-      #owa-vlogo { height: 40px; width: auto; margin-bottom: 18px; filter: brightness(0.22) sepia(1) saturate(6) hue-rotate(15deg); }
-      #owa-vtitre { color: #2F2C00; font-size: 50px; font-weight: 800; line-height: 1.02; letter-spacing: -0.01em; }
-      #owa-vsous { color: #8A7D00; font-size: 38px; font-weight: 800; margin-top: 8px; }
-      #owa-vtag { margin-top: 20px; padding: 8px 18px; border-radius: 30px; background: #2F2C00; color: #FFFCD6; font-size: 22px; font-weight: 500; }
-      /* illustration EDOF : mini carte, statut qui passe a « acceptee » */
-      .ill-carte { position: absolute; inset: 0; border-radius: 26px; background: #2F2C00; overflow: hidden; box-shadow: 0 14px 30px rgba(80,60,0,0.3); }
-      .ill-bar { height: 58px; background: #B9AA02; color: #2F2C00; font-size: 28px; font-weight: 800; display: flex; align-items: center; padding: 0 20px; gap: 10px; }
-      .ill-bar i { width: 12px; height: 12px; border-radius: 50%; background: #2F2C00; opacity: 0.55; display: block; }
-      .ill-l { height: 16px; border-radius: 8px; background: rgba(255,252,214,0.14); margin: 16px 22px 0; }
-      #owa-ill-ok { position: absolute; left: 18px; right: 18px; bottom: 26px; height: 92px; border-radius: 20px; background: #FFF3AE; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(255,243,174,0.6); }
-      #owa-ill-ok svg { width: 60px; height: 60px; }
       .owa-photo { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; object-fit: cover; }  /* cadrage par photo : object-position et transform-origin en style */
       #owa-legende { position: absolute; left: 26px; right: 22px; top: 396px; }
       #owa-sujet { font-size: 48px; line-height: 56px; font-weight: 800; letter-spacing: -0.025em; color: #FFFCD6; white-space: nowrap; }
@@ -178,11 +156,8 @@
             </div>
             <div data-hf-id="hf-owa-recu" id="owa-recu">
               <div data-hf-id="hf-owa-photos" id="owa-photos" data-layout-allow-overflow="">
-                <div data-hf-id="hf-owa-vignette" id="owa-vignette">
-                  <div data-hf-id="hf-owa-illu" id="owa-illu"><div data-hf-id="hf-owa-ill-carte" class="ill-carte"><div data-hf-id="hf-owa-ill-bar" class="ill-bar"><i data-hf-id="hf-owa-ill-p"></i>EDOF</div><div data-hf-id="hf-owa-ill-l1" class="ill-l"></div><div data-hf-id="hf-owa-ill-l2" class="ill-l" style="width:60%"></div><div data-hf-id="hf-owa-ill-l3" class="ill-l" style="width:72%"></div>
-                    <div data-hf-id="hf-owa-ill-ok" id="owa-ill-ok"><svg data-hf-id="hf-owa-ill-svg" viewBox="0 0 60 60"><circle data-hf-id="hf-owa-ill-c" cx="30" cy="30" r="28" fill="#2F2C00"/><path data-hf-id="hf-owa-ill-coche" id="owa-ill-coche" d="M17 31l9 9 18-19" fill="none" stroke="#FFF3AE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="44" stroke-dashoffset="0"/></svg></div></div></div>
-                  <div data-hf-id="hf-owa-vtexte" id="owa-vtexte"><img data-hf-id="hf-owa-vlogo" id="owa-vlogo" src="assets/outro-meg/meg-logo-light.png" alt="MEG"><div data-hf-id="hf-owa-vtitre" id="owa-vtitre"></div><div data-hf-id="hf-owa-vsous" id="owa-vsous"></div><div data-hf-id="hf-owa-vtag" id="owa-vtag">Réalisation MEG</div></div>
-                </div>
+                <img data-hf-id="hf-owa-photo-0" id="owa-photo-0" class="owa-photo" src="assets/outro-meg/sujet-1.jpg" alt="" style="object-position:50% 50%;transform-origin:50% 50%;opacity:1">
+                <img data-hf-id="hf-owa-photo-1" id="owa-photo-1" class="owa-photo" src="assets/outro-meg/sujet-2.jpg" alt="" style="object-position:50% 50%;transform-origin:50% 50%;opacity:0">
               </div>
               <div data-hf-id="hf-owa-legende" id="owa-legende">
                 <div data-hf-id="hf-owa-sujet" id="owa-sujet"></div>
@@ -223,13 +198,12 @@
           message: "Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon accès au portail EDOF.",   // ce que le visiteur enverrait
           reponse: "Top, je vous appelle dans quelques minutes 🤝",         // reponse de l'equipe (3,4 s)
           numero: "Envoyer un message",                           // v4 : libelle du bouton, aucun numero
-          signe: "MEG Business 360",                              // fixe, exactement
-          vTitre: "Demande EDOF acceptée", vSous: "du premier coup"  // vignette de la bulle ; l'illustration = contenu de #owa-illu
+          signe: "MEG Business 360"                               // fixe, exactement
         };
         // ===== fin des variables =====
         try {
           const hv = window.__hyperframes && typeof window.__hyperframes.getVariables === "function" ? window.__hyperframes.getVariables() : null;
-          if (hv) for (const k of ["appel1", "appel2", "motOr", "sujet", "sujetTag", "repere", "message", "reponse", "vTitre", "vSous"]) if (typeof hv[k] === "string") V[k] = hv[k];
+          if (hv) for (const k of ["appel1", "appel2", "motOr", "sujet", "sujetTag", "repere", "message", "reponse"]) if (typeof hv[k] === "string") V[k] = hv[k];
         } catch (e) { /* valeurs du gabarit */ }
 
         const R = "owa-";
@@ -246,7 +220,6 @@
         if (V.sujetTag) { const e = document.createElement("em"); e.textContent = V.sujetTag; sj.append(e); }
         $("repere-t").textContent = V.repere; if (!V.repere) $("repere").style.display = "none";
         $("message").textContent = fr(V.message);
-        $("vtitre").textContent = fr(V.vTitre); $("vsous").textContent = fr(V.vSous); if (!V.vSous) $("vsous").style.display = "none";
         $("reponse-t").textContent = fr(V.reponse);
         function ecrire(el, texte, mot) {
           el.textContent = ""; texte = fr(texte); const i = mot ? texte.indexOf(mot) : -1;
@@ -281,14 +254,6 @@
           if (i) tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut", immediateRender: false }, debut);
           tl.fromTo(el, { scale: i % 2 ? 1.12 : 1.02 }, { scale: i % 2 ? 1.03 : 1.12, duration: fin - debut, ease: "sine.inOut", immediateRender: !i }, debut);
         });
-        // vignette : leger zoom de l'illustration, le statut « accepte » bat 3 fois
-        tl.fromTo("#" + R + "illu", { scale: 1 }, { scale: 1.05, duration: D, ease: "sine.inOut" }, 0);
-        [0.5, 2.6, 4.7].forEach(t => {
-          tl.to("#" + R + "ill-ok", { scale: 1.12, duration: 0.16, ease: "power2.out" }, t);
-          tl.to("#" + R + "ill-ok", { scale: 1, duration: 0.3, ease: "back.out(2)" }, t + 0.16);
-        });
-        tl.fromTo("#" + R + "ill-coche", { strokeDashoffset: 0 }, { strokeDashoffset: 44, duration: 0.01, immediateRender: false }, 2.5);
-        tl.to("#" + R + "ill-coche", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 2.6);
         tl.fromTo("#" + R + "ambiance", { scale: 1 }, { scale: 1.08, duration: D, ease: "sine.inOut" }, 0);
 
         // le point de toucher part de la photo du sujet et glisse vers le bouton (courbe : x et y avec 2 courbes differentes) — identique DSS

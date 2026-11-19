@@ -116,5 +116,5 @@ La source unique reste Git. Aucun rangement manuel n’est nécessaire après pu
 Version validée Solead du 20/11/2026 : prospect à gauche, réponse MEG à droite avec le logo MEG dans la bulle.
 
 - Réponse par défaut : « Top, je vous appelle dans quelques minutes 🤝 ». Message prospect par défaut : « Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon accès au portail [service]. » (remplacer `[service]`, ex. EDOF).
-- Vignette de bulle réutilisable `#owa-vignette` : texte aligné à gauche (variables `vTitre` et `vSous`), illustration à gauche dans `#owa-illu` (seul bloc à changer selon le sujet) avec une mini animation. Jamais de capture, de rayons ou soleil, ni d'image floue.
-- Couleurs (fond vert, « Écrivez-nous » or) : ne rien changer sans demande de Mohamed.
+- Bulle = miniature de la fiche service du site (`public/social-previews/<service>.png`, redimensionnée en 1200×630 dans `assets/outro-meg/sujet-1.jpg`), jamais une capture, jamais une carte dessinée.
+- Ne jamais changer le fond vert ni les couleurs (« Écrivez-nous » or) sans demande de Mohamed.

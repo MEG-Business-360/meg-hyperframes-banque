@@ -110,3 +110,11 @@ La source unique reste Git. Aucun rangement manuel n’est nécessaire après pu
 - `1920 × 1080` → `MEG - YouTube`.
 - Chaque layout reçoit exactement un tag de dossier `meg-reel-folder-*` ou `meg-youtube-folder-*` lors de la régénération.
 - Les dossiers visibles sont : aperçu, intros, écran & visage, détourage, preuves & B-roll, motion & texte, transitions, chapitres, CTA & outros et habillages.
+
+## Outro WhatsApp MEG (`outro-whatsapp-meg-v1`)
+
+Version validée Solead du 20/11/2026 : prospect à gauche, réponse MEG à droite avec le logo MEG dans la bulle.
+
+- Réponse par défaut : « Top, je vous appelle dans quelques minutes 🤝 ». Message prospect par défaut : « Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon accès au portail [service]. » (remplacer `[service]`, ex. EDOF).
+- Vignette de bulle réutilisable `#owa-vignette` : texte aligné à gauche (variables `vTitre` et `vSous`), illustration à gauche dans `#owa-illu` (seul bloc à changer selon le sujet) avec une mini animation. Jamais de capture, de rayons ou soleil, ni d'image floue.
+- Couleurs (fond vert, « Écrivez-nous » or) : ne rien changer sans demande de Mohamed.

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr" data-composition-variables='[
-  {"id":"appel1","type":"string","label":"Titre, ligne 1","default":"Créer votre organisme ?","maxLength":32},
+  {"id":"appel1","type":"string","label":"Titre, ligne 1","default":"Vous aussi, votre NDA ?","maxLength":32},
   {"id":"appel2","type":"string","label":"Titre, ligne 2","default":"Écrivez-nous, on vous répond","maxLength":32},
   {"id":"motOr","type":"string","label":"Mot du titre en or","default":"Écrivez-nous","maxLength":20},
-  {"id":"sujet","type":"string","label":"Sujet de la bulle photo","default":"NDA validé","maxLength":24},
+  {"id":"sujet","type":"string","label":"Sujet de la bulle photo","default":"Déclaration active","maxLength":24},
   {"id":"sujetTag","type":"string","label":"Etiquette du sujet (or, facultative)","default":"Réalisation","maxLength":20},
-  {"id":"repere","type":"string","label":"Ligne repère sous le sujet","default":"Demande relue en entier avant le dépôt","maxLength":44},
-  {"id":"message","type":"string","label":"Message du visiteur","default":"Bonjour, je veux créer mon organisme de formation","maxLength":56},
-  {"id":"reponse","type":"string","label":"Réponse de l’équipe MEG","default":"Bonjour ! On regarde votre projet ensemble.","maxLength":48}
+  {"id":"repere","type":"string","label":"Ligne repère sous le sujet","default":"Suivie de juillet à novembre 2026","maxLength":44},
+  {"id":"message","type":"string","label":"Message du visiteur","default":"Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon accès au portail EDOF.","maxLength":120},
+  {"id":"vTitre","type":"string","label":"Vignette : titre (aligné à gauche)","default":"Demande EDOF acceptée","maxLength":40},
+  {"id":"vSous","type":"string","label":"Vignette : sous-titre or","default":"du premier coup","maxLength":30},
+  {"id":"reponse","type":"string","label":"Réponse de l’équipe MEG","default":"Top, je vous appelle dans quelques minutes 🤝","maxLength":48}
 ]'>
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=1080,height=1920">
@@ -18,11 +20,16 @@
   Mohamed, 10/11/2026 (v1 creme refusee) : « pratiquement pareil que DSS, avec mon truc, le logo MEG ». Meme mecanique, meme ambiance
   verte WhatsApp, meme point de toucher rond ; seuls la marque (logo MEG, or MEG, creme #FFFCD6) et les textes changent. Jamais de visage.
   A 0 s tout est deja la : logo MEG, kicker, titre 2 lignes, en-tete « MEG Business 360 » (avatar = logo MEG, en ligne), bulle photo du sujet,
-  message du visiteur, bouton WhatsApp +33 6 52 52 48 21. Rien n'entre depuis le vide.
+  message du visiteur, bouton WhatsApp « Envoyer un message ». Rien n'entre depuis le vide.
   Pendant : photos du sujet en Ken Burns (fondus), point de toucher rond (0,12 s) qui glisse en courbe et presse le bouton (1,05 s),
   coches 1 -> 2 (1,2 s) -> lues bleues (1,75 s), « en ligne » -> « écrit… » + bulle « ••• » (2,2 s), reponse de l'equipe (3,4 s),
   2e appui qui part de la reponse vers le bouton (5,55 s), halo qui respire, ondes, reflets. Toute l'animation converge vers le bouton.
 
+  VERSION VALIDEE SOLEAD (20/11/2026) : prospect a GAUCHE (message), reponse MEG a DROITE avec le logo MEG dans la bulle, reponse par defaut
+  « Top, je vous appelle dans quelques minutes 🤝 », message par defaut « Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon
+  accès au portail [service]. » ([service] = EDOF, Qualiopi... a ecrire dans message). VIGNETTE de bulle reutilisable #owa-vignette : texte
+  a gauche (variables vTitre / vSous), illustration a gauche dans #owa-illu = SEUL bloc a changer selon le sujet, avec mini animation ;
+  jamais de capture, de rayons/soleil ni d'image floue. Couleurs (fond vert, « Écrivez-nous » or) inchangees.
   PARAMETRES
     - textes : data-composition-variables ci-dessus (default = valeur du gabarit) ET objet V du script (meme valeur) ;
       rendu autonome : npx hyperframes render --variables '{"message":"...","reponse":"..."}'.
@@ -33,11 +40,11 @@
       (le chargeur de sous-composition ne reecrit pas un chemin pose en JS : bulle noire, cf. outro-whatsapp-dss-v2).
     - ambiance : url de #owa-ambiance dans le <style> = la 1re photo.
     - duree : data-duration de #owa-racine ET de #owa-scene (meme valeur, 6 a 7 ; 7 par defaut).
-  Fixe : numero +33 6 52 52 48 21, nom « MEG Business 360 », avatar = logo officiel meg-logo-light.png (fond sombre), kicker « ÉCRIVEZ-NOUS SUR WhatsApp ».
+  Fixe (v4) : bouton « Envoyer un message » sans numero, nom « MEG Business 360 », avatar = logo officiel meg-logo-light.png (fond sombre), kicker « ÉCRIVEZ-NOUS SUR WhatsApp ».
   INSTANCE dans un projet : copier ce fichier (ou hyperframes add outro-whatsapp-meg-v1), remplacer « owa- » par « <id>-owa- » si plusieurs
   outros cohabitent (ids, classes, data-hf-id, cle window.__timelines), puis ne changer que les parametres ci-dessus.
   Charte : ambiance verte WhatsApp (verts profonds, lueur #25D366 maitrisee), bouton #25D366, or MEG #E9D86A / #FFF3AE / #B9AA02 pour la marque,
-  creme #FFFCD6 pour le texte ; police Cabinet Grotesk ; 0 emoji ; aucun son, jamais de musique.
+  creme #FFFCD6 pour le texte ; police Cabinet Grotesk ; 0 emoji sauf le sourire de la reponse (v4) ; aucun son, jamais de musique.
   ZONE SURE : logo, textes, conversation, bouton et point de toucher dans #owa-zone (translate 91,8 px, 137,1 px, scale 0,83, comme DSS)
   = x 142-938, y 240-1493 ; fond, ambiance, vignette et grain restent plein cadre. Ne jamais sortir un element de #owa-zone ni changer son transform.
 -->
@@ -46,7 +53,7 @@
       @font-face { font-family: "Cabinet"; src: url("assets/outro-meg/CabinetGrotesk-Medium.otf") format("opentype"); font-weight: 500; }
       @font-face { font-family: "Cabinet"; src: url("assets/outro-meg/CabinetGrotesk-Bold.woff2") format("woff2"); font-weight: 700; }
       @font-face { font-family: "Cabinet"; src: url("assets/outro-meg/CabinetGrotesk-Extrabold.otf") format("opentype"); font-weight: 800; }
-      #owa-racine { position: absolute; inset: 0; overflow: hidden; background: #03140D; font-family: "Cabinet", system-ui, sans-serif; color: #FFFCD6; }
+      #owa-racine { position: absolute; inset: 0; overflow: hidden; background: #03140D; font-family: "Cabinet", "Noto Color Emoji", system-ui, sans-serif; color: #FFFCD6; }
       #owa-racine, #owa-racine * { box-sizing: border-box; }
       #owa-racine .owa-scene { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
 
@@ -90,6 +97,21 @@
       /* bulle recue : la photo du sujet (1 a 4 photos qui defilent) + sujet + repere */
       #owa-recu { position: absolute; left: 26px; top: 146px; width: 700px; height: 508px; padding: 10px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); }
       #owa-photos { position: absolute; left: 10px; top: 10px; width: 680px; height: 372px; border-radius: 20px; overflow: hidden; background: #082116; }
+      /* VIGNETTE de la realisation (gabarit) : texte aligne a gauche, illustration a gauche dans #owa-illu (seul bloc a changer selon le sujet) */
+      #owa-vignette { position: absolute; inset: 0; background: #FFFCD6; display: flex; align-items: center; gap: 30px; padding: 0 34px 0 30px; box-sizing: border-box; }
+      #owa-illu { position: relative; width: 236px; height: 300px; flex: none; }
+      #owa-vtexte { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+      #owa-vlogo { height: 40px; width: auto; margin-bottom: 18px; filter: brightness(0.22) sepia(1) saturate(6) hue-rotate(15deg); }
+      #owa-vtitre { color: #2F2C00; font-size: 50px; font-weight: 800; line-height: 1.02; letter-spacing: -0.01em; }
+      #owa-vsous { color: #8A7D00; font-size: 38px; font-weight: 800; margin-top: 8px; }
+      #owa-vtag { margin-top: 20px; padding: 8px 18px; border-radius: 30px; background: #2F2C00; color: #FFFCD6; font-size: 22px; font-weight: 500; }
+      /* illustration EDOF : mini carte, statut qui passe a « acceptee » */
+      .ill-carte { position: absolute; inset: 0; border-radius: 26px; background: #2F2C00; overflow: hidden; box-shadow: 0 14px 30px rgba(80,60,0,0.3); }
+      .ill-bar { height: 58px; background: #B9AA02; color: #2F2C00; font-size: 28px; font-weight: 800; display: flex; align-items: center; padding: 0 20px; gap: 10px; }
+      .ill-bar i { width: 12px; height: 12px; border-radius: 50%; background: #2F2C00; opacity: 0.55; display: block; }
+      .ill-l { height: 16px; border-radius: 8px; background: rgba(255,252,214,0.14); margin: 16px 22px 0; }
+      #owa-ill-ok { position: absolute; left: 18px; right: 18px; bottom: 26px; height: 92px; border-radius: 20px; background: #FFF3AE; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(255,243,174,0.6); }
+      #owa-ill-ok svg { width: 60px; height: 60px; }
       .owa-photo { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; object-fit: cover; }  /* cadrage par photo : object-position et transform-origin en style */
       #owa-legende { position: absolute; left: 26px; right: 22px; top: 396px; }
       #owa-sujet { font-size: 48px; line-height: 56px; font-weight: 800; letter-spacing: -0.025em; color: #FFFCD6; white-space: nowrap; }
@@ -98,17 +120,19 @@
       #owa-repere svg { width: 30px; height: 30px; flex: none; fill: #E9D86A; }
 
       /* bulle envoyee : le message du visiteur, coches */
-      #owa-envoye { position: absolute; right: 26px; top: 674px; height: 84px; display: flex; align-items: center; gap: 16px; padding: 0 20px 0 26px; border-radius: 28px 10px 28px 28px; background: #0B6B4F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); white-space: nowrap; }
-      #owa-message { font-size: 33px; font-weight: 500; color: #FFFFFF; letter-spacing: -0.005em; }
+      #owa-envoye { position: absolute; left: 26px; top: 662px; min-height: 84px; display: flex; align-items: flex-end; gap: 16px; padding: 12px 26px 14px 26px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); white-space: normal; }
+      #owa-message { display: block; max-width: 800px; font-size: 31px; line-height: 38px; font-weight: 500; color: #FFFFFF; letter-spacing: -0.005em; } /* v5 : message long sur 2 lignes, taille lisible */
       #owa-coches { position: relative; width: 40px; height: 26px; flex: none; }
       #owa-coches svg { position: absolute; inset: 0; width: 40px; height: 26px; }
       #owa-coche2 { opacity: 0; }
       #owa-lu { opacity: 0; }
 
       /* bulle « ••• » puis reponse de l'equipe (meme place, a gauche, sous le message) */
-      #owa-tape { position: absolute; left: 26px; top: 778px; width: 132px; height: 84px; display: flex; align-items: center; justify-content: center; gap: 12px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); opacity: 0; transform-origin: 0 100%; }
+      #owa-tape { position: absolute; right: 26px; top: 790px; width: 132px; height: 84px; display: flex; align-items: center; justify-content: center; gap: 12px; border-radius: 28px 10px 28px 28px; background: #0B6B4F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); opacity: 0; transform-origin: 100% 100%; }
       .owa-bulle-point { width: 14px; height: 14px; border-radius: 50%; background: #8FE6B3; flex: none; }
-      #owa-reponse { position: absolute; left: 26px; top: 778px; height: 84px; display: flex; align-items: center; padding: 0 30px 0 26px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); white-space: nowrap; opacity: 0; transform-origin: 0 100%; }
+      #owa-reponse { position: absolute; right: 26px; top: 772px; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 22px 10px 24px; border-radius: 28px 10px 28px 28px; background: #0B6B4F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); white-space: nowrap; opacity: 0; transform-origin: 100% 100%; }
+      #owa-reponse-logo { display: block; height: 34px; width: auto; }
+      #owa-reponse-ligne { display: flex; align-items: flex-end; gap: 14px; }
       #owa-reponse-t { font-size: 33px; font-weight: 500; color: #FFFCD6; letter-spacing: -0.005em; }
 
       /* bouton WhatsApp : la destination de toute l'animation */
@@ -154,9 +178,11 @@
             </div>
             <div data-hf-id="hf-owa-recu" id="owa-recu">
               <div data-hf-id="hf-owa-photos" id="owa-photos" data-layout-allow-overflow="">
-                <img data-hf-id="hf-owa-photo-0" id="owa-photo-0" class="owa-photo" src="assets/outro-meg/sujet-1.jpg" alt="" style="object-position:50% 50%;transform-origin:50% 50%;opacity:1">
-                <img data-hf-id="hf-owa-photo-1" id="owa-photo-1" class="owa-photo" src="assets/outro-meg/sujet-2.jpg" alt="" style="object-position:50% 50%;transform-origin:50% 50%;opacity:0">
-                <img data-hf-id="hf-owa-photo-2" id="owa-photo-2" class="owa-photo" src="assets/outro-meg/sujet-3.jpg" alt="" style="object-position:50% 50%;transform-origin:50% 50%;opacity:0">
+                <div data-hf-id="hf-owa-vignette" id="owa-vignette">
+                  <div data-hf-id="hf-owa-illu" id="owa-illu"><div data-hf-id="hf-owa-ill-carte" class="ill-carte"><div data-hf-id="hf-owa-ill-bar" class="ill-bar"><i data-hf-id="hf-owa-ill-p"></i>EDOF</div><div data-hf-id="hf-owa-ill-l1" class="ill-l"></div><div data-hf-id="hf-owa-ill-l2" class="ill-l" style="width:60%"></div><div data-hf-id="hf-owa-ill-l3" class="ill-l" style="width:72%"></div>
+                    <div data-hf-id="hf-owa-ill-ok" id="owa-ill-ok"><svg data-hf-id="hf-owa-ill-svg" viewBox="0 0 60 60"><circle data-hf-id="hf-owa-ill-c" cx="30" cy="30" r="28" fill="#2F2C00"/><path data-hf-id="hf-owa-ill-coche" id="owa-ill-coche" d="M17 31l9 9 18-19" fill="none" stroke="#FFF3AE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="44" stroke-dashoffset="0"/></svg></div></div></div>
+                  <div data-hf-id="hf-owa-vtexte" id="owa-vtexte"><img data-hf-id="hf-owa-vlogo" id="owa-vlogo" src="assets/outro-meg/meg-logo-light.png" alt="MEG"><div data-hf-id="hf-owa-vtitre" id="owa-vtitre"></div><div data-hf-id="hf-owa-vsous" id="owa-vsous"></div><div data-hf-id="hf-owa-vtag" id="owa-vtag">Réalisation MEG</div></div>
+                </div>
               </div>
               <div data-hf-id="hf-owa-legende" id="owa-legende">
                 <div data-hf-id="hf-owa-sujet" id="owa-sujet"></div>
@@ -165,14 +191,14 @@
             </div>
             <div data-hf-id="hf-owa-envoye" id="owa-envoye">
               <span data-hf-id="hf-owa-message" id="owa-message"></span>
-              <div data-hf-id="hf-owa-coches" id="owa-coches">
+              
+            </div>
+            <div data-hf-id="hf-owa-tape" id="owa-tape"><i data-hf-id="hf-owa-b1" id="owa-b1" class="owa-bulle-point"></i><i data-hf-id="hf-owa-b2" id="owa-b2" class="owa-bulle-point"></i><i data-hf-id="hf-owa-b3" id="owa-b3" class="owa-bulle-point"></i></div>
+            <div data-hf-id="hf-owa-reponse" id="owa-reponse"><img data-hf-id="hf-owa-reponse-logo" id="owa-reponse-logo" src="assets/outro-meg/meg-logo-light.png" alt="MEG"><div data-hf-id="hf-owa-reponse-ligne" id="owa-reponse-ligne"><span data-hf-id="hf-owa-reponse-t" id="owa-reponse-t"></span><div data-hf-id="hf-owa-coches" id="owa-coches">
                 <svg data-hf-id="hf-owa-coche1" id="owa-coche1" viewBox="0 0 40 26"><path data-hf-id="hf-owa-coche1-p" d="M4 14l7 7L25 5" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <svg data-hf-id="hf-owa-coche2" id="owa-coche2" viewBox="0 0 40 26"><path data-hf-id="hf-owa-coche2-p" d="M4 14l7 7L25 5M17 19l2 2L33 5" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <svg data-hf-id="hf-owa-lu" id="owa-lu" viewBox="0 0 40 26"><path data-hf-id="hf-owa-lu-p" d="M4 14l7 7L25 5M17 19l2 2L33 5" fill="none" stroke="#53BDEB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-            </div>
-            <div data-hf-id="hf-owa-tape" id="owa-tape"><i data-hf-id="hf-owa-b1" id="owa-b1" class="owa-bulle-point"></i><i data-hf-id="hf-owa-b2" id="owa-b2" class="owa-bulle-point"></i><i data-hf-id="hf-owa-b3" id="owa-b3" class="owa-bulle-point"></i></div>
-            <div data-hf-id="hf-owa-reponse" id="owa-reponse"><span data-hf-id="hf-owa-reponse-t" id="owa-reponse-t"></span></div>
+              </div></div></div>
           </div>
         </div>
 
@@ -191,18 +217,19 @@
       (() => {
         // ===== VARIABLES DU GABARIT outro-whatsapp-meg-v1 : textes par video (+ <img> de #owa-photos, url de #owa-ambiance, data-duration) =====
         const V = {
-          appel1: "Créer votre organisme ?", appel2: "Écrivez-nous, on vous répond", motOr: "Écrivez-nous",
-          sujet: "NDA validé", sujetTag: "Réalisation",           // titre de la bulle photo (etiquette facultative : "")
-          repere: "Demande relue en entier avant le dépôt",        // ligne repere sous le sujet ("" = masquee)
-          message: "Bonjour, je veux créer mon organisme de formation",   // ce que le visiteur enverrait
-          reponse: "Bonjour ! On regarde votre projet ensemble.",         // reponse de l'equipe (3,4 s)
-          numero: "+33 6 52 52 48 21",                            // fixe
-          signe: "MEG Business 360"                               // fixe, exactement
+          appel1: "Vous aussi, votre NDA ?", appel2: "Écrivez-nous, on vous répond", motOr: "Écrivez-nous",
+          sujet: "Déclaration active", sujetTag: "Réalisation",           // titre de la bulle photo (etiquette facultative : "")
+          repere: "Suivie de juillet à novembre 2026",        // ligne repere sous le sujet ("" = masquee)
+          message: "Je viens de voir votre réalisation, moi aussi je souhaite obtenir mon accès au portail EDOF.",   // ce que le visiteur enverrait
+          reponse: "Top, je vous appelle dans quelques minutes 🤝",         // reponse de l'equipe (3,4 s)
+          numero: "Envoyer un message",                           // v4 : libelle du bouton, aucun numero
+          signe: "MEG Business 360",                              // fixe, exactement
+          vTitre: "Demande EDOF acceptée", vSous: "du premier coup"  // vignette de la bulle ; l'illustration = contenu de #owa-illu
         };
         // ===== fin des variables =====
         try {
           const hv = window.__hyperframes && typeof window.__hyperframes.getVariables === "function" ? window.__hyperframes.getVariables() : null;
-          if (hv) for (const k of ["appel1", "appel2", "motOr", "sujet", "sujetTag", "repere", "message", "reponse"]) if (typeof hv[k] === "string") V[k] = hv[k];
+          if (hv) for (const k of ["appel1", "appel2", "motOr", "sujet", "sujetTag", "repere", "message", "reponse", "vTitre", "vSous"]) if (typeof hv[k] === "string") V[k] = hv[k];
         } catch (e) { /* valeurs du gabarit */ }
 
         const R = "owa-";
@@ -212,13 +239,14 @@
 
         // textes
         $("numero").textContent = V.numero;
-        $("wa").setAttribute("data-lien", "https://wa.me/" + V.numero.replace(/\D/g, ""));
+        /* v4 : aucun lien de contact */
         const sp = V.signe.indexOf(" "), nom = $("nom"); nom.textContent = "";
         const nb = document.createElement("b"); nb.textContent = sp > 0 ? V.signe.slice(0, sp) : V.signe; nom.append(nb, sp > 0 ? V.signe.slice(sp) : "");
         const sj = $("sujet"); sj.textContent = V.sujet;
         if (V.sujetTag) { const e = document.createElement("em"); e.textContent = V.sujetTag; sj.append(e); }
         $("repere-t").textContent = V.repere; if (!V.repere) $("repere").style.display = "none";
         $("message").textContent = fr(V.message);
+        $("vtitre").textContent = fr(V.vTitre); $("vsous").textContent = fr(V.vSous); if (!V.vSous) $("vsous").style.display = "none";
         $("reponse-t").textContent = fr(V.reponse);
         function ecrire(el, texte, mot) {
           el.textContent = ""; texte = fr(texte); const i = mot ? texte.indexOf(mot) : -1;
@@ -233,8 +261,8 @@
           for (const s of [s1, s2]) s.style.fontSize = "";
           const w = Math.max(s1.offsetWidth, s2.offsetWidth);
           if (w > 960) { const f = (76 * 960 / w).toFixed(1) + "px"; s1.style.fontSize = f; s2.style.fontSize = f; }
-          const m = $("message"); m.style.fontSize = ""; if (m.offsetWidth > 800) m.style.fontSize = (33 * 800 / m.offsetWidth).toFixed(1) + "px";
-          const r = $("reponse-t"); r.style.fontSize = ""; if (r.offsetWidth > 820) r.style.fontSize = (33 * 820 / r.offsetWidth).toFixed(1) + "px";
+          /* v5 : message sur 2 lignes (max-width), sans reduction */
+          const r = $("reponse-t"); r.style.fontSize = ""; if (r.offsetWidth > 760) r.style.fontSize = (33 * 760 / r.offsetWidth).toFixed(1) + "px";
           sj.style.fontSize = ""; if (sj.offsetWidth > 652) sj.style.fontSize = (48 * 652 / sj.offsetWidth).toFixed(1) + "px";
           const rp = $("repere"); rp.style.fontSize = ""; if (rp.scrollWidth > 652) rp.style.fontSize = (29 * 652 / rp.scrollWidth).toFixed(1) + "px";
         }
@@ -253,6 +281,14 @@
           if (i) tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut", immediateRender: false }, debut);
           tl.fromTo(el, { scale: i % 2 ? 1.12 : 1.02 }, { scale: i % 2 ? 1.03 : 1.12, duration: fin - debut, ease: "sine.inOut", immediateRender: !i }, debut);
         });
+        // vignette : leger zoom de l'illustration, le statut « accepte » bat 3 fois
+        tl.fromTo("#" + R + "illu", { scale: 1 }, { scale: 1.05, duration: D, ease: "sine.inOut" }, 0);
+        [0.5, 2.6, 4.7].forEach(t => {
+          tl.to("#" + R + "ill-ok", { scale: 1.12, duration: 0.16, ease: "power2.out" }, t);
+          tl.to("#" + R + "ill-ok", { scale: 1, duration: 0.3, ease: "back.out(2)" }, t + 0.16);
+        });
+        tl.fromTo("#" + R + "ill-coche", { strokeDashoffset: 0 }, { strokeDashoffset: 44, duration: 0.01, immediateRender: false }, 2.5);
+        tl.to("#" + R + "ill-coche", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 2.6);
         tl.fromTo("#" + R + "ambiance", { scale: 1 }, { scale: 1.08, duration: D, ease: "sine.inOut" }, 0);
 
         // le point de toucher part de la photo du sujet et glisse vers le bouton (courbe : x et y avec 2 courbes differentes) — identique DSS
@@ -267,12 +303,8 @@
         tl.to(wa, { scale: 0.965, duration: 0.1, ease: "power1.in" }, 1.05);
         tl.to(wa, { scale: 1, duration: 0.18, ease: "power2.out" }, 1.15);
         tl.to(doigt, { scale: 1.25, opacity: 0, duration: 0.35, ease: "power1.out" }, 1.18);
-        // message envoye : ✓ puis ✓✓ puis lu (bleu)
-        tl.set("#" + R + "coche1", { opacity: 0 }, 1.2);
-        tl.set("#" + R + "coche2", { opacity: 1 }, 1.2);
-        tl.fromTo("#" + R + "envoye", { scale: 1 }, { scale: 1.035, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", transformOrigin: "100% 50%" }, 1.2);
-        tl.set("#" + R + "coche2", { opacity: 0 }, 1.75);
-        tl.set("#" + R + "lu", { opacity: 1 }, 1.75);
+        // message du prospect deja la (bulle entrante) : leger rebond a l'appui du bouton
+        tl.fromTo("#" + R + "envoye", { scale: 1 }, { scale: 1.035, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", transformOrigin: "0% 50%" }, 1.2);
         // l'equipe ecrit… (statut + bulle « ••• »), puis repond a 3,4 s et repasse « en ligne »
         const TR = 3.4;
         tl.to("#" + R + "en-ligne", { opacity: 0, duration: 0.15 }, 2.15);
@@ -288,6 +320,11 @@
         tl.fromTo("#" + R + "reponse", { opacity: 0, scale: 0.82, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.38, ease: "back.out(1.7)", immediateRender: false }, TR);
         tl.to("#" + R + "ecrit", { opacity: 0, duration: 0.15 }, TR);
         tl.to("#" + R + "en-ligne", { opacity: 1, duration: 0.15 }, TR + 0.05);
+        // reponse MEG envoyee : ✓✓ puis lu (bleu)
+        tl.set("#" + R + "coche1", { opacity: 0 }, 0);
+        tl.set("#" + R + "coche2", { opacity: 1 }, TR);
+        tl.set("#" + R + "coche2", { opacity: 0 }, TR + 0.6);
+        tl.set("#" + R + "lu", { opacity: 1 }, TR + 0.6);
         // 2e appui : le point part de la reponse et retourne au bouton (sur le logo WhatsApp, le numero reste lisible)
         const T2 = D - 1.45, EX0 = 930, EY0 = 1380, EX1 = 300, EY1 = 1564;
         tl.set(doigt, { x: EX0, y: EY0, scale: 0.6, opacity: 0 }, T2 - 0.95);

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=1080,height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script><title>Outro WhatsApp DSS v2</title></head>
+  <body>
+<!--
+  OUTRO WHATSAPP DSS v2 (Snap 9:16, le meme gabarit a la fin de chaque clip) — miroir vert de l'outro YouTube (outro-dss).
+  Mohamed, 13/10/2026 : « des la premiere frame on voit les choses », « YouTube c'est en rouge, la c'est en vert », « une animation vers le bouton WhatsApp ».
+  Concept : une conversation WhatsApp avec Salimou. A 0 s tout est deja la : logo, phrase d'appel, en-tete (portrait logo-dss.png valide +
+  « Salimou · DSS »), bulle avec la CARTE DE DUBAI et le pin du lieu du clip, message du viewer, bouton WhatsApp avec le numero. Rien n'entre depuis le vide.
+
+  REVISION DU 27/11/2026 (accord de Mohamed, seuls changements autorises sur ce gabarit valide « parfait ») :
+    « Vous avez un projet a Dubai ? Contactez-nous directement sur WhatsApp, un membre de mon equipe va vous envoyer directement le projet »
+      (voix Maxim, phrase adaptee au sujet du clip) ;
+    « le numero ... super important » : +971 52 480 4972 en 78 px gras, chiffres vert nuit sur le vert WhatsApp (contraste 9,5:1), jamais coupe ni masque ;
+    « quand la voix a fini, la carte reste 2 a 3 s » et « seules les couleurs bougent, sans gros mouvement » ;
+    « il faut mettre un truc en rapport personnalise ... un projet ... il faut mettre la carte de Dubai, un truc comme ca » ;
+    « il faut jamais se tromper ».
+  DUREE, une seule source : data-voix-fin (fin de la voix, en s) et data-tenue (2,5 par defaut, borne 2 a 3) sur #owa-racine.
+    D = min(11, voix-fin + tenue). Le script recalcule D et l'ecrit dans data-duration de #owa-racine ET de #owa-scene ;
+    mettre aussi la meme valeur en dur dans ces 2 attributs (le moteur peut les lire avant le script).
+  PENDANT LA VOIX (0 -> voix-fin) : doigt vers le bouton, coches puis lu, « ecrit… », zoom lent de la carte vers le pin, pin qui rebondit puis
+    ondes du pin, halo du bouton qui respire, ondes et reflet du bouton. Tout mouvement est termine a voix-fin.
+  TENUE (voix-fin -> D) : AUCUN mouvement de position ni d'echelle. Seules les couleurs changent : derive du degrade vert du fond (fondu d'un 2e
+    degrade), lueur du bouton (opacite), halo (opacite), lueur du pin (or -> vert -> or).
+  SOUS-TITRES DE LA VOIX : le moteur les pose en bas (bas de la capsule a y 1500, capsule 102 px de haut : y 1398-1500 a l'ecran).
+    Le bouton finit a y 1361 a l'ecran : bande libre y 1361-1500 reservee aux sous-titres, rien d'important dedans (seulement la lueur du halo).
+  CARTE : vraies donnees OpenStreetMap (ODbL, credit « © OpenStreetMap » dans la carte), construites par carte/construire_carte.py,
+    source et coordonnees dans carte/preuve-carte.json. Projection equirectangulaire, cadre lon @LON0@ a @LON1@, lat @LAT0@ a @LAT1@
+    (bulle 680 x 330 px). Jamais de carte dessinee a la main, jamais de pin devine : coordonnees d'un objet OSM nomme.
+
+  AVANT DE REMPLIR, ecrire dans le compte rendu (Mohamed, 13/10/2026 : « se poser des questions sur ce qu'on montre ») :
+    1) De quoi parle le clip, en 1 phrase ?
+    2) Quel lieu la parole cite-t-elle (citation + seconde) ? Aucun lieu precis : pin general « Dubai » (noeud OSM 31248510), jamais un quartier invente.
+    3) Quel message le viewer enverrait (V.message, court, 1re personne du viewer, vouvoiement de la voix respecte) ?
+
+  INSTANCE PAR CLIP : copier ce fichier, remplacer « owa- » par « cNN-owa- » partout (ids, classes, data-hf-id), data-composition-id « outro-cNN »
+  et la cle window.__timelines["outro-cNN"] ; puis ne modifier QUE : l'objet V (textes et V.carte), data-voix-fin (et data-tenue),
+  data-duration (= D, racine et scene). Ne jamais sortir un element de #owa-zone ni changer son transform (controle_lot_snap.py : ALERTE outro hors zone sure).
+  Zone sure (Mohamed, 15/10/2026 : « la safe zone pour le outro, c'est super important ») : #owa-zone (translate 91,8 px, 137,1 px, scale 0,83).
+  Jamais de prix ni de nombre d'unites. Fixe : numero +971 52 480 4972 (confirme le 13/10/2026), signature exacte « Salimou · DSS ».
+  Charte : ambiance verte WhatsApp (verts profonds, lueur #25D366 maitrisee), bouton #25D366, or DSS #F0CC86/#E8B65C/#B98330, creme #FCF6ED ;
+  jamais d'orange ; 0 emoji ; police Cabinet Grotesk. Aucun son par defaut, jamais de musique.
+  Medias : seulement ceux de la banque (polices, logo-dss.png, grain.png) ; la carte est un SVG en ligne, aucune image externe.
+-->
+    <style>
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Regular.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Medium.otf") format("opentype"); font-weight: 500; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Bold.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Cabinet"; src: url("assets/outro/CabinetGrotesk-Extrabold.otf") format("opentype"); font-weight: 800; }
+      #owa-racine { position: absolute; inset: 0; overflow: hidden; background: #03140D; font-family: "Cabinet", system-ui, sans-serif; color: #FCF6ED; }
+      #owa-racine, #owa-racine * { box-sizing: border-box; }
+      #owa-racine .owa-scene { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+      /* ambiance verte WhatsApp : verts profonds, lueur haute ; 2e degrade (owa-fond2) fondu pendant la tenue = derive des couleurs, sans mouvement */
+      #owa-fond { position: absolute; inset: 0; background:
+        radial-gradient(70% 30% at 50% 0%, rgba(37,211,102,0.20) 0%, rgba(37,211,102,0) 100%),
+        linear-gradient(180deg, #08301F 0%, #052216 46%, #03140D 100%); }
+      #owa-fond2 { position: absolute; inset: 0; opacity: 0; background:
+        radial-gradient(80% 36% at 50% 4%, rgba(46,224,111,0.26) 0%, rgba(46,224,111,0) 100%),
+        radial-gradient(60% 30% at 50% 74%, rgba(240,204,134,0.08) 0%, rgba(240,204,134,0) 100%),
+        linear-gradient(180deg, #0A3A26 0%, #06291A 46%, #03170F 100%); }
+      #owa-ambiance { position: absolute; left: 60px; top: 640px; width: 960px; height: 760px; background: radial-gradient(ellipse, #256047 0%, rgba(37,96,71,0) 65%); opacity: 0.34; }
+      #owa-vignette { position: absolute; inset: 0; background: radial-gradient(90% 60% at 50% 46%, rgba(3,20,13,0) 42%, rgba(3,20,13,0.7) 100%); }
+      #owa-halo { position: absolute; left: 40px; top: 1214px; width: 1000px; height: 380px; background: radial-gradient(50% 50% at 50% 50%, rgba(37,211,102,0.42) 0%, rgba(37,211,102,0.12) 46%, rgba(37,211,102,0) 100%); }
+      #owa-grain { position: absolute; inset: 0; background: url("assets/outro/grain.png") repeat; opacity: 0.05; mix-blend-mode: overlay; }
+
+      /* marque : logo, kicker, phrase d'appel */
+      #owa-logo { position: absolute; left: 0; right: 0; top: 130px; margin: 0 auto; width: 128px; height: auto; display: block; }
+      #owa-kicker { position: absolute; left: 0; right: 0; top: 252px; height: 44px; display: flex; justify-content: center; align-items: center; gap: 14px; font-weight: 700; font-size: 24px; letter-spacing: 0.22em; color: rgba(252,246,237,0.74); white-space: nowrap; }
+      #owa-kicker svg { width: 40px; height: 40px; flex: none; fill: #25D366; }
+      #owa-kicker b { font-weight: 800; font-size: 31px; letter-spacing: -0.01em; color: #FCF6ED; }
+      .owa-ligne-titre { position: absolute; left: 0; right: 0; height: 100px; overflow: hidden; text-align: center; line-height: 0; }
+      .owa-ligne-titre span { display: inline-block; vertical-align: top; font-weight: 800; font-size: 76px; line-height: 96px; letter-spacing: -0.03em; color: #FCF6ED; white-space: nowrap; }
+      .owa-ligne-titre em { font-style: normal; color: #E8B65C; }
+      #owa-l1 { top: 322px; }
+      #owa-l2 { top: 410px; }
+
+      /* la conversation WhatsApp (27/11 : compactee pour remonter le bouton et liberer la bande des sous-titres) */
+      #owa-chat { position: absolute; left: 60px; top: 568px; width: 960px; height: 740px; border-radius: 36px; box-shadow: 0 50px 100px rgba(1,10,6,0.72), 0 12px 30px rgba(1,10,6,0.45); }
+      #owa-bord { position: absolute; inset: -2px; border-radius: 38px; background: linear-gradient(140deg, rgba(240,204,134,0.88) 0%, rgba(240,204,134,0.14) 32%, rgba(240,204,134,0.04) 62%, rgba(240,204,134,0.48) 100%); }
+      #owa-ecran { position: absolute; inset: 0; border-radius: 36px; overflow: hidden; background: linear-gradient(180deg, #0B2A1E 0%, #082116 100%); }
+      #owa-entete { position: absolute; left: 0; right: 0; top: 0; height: 128px; background: linear-gradient(180deg, #145238 0%, #0F4129 100%); }
+      #owa-anneau { position: absolute; left: 26px; top: 16px; width: 96px; height: 96px; border-radius: 50%; padding: 3px; background: linear-gradient(140deg, #F0CC86, #B98330); }
+      #owa-anneau i { display: block; width: 100%; height: 100%; border-radius: 50%; border: 3px solid #0F4129; background: #0B2A1E url("assets/outro/logo-dss.png") center / 76% auto no-repeat; }
+      #owa-nom { position: absolute; left: 144px; top: 20px; font-size: 41px; line-height: 50px; font-weight: 500; color: #F0CC86; white-space: nowrap; letter-spacing: -0.01em; }
+      #owa-nom b { font-weight: 800; color: #FCF6ED; }
+      #owa-statut { position: absolute; left: 144px; top: 72px; width: 560px; height: 36px; }
+      #owa-statut span { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 10px; height: 36px; font-size: 27px; font-weight: 500; color: #8FE6B3; white-space: nowrap; }
+      #owa-pastille { width: 13px; height: 13px; border-radius: 50%; background: #25D366; flex: none; }
+      #owa-ecrit { opacity: 0; }
+      .owa-point { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #8FE6B3; margin-left: 4px; }
+      #owa-entete svg { position: absolute; right: 30px; top: 38px; width: 52px; height: 52px; fill: #25D366; }
+
+      /* bulle recue : la carte de Dubai (680 x 330) + sujet + lieu */
+      #owa-recu { position: absolute; left: 26px; top: 146px; width: 700px; height: 470px; padding: 10px; border-radius: 10px 28px 28px 28px; background: #12402F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); }
+      #owa-photos { position: absolute; left: 10px; top: 10px; width: 680px; height: 330px; border-radius: 20px; overflow: hidden; background: #072519; }
+      #owa-plan { position: absolute; left: 0; top: 0; width: 680px; height: 330px; }
+      #owa-carte { position: absolute; left: 0; top: 0; width: 680px; height: 330px; display: block; }
+      #owa-pin { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+      #owa-pin-or, #owa-pin-vert { position: absolute; left: -48px; top: -48px; width: 96px; height: 96px; border-radius: 50%; }
+      #owa-pin-or { background: radial-gradient(circle, rgba(240,204,134,0.75) 0%, rgba(232,182,92,0.28) 42%, rgba(232,182,92,0) 70%); }
+      #owa-pin-vert { opacity: 0; background: radial-gradient(circle, rgba(46,224,111,0.80) 0%, rgba(37,211,102,0.30) 42%, rgba(37,211,102,0) 70%); }
+      #owa-pin-onde { position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border-radius: 50%; border: 3px solid #F0CC86; opacity: 0; }
+      #owa-pin-point { position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border-radius: 50%; background: #FCF6ED; box-shadow: 0 0 0 3px #B98330; }
+      #owa-pin-icone { position: absolute; left: -24px; top: -58px; width: 48px; height: 52px; }
+      #owa-pin-icone svg { width: 48px; height: 52px; display: block; fill: #E8B65C; stroke: #03140D; stroke-width: 10; paint-order: stroke; filter: drop-shadow(0 4px 6px rgba(1,10,6,0.6)); }
+      #owa-etiquette { position: absolute; left: 0; top: 0; padding: 8px 16px 9px; border-radius: 14px; background: rgba(3,20,13,0.86); border: 2px solid rgba(240,204,134,0.7); white-space: nowrap; line-height: 1; }
+      #owa-etiquette b { display: block; font-weight: 800; font-size: 26px; letter-spacing: -0.01em; color: #F0CC86; margin-bottom: 5px; }
+      #owa-etiquette span { display: block; font-weight: 700; font-size: 24px; color: #FCF6ED; }
+      .owa-autre { position: absolute; width: 0; height: 0; }
+      .owa-autre i { position: absolute; left: -6px; top: -6px; width: 12px; height: 12px; border-radius: 50%; background: #E8B65C; box-shadow: 0 0 0 3px rgba(3,20,13,0.85); }
+      .owa-autre span { position: absolute; top: -13px; font-weight: 700; font-size: 21px; line-height: 26px; color: rgba(252,246,237,0.9); white-space: nowrap; text-shadow: 0 1px 3px #03140D, 0 0 6px #03140D; }
+      #owa-credit { position: absolute; right: 12px; bottom: 7px; font-size: 16px; font-weight: 700; color: rgba(252,246,237,0.86); text-shadow: 0 1px 2px #03140D; white-space: nowrap; }
+      #owa-legende { position: absolute; left: 26px; right: 22px; top: 354px; }
+      #owa-sujet { font-size: 48px; line-height: 56px; font-weight: 800; letter-spacing: -0.025em; color: #FCF6ED; white-space: nowrap; }
+      #owa-sujet em { font-style: normal; font-weight: 700; font-size: 31px; letter-spacing: -0.005em; color: #F0CC86; margin-left: 12px; }
+      #owa-repere { display: flex; align-items: center; gap: 10px; margin-top: 8px; height: 40px; font-size: 29px; font-weight: 500; color: rgba(252,246,237,0.84); white-space: nowrap; }
+      #owa-repere svg { width: 30px; height: 30px; flex: none; fill: #E8B65C; }
+      #owa-repere b { font-weight: 700; color: #F0CC86; }
+
+      /* bulle envoyee : le message du viewer, coches */
+      #owa-envoye { position: absolute; right: 26px; top: 636px; height: 78px; display: flex; align-items: center; gap: 16px; padding: 0 20px 0 26px; border-radius: 28px 10px 28px 28px; background: #0B6B4F; box-shadow: 0 6px 18px rgba(1,10,6,0.35); white-space: nowrap; }
+      #owa-message { font-size: 33px; font-weight: 500; color: #FFFFFF; letter-spacing: -0.005em; }
+      #owa-coches { position: relative; width: 40px; height: 26px; flex: none; }
+      #owa-coches svg { position: absolute; inset: 0; width: 40px; height: 26px; }
+      #owa-coche2 { opacity: 0; }
+      #owa-lu { opacity: 0; }
+
+      /* bouton WhatsApp : destination de toute l'animation ; numero 78 px vert nuit sur vert WhatsApp (contraste 9,5:1) */
+      #owa-onde { position: absolute; left: 90px; top: 1334px; width: 900px; height: 140px; border-radius: 999px; background: rgba(46,224,111,0.5); filter: blur(12px); opacity: 0; }
+      #owa-wa { position: absolute; left: 90px; top: 1334px; width: 900px; height: 140px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 22px;
+        background: linear-gradient(180deg, #3BE07C 0%, #25D366 55%, #1FC85E 100%); color: #03140D; font-weight: 800; font-size: 78px; letter-spacing: -0.01em; white-space: nowrap;
+        box-shadow: 0 24px 54px rgba(37,211,102,0.30), 0 12px 28px rgba(1,10,6,0.55), inset 0 0 0 3px rgba(252,246,237,0.35); }
+      #owa-wa-lueur { position: absolute; inset: 0; border-radius: 999px; opacity: 0; background: linear-gradient(180deg, #6BF0A0 0%, #3BE07C 55%, #2AD46C 100%); }
+      #owa-wa svg { width: 76px; height: 76px; flex: none; position: relative; fill: #FFFFFF; filter: drop-shadow(0 2px 3px rgba(3,20,13,0.35)); }
+      #owa-numero { position: relative; }
+      #owa-zone-reflet { position: absolute; inset: 0; border-radius: 999px; overflow: hidden; }
+      #owa-reflet { position: absolute; top: -20px; left: 0; width: 130px; height: 180px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.36) 50%, rgba(255,255,255,0) 100%); transform: translateX(-180px) skewX(-20deg); }
+
+      /* zone sure 15/10 : logo y 245, x 142-938 (Instagram/Snap : rien d'important hors x 65-1015, y 240-1500) ; 27/11 : bouton fini a y 1361, bande 1361-1500 aux sous-titres */
+      #owa-zone { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; transform: translate(91.8px, 137.1px) scale(0.83); }
+
+      #owa-doigt { position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(252,246,237,0.9); box-shadow: 0 0 0 10px rgba(252,246,237,0.22), 0 10px 26px rgba(1,10,6,0.5); }
+    </style>
+    <div data-hf-id="hf-owa-racine" id="owa-racine" data-composition-id="outro-whatsapp-dss-v2" data-start="0" data-duration="8" data-voix-fin="5.5" data-tenue="2.5" data-width="1080" data-height="1920">
+      <div data-hf-id="hf-owa-scene" id="owa-scene" class="clip owa-scene" data-start="0" data-duration="8" data-track-index="1">
+        <div data-hf-id="hf-owa-fond" id="owa-fond"></div>
+        <div data-hf-id="hf-owa-fond2" id="owa-fond2"></div>
+        <div data-hf-id="hf-owa-ambiance" id="owa-ambiance" data-layout-allow-overflow=""></div>
+        <div data-hf-id="hf-owa-vignette" id="owa-vignette"></div>
+        <div data-hf-id="hf-owa-zone" id="owa-zone">
+        <div data-hf-id="hf-owa-halo" id="owa-halo" data-layout-allow-overflow=""></div>
+
+        <img data-hf-id="hf-owa-logo" id="owa-logo" src="assets/outro/logo-dss.png" alt="DSS Real Estate">
+        <div data-hf-id="hf-owa-kicker" id="owa-kicker"><span data-hf-id="hf-owa-kicker-t" id="owa-kicker-t"></span><svg data-hf-id="hf-owa-kicker-logo" viewBox="0 0 256 256"><path data-hf-id="hf-owa-kicker-logo-p" d="@WA@"/></svg><b data-hf-id="hf-owa-kicker-wa">WhatsApp</b></div>
+        <div data-hf-id="hf-owa-l1" id="owa-l1" class="owa-ligne-titre"><span data-hf-id="hf-owa-l1-s"></span></div>
+        <div data-hf-id="hf-owa-l2" id="owa-l2" class="owa-ligne-titre"><span data-hf-id="hf-owa-l2-s"></span></div>
+
+        <div data-hf-id="hf-owa-chat" id="owa-chat">
+          <div data-hf-id="hf-owa-bord" id="owa-bord"></div>
+          <div data-hf-id="hf-owa-ecran" id="owa-ecran">
+            <div data-hf-id="hf-owa-entete" id="owa-entete">
+              <div data-hf-id="hf-owa-anneau" id="owa-anneau"><i data-hf-id="hf-owa-visage" role="img" aria-label="DSS"></i></div>
+              <div data-hf-id="hf-owa-nom" id="owa-nom"></div>
+              <div data-hf-id="hf-owa-statut" id="owa-statut">
+                <span data-hf-id="hf-owa-en-ligne" id="owa-en-ligne"><i data-hf-id="hf-owa-pastille" id="owa-pastille"></i>en ligne</span>
+                <span data-hf-id="hf-owa-ecrit" id="owa-ecrit">écrit<i data-hf-id="hf-owa-p1" id="owa-p1" class="owa-point"></i><i data-hf-id="hf-owa-p2" id="owa-p2" class="owa-point"></i><i data-hf-id="hf-owa-p3" id="owa-p3" class="owa-point"></i></span>
+              </div>
+              <svg data-hf-id="hf-owa-entete-logo" viewBox="0 0 256 256"><path data-hf-id="hf-owa-entete-logo-p" d="@WA@"/></svg>
+            </div>
+            <div data-hf-id="hf-owa-recu" id="owa-recu">
+              <div data-hf-id="hf-owa-photos" id="owa-photos" data-layout-allow-overflow="">
+                <div data-hf-id="hf-owa-plan" id="owa-plan" data-layout-allow-overflow="">
+                  <svg data-hf-id="hf-owa-carte" id="owa-carte" viewBox="0 0 1360 660" preserveAspectRatio="none" aria-label="Carte de Dubaï, données OpenStreetMap">
+                    <defs>
+                      <linearGradient id="owa-mer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05251A"/><stop offset="1" stop-color="#031A12"/></linearGradient>
+                      <linearGradient id="owa-sol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#237253"/><stop offset="1" stop-color="#1A5C42"/></linearGradient>
+                    </defs>
+                    <rect width="1360" height="660" fill="url(#owa-mer)"/>
+                    <path data-hf-id="hf-owa-terre" id="owa-terre" fill="url(#owa-sol)" fill-rule="evenodd" stroke="#E8B65C" stroke-opacity="0.78" stroke-width="2.4" stroke-linejoin="round" d="@TERRE@"/>
+                    <path data-hf-id="hf-owa-routes" id="owa-routes" fill="none" stroke="#FCF6ED" stroke-opacity="0.2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="@ROUTES@"/>
+                  </svg>
+                  <div data-hf-id="hf-owa-autres" id="owa-autres"></div>
+                  <div data-hf-id="hf-owa-pin" id="owa-pin" data-layout-allow-overflow="">
+                    <div data-hf-id="hf-owa-pin-or" id="owa-pin-or"></div>
+                    <div data-hf-id="hf-owa-pin-vert" id="owa-pin-vert"></div>
+                    <div data-hf-id="hf-owa-pin-onde" id="owa-pin-onde"></div>
+                    <div data-hf-id="hf-owa-pin-point" id="owa-pin-point"></div>
+                    <div data-hf-id="hf-owa-pin-icone" id="owa-pin-icone"><svg data-hf-id="hf-owa-pin-svg" viewBox="0 0 256 256"><path data-hf-id="hf-owa-pin-svg-p" d="@PIN@"/></svg></div>
+                  </div>
+                  <div data-hf-id="hf-owa-etiquette" id="owa-etiquette"><b data-hf-id="hf-owa-etiquette-projet" id="owa-etiquette-projet"></b><span data-hf-id="hf-owa-etiquette-lieu" id="owa-etiquette-lieu"></span></div>
+                </div>
+                <div data-hf-id="hf-owa-credit" id="owa-credit">© OpenStreetMap</div>
+              </div>
+              <div data-hf-id="hf-owa-legende" id="owa-legende">
+                <div data-hf-id="hf-owa-sujet" id="owa-sujet"></div>
+                <div data-hf-id="hf-owa-repere" id="owa-repere"><svg data-hf-id="hf-owa-pin" viewBox="0 0 256 256"><path data-hf-id="hf-owa-pin-p" d="@PIN@"/></svg><span data-hf-id="hf-owa-repere-t" id="owa-repere-t"></span></div>
+              </div>
+            </div>
+            <div data-hf-id="hf-owa-envoye" id="owa-envoye">
+              <span data-hf-id="hf-owa-message" id="owa-message"></span>
+              <div data-hf-id="hf-owa-coches" id="owa-coches">
+                <svg data-hf-id="hf-owa-coche1" id="owa-coche1" viewBox="0 0 40 26"><path data-hf-id="hf-owa-coche1-p" d="M4 14l7 7L25 5" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg data-hf-id="hf-owa-coche2" id="owa-coche2" viewBox="0 0 40 26"><path data-hf-id="hf-owa-coche2-p" d="M4 14l7 7L25 5M17 19l2 2L33 5" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg data-hf-id="hf-owa-lu" id="owa-lu" viewBox="0 0 40 26"><path data-hf-id="hf-owa-lu-p" d="M4 14l7 7L25 5M17 19l2 2L33 5" fill="none" stroke="#53BDEB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-owa-onde" id="owa-onde"></div>
+        <div data-hf-id="hf-owa-wa" id="owa-wa">
+          <div data-hf-id="hf-owa-wa-lueur" id="owa-wa-lueur"></div>
+          <div data-hf-id="hf-owa-zone-reflet" id="owa-zone-reflet" data-layout-allow-overflow=""><div data-hf-id="hf-owa-reflet" id="owa-reflet" data-layout-allow-overflow=""></div></div>
+          <svg data-hf-id="hf-owa-wa-logo" viewBox="0 0 256 256"><path data-hf-id="hf-owa-wa-logo-p" d="@WA@"/></svg>
+          <span data-hf-id="hf-owa-numero" id="owa-numero"></span>
+        </div>
+        <div data-hf-id="hf-owa-doigt" id="owa-doigt" data-layout-allow-overflow=""></div>
+        </div>
+        <div data-hf-id="hf-owa-grain" id="owa-grain"></div>
+      </div>
+    </div>
+    <script>
+      (() => {
+        // ===== VARIABLES DU GABARIT outro-whatsapp-dss-v2 : textes et carte par clip (+ data-voix-fin, data-tenue, data-duration) =====
+        const V = {
+          sujet: "Weston", promoteur: "",                        // titre du sujet dans la bulle (promoteur facultatif : "")
+          lieu: "Dubailand Residence Complex", repere: "",       // ligne repere (repere facultatif : "")
+          kicker: "CONTACTEZ-NOUS SUR",
+          appel1: "Le projet Weston vous intéresse ?", appel2: "Écrivez-nous sur WhatsApp", motOr: "WhatsApp",
+          message: "Bonjour, je veux le projet Weston",          // ce que le viewer enverrait
+          numero: "+971 52 480 4972",                            // confirme par Mohamed le 13/10/2026, toujours celui-ci
+          signe: "Salimou · DSS",                                // exactement
+          // carte : coordonnees d'un objet OSM nomme (carte/preuve-carte.json), jamais devinees ; projet "" si aucun projet etabli
+          // autres : reperes secondaires cites par la parole, [] sinon ({ lat, lon, nom }) ; place : "" (auto) ou dessous|dessus|droite|gauche
+          carte: { lat: 25.0926, lon: 55.380771, etiquette: "Dubailand Residence Complex", projet: "Weston", autres: [], place: "" }
+        };
+        // ===== fin des variables =====
+        const R = "owa-";
+        const $ = id => document.getElementById(R + id);
+        const racine = $("racine");
+        // duree : une seule source (data-voix-fin + data-tenue), recopiee sur la racine et la scene
+        const VF = Math.max(2.5, Number(racine.getAttribute("data-voix-fin")) || 5.5);
+        const TENUE = Math.min(3, Math.max(2, Number(racine.getAttribute("data-tenue")) || 2.5));
+        const D = Math.round(Math.min(11, VF + TENUE) * 1000) / 1000;
+        const FV = Math.min(VF, D);   // fin de tout mouvement
+        racine.setAttribute("data-duration", String(D)); $("scene").setAttribute("data-duration", String(D));
+
+        // textes
+        $("kicker-t").textContent = V.kicker;
+        $("numero").textContent = V.numero;
+        $("wa").setAttribute("data-lien", "https://wa.me/" + V.numero.replace(/\D/g, ""));
+        const sg = V.signe.split(" · "), nom = $("nom"); nom.textContent = "";
+        const nb = document.createElement("b"); nb.textContent = sg[0]; nom.append(nb, sg[1] ? " · " + sg[1] : "");
+        const sj = $("sujet"); sj.textContent = V.sujet;
+        if (V.promoteur) { const e = document.createElement("em"); e.textContent = V.promoteur; sj.append(e); }
+        const rp = $("repere-t"); rp.textContent = V.lieu;
+        if (V.repere) { const b = document.createElement("b"); b.textContent = V.repere; rp.append("  ·  ", b); }
+        $("message").textContent = V.message;
+        function ecrire(el, texte, mot) {
+          el.textContent = ""; const i = mot ? texte.indexOf(mot) : -1;
+          if (i < 0) { el.textContent = texte; return; }
+          const em = document.createElement("em"); em.textContent = mot;
+          el.append(texte.slice(0, i), em, texte.slice(i + mot.length));
+        }
+        const s1 = document.querySelector("#" + R + "l1 span"), s2 = document.querySelector("#" + R + "l2 span");
+        ecrire(s1, V.appel1, V.motOr); ecrire(s2, V.appel2, V.motOr);
+
+        // carte : projection du cadre OSM (equirectangulaire) vers la bulle 680 x 330
+        const CADRE = { lon0: @LON0@, lon1: @LON1@, lat0: @LAT0@, lat1: @LAT1@, w: 680, h: 330 };
+        const proj = (lat, lon) => [(lon - CADRE.lon0) / (CADRE.lon1 - CADRE.lon0) * CADRE.w, (CADRE.lat1 - lat) / (CADRE.lat1 - CADRE.lat0) * CADRE.h];
+        const C = V.carte;
+        const [PX, PY] = proj(C.lat, C.lon);
+        const pin = $("pin"); pin.style.left = PX.toFixed(1) + "px"; pin.style.top = PY.toFixed(1) + "px";
+        $("plan").style.transformOrigin = PX.toFixed(1) + "px " + PY.toFixed(1) + "px";
+        const ep = $("etiquette-projet"), el = $("etiquette-lieu"), et = $("etiquette");
+        ep.textContent = C.projet || ""; ep.style.display = C.projet ? "" : "none"; el.textContent = C.etiquette;
+        (C.autres || []).forEach(a => {
+          const [ax, ay] = proj(a.lat, a.lon), d = document.createElement("div");
+          d.className = R + "autre"; d.style.left = ax.toFixed(1) + "px"; d.style.top = ay.toFixed(1) + "px";
+          const i = document.createElement("i"), s = document.createElement("span"); s.textContent = a.nom;
+          if (ax > CADRE.w * 0.62) s.style.right = "14px"; else s.style.left = "14px";
+          d.append(i, s); $("autres").append(d);
+        });
+        // etiquette : 1re place libre parmi dessous, dessus, droite, gauche (ou V.carte.place), dans la carte a 18 px du bord,
+        // sans couvrir un repere secondaire ; jamais sur le pin
+        function placerEtiquette() {
+          const s = et.style.transform ? 440 / et.offsetWidth : 1, w = et.offsetWidth * s, h = et.offsetHeight * s, M = 18;
+          const pos = {
+            dessous: [PX - w / 2, PY + 20], dessus: [PX - w / 2, PY - 66 - h],
+            droite: [PX + 34, PY - 30 - h / 2], gauche: [PX - 34 - w, PY - 30 - h / 2]
+          };
+          const ordre = C.place ? [C.place] : ["dessous", "dessus", "droite", "gauche"];
+          const pts = (C.autres || []).map(a => proj(a.lat, a.lon));
+          let choix = null;
+          for (const k of ordre) {
+            const [x, y] = pos[k];
+            const dedans = x >= M && y >= M && x + w <= CADRE.w - M && y + h <= CADRE.h - 30;
+            const libre = pts.every(([ax, ay]) => ax < x - 16 || ax > x + w + 16 || ay < y - 16 || ay > y + h + 16);
+            if (dedans && libre) { choix = [x, y]; break; }
+          }
+          if (!choix) { const [x, y] = pos[ordre[0]]; choix = [Math.min(Math.max(x, M), CADRE.w - M - w), Math.min(Math.max(y, M), CADRE.h - 30 - h)]; }
+          et.style.left = choix[0].toFixed(1) + "px"; et.style.top = choix[1].toFixed(1) + "px";
+        }
+
+        // 2 lignes a la meme taille, 960 px max ; message, sujet, numero et etiquette ajustes a leur place
+        function ajuster() {
+          for (const s of [s1, s2]) s.style.fontSize = "";
+          const w = Math.max(s1.offsetWidth, s2.offsetWidth);
+          if (w > 960) { const f = (76 * 960 / w).toFixed(1) + "px"; s1.style.fontSize = f; s2.style.fontSize = f; }
+          const m = $("message"); m.style.fontSize = ""; if (m.offsetWidth > 800) m.style.fontSize = (33 * 800 / m.offsetWidth).toFixed(1) + "px";
+          sj.style.fontSize = ""; if (sj.offsetWidth > 652) sj.style.fontSize = (48 * 652 / sj.offsetWidth).toFixed(1) + "px";
+          rp.style.fontSize = ""; if (rp.offsetWidth > 610) rp.style.fontSize = (29 * 610 / rp.offsetWidth).toFixed(1) + "px";
+          const nu = $("numero"); nu.style.fontSize = ""; if (nu.offsetWidth > 740) nu.style.fontSize = (78 * 740 / nu.offsetWidth).toFixed(1) + "px";
+          et.style.transform = ""; if (et.offsetWidth > 440) { et.style.transformOrigin = "0 0"; et.style.transform = "scale(" + (440 / et.offsetWidth).toFixed(3) + ")"; }
+          placerEtiquette();
+        }
+        ajuster(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajuster);
+
+        const tl = gsap.timeline({ paused: true });
+        const S = "#" + R;
+        // REGLE 1re FRAME : aucun fromTo qui part d'une opacite 0 sur un element visible a 0 s ; tout est deja pose a t = 0.
+        // REGLE TENUE (27/11) : toute tween de position ou d'echelle se termine au plus tard a FV (= voix-fin).
+
+        // ===== PENDANT LA VOIX =====
+        // carte : zoom lent vers le pin (1 -> 1,07), fini a voix-fin
+        tl.fromTo(S + "plan", { scale: 1 }, { scale: 1.07, duration: FV, ease: "sine.inOut" }, 0);
+        tl.fromTo(S + "ambiance", { scale: 1 }, { scale: 1.08, duration: FV, ease: "sine.inOut" }, 0);
+        // pin : petit rebond, puis ondes regulieres jusqu'a voix-fin
+        tl.to(S + "pin-icone", { y: -16, duration: 0.2, ease: "power2.out" }, 0.25);
+        tl.to(S + "pin-icone", { y: 0, duration: 0.45, ease: "bounce.out" }, 0.45);
+        for (let t = 0.55; t + 1.1 <= FV - 0.1; t += 1.3)
+          tl.fromTo(S + "pin-onde", { scale: 0.5, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.1, ease: "power2.out", immediateRender: false }, t);
+
+        // le doigt part de la carte et glisse vers le bouton
+        const DX0 = 905, DY0 = 980, DX1 = 760, DY1 = 1404;
+        tl.set(S + "doigt", { x: DX0, y: DY0, scale: 0.6, opacity: 0 }, 0);
+        tl.to(S + "doigt", { scale: 1, opacity: 1, duration: 0.18, ease: "back.out(2)" }, 0.12);
+        tl.to(S + "doigt", { x: DX1, duration: 0.75, ease: "power1.inOut" }, 0.3);
+        tl.to(S + "doigt", { y: DY1, duration: 0.75, ease: "power2.in" }, 0.3);
+        tl.to(S + "doigt", { scale: 0.78, duration: 0.1, ease: "power1.in" }, 1.05);
+        tl.to(S + "wa", { scale: 0.965, duration: 0.1, ease: "power1.in" }, 1.05);
+        tl.to(S + "wa", { scale: 1, duration: 0.18, ease: "power2.out" }, 1.15);
+        tl.to(S + "doigt", { scale: 1.25, opacity: 0, duration: 0.35, ease: "power1.out" }, 1.18);
+        // message envoye : coche, double coche, lu (bleu), puis Salimou ecrit…
+        tl.set(S + "coche1", { opacity: 0 }, 1.2);
+        tl.set(S + "coche2", { opacity: 1 }, 1.2);
+        tl.fromTo(S + "envoye", { scale: 1 }, { scale: 1.035, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", transformOrigin: "100% 50%" }, 1.2);
+        tl.set(S + "coche2", { opacity: 0 }, 1.75);
+        tl.set(S + "lu", { opacity: 1 }, 1.75);
+        tl.to(S + "en-ligne", { opacity: 0, duration: 0.15 }, 2.15);
+        tl.to(S + "ecrit", { opacity: 1, duration: 0.15 }, 2.2);
+        for (let t = 2.3; t + 0.24 + 0.36 <= FV; t += 0.9)
+          [1, 2, 3].forEach(j => tl.to(S + "p" + j, { y: -8, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, t + (j - 1) * 0.12));
+        // halo du bouton qui respire (nombre pair d'allers-retours : revient a l'echelle 1 avant voix-fin), ondes, reflet
+        const nHalo = Math.max(2, 2 * Math.floor(FV / 1.2));
+        tl.fromTo(S + "halo", { opacity: 0.75, scale: 1 }, { opacity: 1, scale: 1.06, duration: FV / nHalo, yoyo: true, repeat: nHalo - 1, ease: "sine.inOut" }, 0);
+        const ondes = [1.12]; for (let t = 2.9; t + 0.8 <= FV - 0.1; t += 1.8) ondes.push(t);
+        ondes.forEach(t => tl.fromTo(S + "onde", { opacity: 0.7, scaleX: 1, scaleY: 1 }, { opacity: 0, scaleX: 1.07, scaleY: 1.4, duration: 0.8, ease: "power2.out", immediateRender: false }, t));
+        tl.fromTo(S + "reflet", { x: -180 }, { x: 1080, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 1.6);
+        if (FV >= 5) tl.fromTo(S + "reflet", { x: -180 }, { x: 1080, duration: 0.95, ease: "power2.inOut", immediateRender: false }, FV - 1.15);
+
+        // ===== TENUE (voix-fin -> D) : couleurs seules =====
+        const T = D - FV;
+        if (T > 0) {
+          tl.fromTo(S + "fond2", { opacity: 0 }, { opacity: 0.9, duration: T, ease: "sine.inOut", immediateRender: false }, FV);
+          tl.fromTo(S + "wa-lueur", { opacity: 0 }, { opacity: 0.55, duration: T / 2, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, FV);
+          tl.fromTo(S + "halo", { opacity: 0.75 }, { opacity: 0.4, duration: T / 2, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, FV);
+          tl.fromTo(S + "pin-or", { opacity: 1 }, { opacity: 0.2, duration: T / 2, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, FV);
+          tl.fromTo(S + "pin-vert", { opacity: 0 }, { opacity: 1, duration: T / 2, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, FV);
+        }
+        tl.to({}, { duration: 0 }, D);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["outro-whatsapp-dss-v2"] = tl;
+      })();
+    </script>
+  </body>
+</html>

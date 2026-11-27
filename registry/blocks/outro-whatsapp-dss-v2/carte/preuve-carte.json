@@ -1,0 +1,125 @@
+{
+ "source": {
+  "fichier": "gcc-states-latest.osm.pbf",
+  "url": "https://download.geofabrik.de/asia/gcc-states-latest.osm.pbf",
+  "octets": 258161386,
+  "last_modified": "2026-11-27T03:45:11Z",
+  "md5": "f3a8acf4882544a2756947b1efdd0118",
+  "licence": "ODbL 1.0, © contributeurs OpenStreetMap (credit « © OpenStreetMap » affiche dans la carte)"
+ },
+ "date_construction": "2026-11-27",
+ "cadre": {
+  "lon0": 54.89708349109509,
+  "lon1": 55.60291650890491,
+  "lat0": 25.02,
+  "lat1": 25.33,
+  "w": 1360,
+  "h": 660,
+  "projection": "equirectangulaire, x mis a l echelle par cos(latitude moyenne)"
+ },
+ "bulle_px": {
+  "w": 680,
+  "h": 330
+ },
+ "formule": "x = (lon - lon0) / (lon1 - lon0) * 680 ; y = (lat1 - lat) / (lat1 - lat0) * 330",
+ "geometrie": {
+  "terre": "ways natural=coastline fusionnes, continent = morceau du cadre contenant la terre, iles = anneaux fermes CCW ; simplification 0,9 px (viewBox 1360x660)",
+  "routes": "highway=motorway, simplification 1,2 px",
+  "controle": "reference.py : tuiles OSM z12 reprojetees dans le meme cadre"
+ },
+ "lieux": {
+  "node/31248510": {
+   "lat": 25.264723,
+   "lon": 55.292415,
+   "name": "دبي",
+   "name_en": "Dubai",
+   "place": "city"
+  },
+  "node/1623893077": {
+   "lat": 25.092939,
+   "lon": 55.318483,
+   "name": "ماجان",
+   "name_en": "Majan",
+   "place": "neighbourhood"
+  },
+  "node/8143204857": {
+   "lat": 25.033817,
+   "lon": 55.136604,
+   "name": "جبل علي",
+   "name_en": "Jabal Ali",
+   "place": "suburb"
+  },
+  "node/11800596709": {
+   "lat": 25.056588,
+   "lon": 55.207987,
+   "name": "قرية جميرا الدائرية",
+   "name_en": "Jumeirah Village Circle",
+   "place": "suburb"
+  },
+  "way/365212294": {
+   "lat": 25.0926,
+   "lon": 55.380771,
+   "centroide": true,
+   "name": "مجمع مسكن دبي",
+   "name_en": "Dubai Residence Complex",
+   "place": "neighbourhood"
+  },
+  "way/874795302": {
+   "lat": 25.054257,
+   "lon": 55.202133,
+   "centroide": true,
+   "name": "قرية جميرا الدائرية",
+   "name_en": "Jumeirah Village Circle",
+   "place": "neighbourhood"
+  },
+  "way/1012399700": {
+   "lat": 25.091749,
+   "lon": 55.317548,
+   "centroide": true,
+   "name": "ماجان",
+   "name_en": "Majan",
+   "place": "residential"
+  },
+  "way/1159907277": {
+   "lat": 25.162152,
+   "lon": 55.309662,
+   "centroide": true,
+   "name": "ميدان",
+   "name_en": "Meydan",
+   "place": "neighbourhood"
+  }
+ },
+ "utilises": {
+  "Dubai (pin general)": {
+   "osm": "node/31248510",
+   "lat": 25.264723,
+   "lon": 55.292415
+  },
+  "Dubailand Residence Complex (Weston)": {
+   "osm": "way/365212294 (centroide, name:en Dubai Residence Complex)",
+   "lat": 25.0926,
+   "lon": 55.380771,
+   "recoupement": "Weston by Wadan : Wadi Al Safa 5, Dubai Land Residence Complex (Khaleej Times, Binayah, FAM Properties, Property Finder)"
+  },
+  "Jumeirah Village Circle": {
+   "osm": "way/874795302 (centroide)",
+   "lat": 25.054257,
+   "lon": 55.202133
+  },
+  "Majan": {
+   "osm": "way/1012399700 (centroide)",
+   "lat": 25.091749,
+   "lon": 55.317548
+  },
+  "Meydan": {
+   "osm": "way/1159907277 (centroide)",
+   "lat": 25.162152,
+   "lon": 55.309662
+  },
+  "Jebel Ali": {
+   "osm": "node/8143204857 (name:en Jabal Ali, place=suburb)",
+   "lat": 25.033817,
+   "lon": 55.136604
+  }
+ }
+}

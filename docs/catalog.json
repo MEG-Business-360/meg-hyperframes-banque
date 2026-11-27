@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T07:57:50.947Z",
+  "generatedAt": "2026-11-27T16:59:01.883Z",
   "count": 291,
   "formats": [
     {
@@ -7503,7 +7503,7 @@
         "height": 1920
       },
       "title": "Outro WhatsApp DSS v2",
-      "description": "v2 de outro-whatsapp-dss (15/10/2026) : photos du sujet en <img> statiques (le chargeur de sous-composition ne réécrit pas un chemin posé en JS : bulle noire loin dans la timeline), conversation et bouton dans la zone sûre Snapchat (#owa-zone). 5 à 7 s, ambiance verte, photos en Ken Burns, doigt sur le bouton vert +971 52 480 4972 ; tout visible dès la 1re frame. Photos fournies par le projet (jamais commitées).",
+      "description": "v2 de outro-whatsapp-dss, révision du 27/11/2026 : carte de Dubaï en données OpenStreetMap (SVG en ligne, crédit © OpenStreetMap, preuve dans carte/preuve-carte.json) avec pin paramétrable (V.carte : lat, lon, étiquette, projet, repères) ; numéro +971 52 480 4972 en 78 px, contraste 9,5:1 ; bouton remonté (bas à y 1361) pour laisser la bande des sous-titres y 1398-1500 libre ; durée D = data-voix-fin + data-tenue (2 à 3 s, 2,5 par défaut), D ≤ 11 s ; pendant la tenue seules les couleurs changent. Conversation avec Salimou, zone sûre #owa-zone, tout visible dès la 1re frame.",
       "tags": [
         "meg",
         "dss",
@@ -7511,9 +7511,11 @@
         "whatsapp",
         "snapchat",
         "dss-montage",
-        "v2"
+        "v2",
+        "carte",
+        "openstreetmap"
       ],
-      "duration": 7,
+      "duration": 8,
       "target": "templates-dss/outro-whatsapp-dss-v2.html",
       "preview": "registry/blocks/outro-whatsapp-dss-v2/preview.jpg"
     },

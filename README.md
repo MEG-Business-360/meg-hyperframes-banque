@@ -12,6 +12,8 @@ Chaque projet pointe vers cette URL dans `hyperframes.json` :
 https://raw.githubusercontent.com/megbusiness360/meg-hyperframes-banque/main/registry
 ```
 
+Le bloc `outro-whatsapp-dss-v2` cible `templates-dss/`. Pour l’installer avec `hyperframes add`, renseigner `"paths": {"blocks": "templates-dss"}` dans `hyperframes.json`.
+
 Pour synchroniser une ancienne ou une nouvelle timeline :
 
 ```bash

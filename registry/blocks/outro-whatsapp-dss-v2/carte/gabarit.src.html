@@ -334,8 +334,8 @@
         for (let t = 0.55; t + 1.1 <= FV - 0.1; t += 1.3)
           tl.fromTo(S + "pin-onde", { scale: 0.5, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.1, ease: "power2.out", immediateRender: false }, t);
 
-        // le doigt part de la carte et glisse vers le bouton
-        const DX0 = 905, DY0 = 980, DX1 = 760, DY1 = 1404;
+        // le doigt part de la carte et appuie sur l’icône, à gauche du numéro
+        const DX0 = 905, DY0 = 980, DX1 = 225, DY1 = 1404;
         tl.set(S + "doigt", { x: DX0, y: DY0, scale: 0.6, opacity: 0 }, 0);
         tl.to(S + "doigt", { scale: 1, opacity: 1, duration: 0.18, ease: "back.out(2)" }, 0.12);
         tl.to(S + "doigt", { x: DX1, duration: 0.75, ease: "power1.inOut" }, 0.3);
